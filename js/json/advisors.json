@@ -1,0 +1,77 @@
+[
+
+    {
+        "id": 1,
+        "name": "Brian Min",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "阿默斯特学院"
+    },
+
+    {
+        "id": 2,
+        "name": "Imani Lee Ivery",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州大学洛杉矶分校"
+    },
+
+    {
+        "id": 4,
+        "name": "Fei Sun",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "杜克大学生物博士"
+    }, {
+        "id": 5,
+        "name": "Hajin Lily Yee",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州大学洛杉矶分校"
+    },
+
+    {
+        "id": 6,
+        "name": "Sheren Hotama",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州伯克利大学毕业"
+    }, {
+        "id": 7,
+        "name": "Laura Fitch",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "哥伦比亚大学毕业"
+    }, {
+        "id": 8,
+        "name": "Hajin Lily Yee",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州大学洛杉矶分校"
+    }, {
+        "id": 9,
+        "name": "Weston Hustace",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州大学圣塔克鲁兹分校"
+    },
+
+    {
+        "id": 10,
+        "name": "Adriane Stoia",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "加州伯克利大学"
+    }, {
+        "id": 11,
+        "name": "Grace Lee",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "JP Morgan Summer Analyst"
+    }, {
+        "id": 12,
+        "name": "Nabil Hamade",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "JP Morgan Summer Analyst"
+    }, {
+        "id": 13,
+        "name": "Sammy Tong",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "NBC Summer Intern"
+    }, {
+        "id": 14,
+        "name": "Stanley Liu",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "background": "英属哥伦比亚金融硕士"
+    }
+]

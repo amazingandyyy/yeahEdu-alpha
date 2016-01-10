@@ -1,0 +1,664 @@
+/*
+******************** Colour reference chart****************
+*************************** comment ********* colour ******** 
+
+background colour and main  mainColor              #4479F6
+box border colour           bb               #abcdef
+box text colour             bt               #2B2B2B
+
+*/
+
+body {
+    background: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    transition: all .3s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+    user-select: none;
+}
+h1 {
+    font-weight: 700;
+}
+a {
+    color: inherit;
+}
+a:hover {
+    color: inherit;
+}
+.margin10px {
+    height: 10px;
+    opacity: 0;
+}
+.margin20px {
+    height: 20px;
+    opacity: 0;
+}
+.margin50px {
+    height: 50px;
+    opacity: 0;
+}
+.margin150px {
+    height: 150px;
+    opacity: 0;
+}
+/*
+.logSection {
+    padding: 30px 0;
+    transform: rotate(0deg);
+}
+.logSection h1 {
+    color: white;
+    letter-spacing: -1px;
+    font-weight: 100;
+    font-size: 4em;
+    transform: rotate(0deg);
+}
+
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px 10px;
+    box-shadow: -15px 15px 0px 0px #425FF4;
+}
+.inputDiv {
+    height: 40px;
+    padding: 3px 10px;
+    font-size: 1.2em;
+    border: 0px;
+    background: #EEF3FA;
+    outline: none;
+    margin: 5px;
+    width: 80%;
+}
+.border5px {
+    border-radius: 5px;
+}
+.buttonDiv {
+    height: 40px;
+    padding: 3px 10px;
+    font-size: 1.2em;
+    border: 0px;
+    background: #4479F6;
+    color: white;
+    outline: none;
+    margin: 5px;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+}
+.buttonDiv:hover {
+    background: #425FF4;
+    transition: all 0.2s;
+}
+.buttonDiv2 {
+    height: 40px;
+    padding: 3px 10px;
+    font-size: 1.2em;
+    border: 0px;
+    background: #4479F6;
+    color: white;
+    outline: none;
+    margin: 5px;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+}
+.errorText {
+    color: red;
+}
+#signupDiv {
+    -vendor-animation-duration: 0.2s;
+}
+*/
+
+.h1, .h2, .h3, h1, h2, h3 {
+ margin-top: 12px;
+ margin-bottom: 8px;
+}
+
+.menu-box {
+    background: #fff;
+    border-radius: 4px;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .1s ease-in-out;
+    -moz-transition: .1s ease-in-out;
+    -o-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    margin: -7px -14px -10px 0px;
+}
+.menu-bar {
+    border-radius: 2px;
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background: #1F4056;
+    opacity: 1;
+    left: 5;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+.menu-bar:nth-child(1) {
+    top: 7px;
+}
+.menu-bar:nth-child(2) {
+    top: 14px;
+}
+.menu-bar:nth-child(3) {
+    top: 21px;
+}
+.menu-box.open .menu-bar:nth-child(1) {
+    top: 14px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+.menu-box.open .menu-bar:nth-child(2) {
+    opacity: 0;
+    left: -10px;
+}
+.menu-box.open .menu-bar:nth-child(3) {
+    top: 14px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.navbar-default.shrink {
+    padding: 0px;
+    min-height: 20px;
+    border-bottom: 1px solid rgba(233, 234, 234, 1);
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.navbar-default {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.navbar-default .navbar-brand {
+    color: #1F4056;
+    font-size: 2.5em;
+    font-weight: 900;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.navbar-default .navbar-brand:hover {
+    padding-top: 16px;
+    color: #34B3A0;
+    opacity: 0.9;
+    letter-spacing: 3px;
+    transition: all .3s ease-in-out;
+    font-size: 1.9em;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #1F4056;
+    font-size: 1.1em;
+    transition: all .1s ease-in-out;
+    opacity: 0.8;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    opacity: 1;
+    color: #1F4056;
+    font-weight: 700;
+    transition: all .1s ease-in-out;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: all .1s ease-in-out;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    color: #1F4056;
+}
+.navbar-default .navbar-toggle {
+    border: none;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: all .3s ease-in-out;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border: none;
+}
+.container-fluid1-- {
+    overflow: hidden;
+    background-image: url("images/The-Stanford-Church-in-the-Photowalk-Storm1-1920x1080-wide-wallpapers.net.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+.background_cover {
+    background: rgba(0, 0, 0, 0);
+    ;
+    /* For browsers that do not support gradients */
+    /*background: -webkit-linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0)); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(-90deg, rgba(0,0,0,0.8), rgba(0,0,0,0)); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(-90deg, rgba(0,0,0,0.8), rgba(0,0,0,0)); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(180deg, rgba(52,89,176,0.8) 1%, rgba(68,121,246,1) 10%, rgba(68,121,246,1) 50%); /* Standard syntax */
+    height: 100vh;
+}
+.section {
+    padding: 60px 20px 100px 20px;
+    color: #1F4056;
+}
+.section1 h1 {
+    font-size: 6em;
+}
+.section1 h2 {
+    font-size: 2em;
+}
+.section1 h1 span {
+    color: #34B3A0;
+}
+.section1 {
+    padding: 180px 20px 200px 20px;
+}
+.section-w {
+    background: white;
+}
+.section-g {
+    background: #E9EAEA;
+}
+
+.card {
+    padding: 30px 10px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+}
+/*
+.card:hover {
+color: white;
+ background: #34B3A0;
+}
+*/
+
+.card-g {
+    background: #E9EAEA;
+}
+.srdz-intro .card-g {
+    border: 3px solid white;
+}
+.card-w {
+    background: white;
+}
+.first-section {
+    padding: 10% 0;
+    background: white;
+    height: 100vh;
+}
+.first-section h1 {
+    font-size: 6em;
+}
+.card-highlight {
+    background: #34B3A0;
+    color: white;
+    border: 5px white solid;
+}
+.srdz-intro h1 {
+    font-weight: 700;
+}
+.srdz-intro h2 {
+    font-weight: 300;
+    font-size: 1.7em;
+}
+.srdz-intro h3 {
+    font-weight: 300;
+    font-size: 1.4em;
+}
+.srdz-intro h2 span {
+    display: inline-block;
+    margin: 10px 0px -20px 0px;
+}
+.srdz-intro .pyramid-2 {
+    width: 98%;
+}
+.srdz-intro .card {
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+.section-advisor .card {
+    text-align: center;
+}
+.section-advisor .profile-img {
+    border-radius: 50%;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    overflow: hidden;
+    /*
+ background: url('images/team/advisors/default-profile.png') no-repeat center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+*/
+}
+.section-advisor .profile-img img {
+    height: 150px;
+    width: 150px;
+}
+.card-advisor {
+    min-height: 350px;
+    transition: all 0.1s ease-in-out;
+    margin: 15px 0px;
+    width: 260px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.card-advisor:hover {
+background: #34B3A0;
+ color: white;
+}
+
+.card-advisor-more {
+    min-height: 350px;
+    transition: all .3s ease-in-out;
+    margin: 15px 0px;
+    width: 256px;
+    margin: 10px;
+    display: inline-block;
+    outline: 2px dotted #D4D5D6;
+    text-align: center;
+}
+.card-advisor-more:hover {
+    transition: all .2s ease-in-out;
+    background: white;
+    outline: 0px dotted #D4D5D6;
+}
+.card-advisor-more-i {
+    font-size: 5em;
+    color: #D4D5D6;
+}
+.card-advisor-more .profile-img {
+    border-radius: 50%;
+    border: 1px solid #D4D5D6;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    padding: 40px;
+}
+.card-advisor-more h3,
+.card-advisor-more h5 {
+    color: #D4D5D6;
+}
+.more-advisor a {
+    text-decoration: none;
+}
+.more-advisor {
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 300;
+    border: 1px solid #1F4056;
+    padding: 3px 20px;
+    border-radius: 20px;
+    transition: all .4s ease-in-out;
+}
+.more-advisor:hover,
+.more-advisor:active,
+.more-advisor.hover_effect {
+    letter-spacing: 2px;
+    font-weight: 200;
+    color: white;
+    background: #1F4056;
+    transition: all .3s ease-in-out;
+}
+.advisor-container {
+    margin-left: -30px;
+    margin-right: -35px;
+    height: 400px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.advisor-container-inner {
+    height: 380px;
+    width: 2850px;
+    overflow-x: visible;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+footer {
+    padding: 30px 20px 10px 20px;
+    background: #444449;
+ color: white;
+}
+
+footer h3 {
+ font-size: 1.1em;
+ line-height: 25px;
+ font-weight: 300;
+ text-align: left;
+  cursor: pointer;
+}
+
+footer h3:hover {
+ font-weight: 500;
+}
+
+footer h4 {
+ font-size: 0.8em;
+ letter-spacing: 0.3px;
+ font-weight: 300;
+ color: rgba(250,250,250,0.8);
+}
+
+footer h4 b {
+ font-weight: 400;
+}
+footer ul {
+  list-style-type: none;
+}
+
+footer .qrcode {
+ width: 130px;
+}
+
+footer .rights h3{
+color: rgba(250,250,250,0.5);
+ font-size: 0.7em;
+ letter-spacing: 0.3px;
+ font-weight: 500;
+ text-align: center;
+}
+.subcription {
+padding-top: 10px;
+}
+
+
+
+/**/
+
+/*
+.btn {
+    margin: 10px;
+    border: 1px solid #949494;
+    display: inline-block;
+    padding: 15px 100px;
+    position: relative;
+    transition: all 0.2s;
+}
+.btn2a {
+    overflow: hidden;
+    height: 20px;
+    border-radius: 5px;
+}
+.btn2a:before {
+    transition: all 0.2s;
+    content: "\e90c  Apple";
+    line-height: 2.5;
+    position: absolute;
+    top: 0px;
+    background: white;
+    z-index: -1;
+    left: 0px;
+    width: 100%;
+    border-right: 1px solid #949494;
+    height: calc(100% - 0px);
+    opacity: 1;
+}
+.btn2a:after {
+    transition: all .2s;
+    content: "\e908  Spotify";
+    line-height: 2.5;
+    position: absolute;
+    top: 50px;
+    z-index: 99;
+    left: 0px;
+    width: 100%;
+    border-right: 1px solid #949494;
+    height: calc(100% - 0px);
+    background: #26E169;
+}
+.btn2a:hover:after {
+    top: 0px;
+    color: white;
+}
+.btn2a:hover:before {
+    opacity: 1;
+    top: -50px;
+}
+.btn2a:hover {
+    border-color: #26E169;
+}
+*/
+
+/**/
+
+/*
+.qcgh-intro .card-g {
+  overflow: hidden;
+}
+
+.qcgh-intro .card-g:after {
+  content: '';
+  position: absolute;
+  z-index: 99;
+  transition: all 0.3s;
+  width: 0%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 50%;
+  background: #34B3A0;
+}
+
+.qcgh-intro .card-g:hover {
+  color: white;
+}
+
+.qcgh-intro .card-g:hover:after {
+  width: 100%;
+  left: 0%;
+  opacity: 1;
+}
+
+.qcgh-intro .card-g:active:after {
+  width: 120%;
+  left: -10%;
+  opacity: 1;
+}*/
+
+/* Extra small devices (phones, less than 768px) */
+
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+
+/*
+iPhone6+: 414px;
+iPhone6: 375px;
+iPhone5: 320px
+*/
+
+@media (max-width: 375px) {
+    .first-section h1 {
+        font-size: 5em;
+    }
+    .srdz-intro h1 {
+        font-size: 2em;
+    }
+    .srdz-intro .iphone6-h2 {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 320px) {
+    .first-section h1 {
+        font-size: 4em;
+        line-height: 50px;
+    }
+    .first-section h2 {
+        font-size: 1.6em;
+    }
+    .first-section h3 {
+        font-size: 1.2em;
+    }
+   .srdz-intro .iphone6-h2 {
+        font-size: 1.1em;
+    line-height: 0px;
+    }
+ 
+ .srdz-intro h3 {
+        font-size: 1.2em;
+    }
+ .srdz-intro .card-g {
+  padding: 8px 5px;
+ }
+ 
+}
+@media (min-width: @screen-sm-min) {
+    ...
+}
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: @screen-md-min) {
+    ...
+}
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: @screen-lg-min) {
+    ...
+}
