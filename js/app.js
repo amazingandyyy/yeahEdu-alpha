@@ -14,8 +14,8 @@ $(document).ready(function() {
     //        }, 200);
     //        return false;
     //    });
-
-
+//testing
+	
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('.navbar-default').addClass('shrink');
