@@ -16,6 +16,8 @@ $(document).ready(function() {
     //    });
 //testing
 	
+
+	
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('.navbar-default').addClass('shrink');
@@ -33,12 +35,7 @@ $(document).ready(function() {
             });
         }
     });
-
-    $('.navbar-toggle').click(function() {
-        //        $('.menu-box').toggleClass('open');
-        console.log('ok');
-    });
-
+   
     $.getJSON("js/json/advisors.json", function(json) {
 
         var html = "";
