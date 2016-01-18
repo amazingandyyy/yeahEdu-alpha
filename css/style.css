@@ -222,6 +222,7 @@ a:hover {
 .navbar-default .navbar-brand {
     color: #1F4056;
     font-size: 2.5em;
+    padding-top: 13px;
     font-weight: 900;
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
@@ -231,6 +232,7 @@ a:hover {
 .navbar-default .navbar-brand:hover {
     padding-top: 16px;
     color: #34B3A0;
+    padding-top: 13px;
     opacity: 0.9;
     letter-spacing: 3px;
     transition: all .3s ease-in-out;
@@ -260,7 +262,10 @@ a:hover {
     margin-right: 1px;
     color: #1F4056;
 }
-.navbar-default .navbar-toggle {
+#userlog {
+    color: #34B3A0;
+}
+#userlog:hover {} .navbar-default .navbar-toggle {
     border: none;
 }
 .navbar-default .navbar-toggle:focus,
@@ -512,7 +517,7 @@ iPhone5: 320px
     }
 }
 @media (max-width: 320px) {
-	.first-section h1 {
+    .first-section h1 {
         font-size: 4em;
     }
     .first-section h2 {
@@ -521,7 +526,7 @@ iPhone5: 320px
     .first-section h3 {
         font-size: 1.2em;
     }
-	    .srdz-intro h3 {
+    .srdz-intro h3 {
         font-size: 1.1em;
         font-weight: 300;
     }
@@ -529,7 +534,7 @@ iPhone5: 320px
         font-size: 1.1em;
         line-height: 0px;
     }
-				.card-highlight .iphone5 {
+    .card-highlight .iphone5 {
         font-size: 2em;
     }
     .srdz-intro h3 {
