@@ -24,7 +24,7 @@
                 <li><a href="#">公益讲座/动向</a>
                 </li>
 
-                <li><a href="#" id="userlog" data-toggle="modal" data-target="#myModal">会员入口</a>
+                <li><a href="#" id="userlog" data-toggle="modal" data-target="#logForm">会员入口</a>
 
                 </li>
             </ul>
@@ -35,29 +35,39 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- logForm Modal -->
+<div class="modal fade" id="logForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog " role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
-                    <span></span><span></span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                
+                <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
             </div>
             <div class="modal-body">
-               
-                <ul class="nav nav-tabs　nav-justified">
-                    <li role="presentation" class="active"><a href="#">登入</a>
-                    ｆｄｓａｆｄｓ
-                    </li>
-                    <li role="presentation"><a href="#">注册</a>
-                    ａｆｄｓｆ
-                    </li>
-                    
-                </ul>
+
+                <div>
+<button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
+                    <span></span><span></span>
+                </button>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">会员登入</a>
+                        </li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">加入会员</a>
+                        </li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active fade" id="home">...</div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile">..ff.</div>
+                         
+                    </div>
+
+                </div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -68,11 +78,16 @@
         $('.menu-box').toggleClass('open');
     });
 
-    $('.modal-header').find('.close').hover(function() {
+    $('.modal').find('.close').hover(function() {
         $('span:nth-child(1)').toggleClass('active');
         $('span:nth-child(2)').toggleClass('active');
         console.log('adsfdsa')
     });
+
+    $('#logForm-tab a').click(function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
 </script>
 
 
