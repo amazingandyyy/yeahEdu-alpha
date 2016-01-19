@@ -1,18 +1,18 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-           
-           <a class="navbar-brand" href="/index.html"><i class="fa fa-hand-peace-o"></i><span> 欧耶转学</span></a>
-           
+
+            <a class="navbar-brand" href="/index.html"><i class="fa fa-hand-peace-o"></i><span> 欧耶转学</span></a>
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse"><span class="sr-only">Toggle navigation</span>
                 <div class="menu-box">
                     <div class="menu-bar"></div>
                     <div class="menu-bar"></div>
                     <div class="menu-bar"></div>
-                    
+
                 </div>
             </button>
-            
+
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -24,21 +24,56 @@
                 <li><a href="#">公益讲座/动向</a>
                 </li>
 
-                <li><a href="#" id="userlog">会员入口</a>
-                
+                <li><a href="#" id="userlog" data-toggle="modal" data-target="#myModal">会员入口</a>
+
                 </li>
             </ul>
         </div>
-        
+
     </div>
-    
+
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
+                    <span></span><span></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+               
+                <ul class="nav nav-tabs　nav-justified">
+                    <li role="presentation" class="active"><a href="#">登入</a>
+                    ｆｄｓａｆｄｓ
+                    </li>
+                    <li role="presentation"><a href="#">注册</a>
+                    ａｆｄｓｆ
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
 <script>
-$('.navbar-toggle').click(function() {
-       $('.menu-box').toggleClass('open');
+    $('.navbar-toggle').click(function() {
+        $('.menu-box').toggleClass('open');
     });
 
+    $('.modal-header').find('.close').hover(function() {
+        $('span:nth-child(1)').toggleClass('active');
+        $('span:nth-child(2)').toggleClass('active');
+        console.log('adsfdsa')
+    });
 </script>
+
 
 

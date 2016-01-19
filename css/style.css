@@ -242,20 +242,18 @@ a:hover {
     transition: all .1s ease-in-out;
     opacity: 0.8;
 }
-
 #userlog {
-	background-color: #34B3A0;
-	color: white;
-	position: relative;
+    background-color: #34B3A0;
+    color: white;
+    position: relative;
+    outline: none;
 }
-
 .log-Container {
-	padding: 20px;
-	background-color: aqua;
-	width: 100px;
-	float: right;
+    padding: 20px;
+    background-color: aqua;
+    width: 100px;
+    float: right;
 }
-
 .navbar-default .navbar-nav>li>a:hover {
     opacity: 1;
     color: #1F4056;
@@ -502,6 +500,112 @@ footer .rights {
 .subcription {
     padding-top: 10px;
 }
+/* customize the boostrap Modal*/
+
+.modal-content {
+    margin-top: 80px;
+    border-radius: 7px;
+    /*    box-shadow: 0px -5px 50px -20px rgba(0, 0, 0, 0.7);*/
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.modal-backdrop.in {
+    background: rgba(255, 255, 255, 1);
+    opacity: 0.975;
+}
+.modal .close {
+    outline: none;
+    opacity: 1;
+    position: relative;
+    display: inline-block;
+    float: right;
+	margin-left: -50%;
+	right: 0px;
+	top: 2px;
+	height: 25px;
+	width: 25px;
+}
+.modal .close span:nth-child(1) {
+    background: rgba(215, 215, 215, 1);
+    border-radius: 5px;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(135deg);
+    top: 12px;
+    right: 3px;
+	transition: all .5s ease-in-out;
+}
+
+.modal .close span:nth-child(1).active {
+    transform: rotate(-135deg);
+	transition: all .4s ease-in-out;
+	background: rgba(42, 200, 160, 1);
+}
+
+.modal .close span:nth-child(2) {
+    background: rgba(192, 193, 194, 1);
+    border-radius: 5px;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 12px;
+    left: 2px;
+	transition: all .4s ease-in-out;
+}
+
+.modal .close span:nth-child(2).active {
+    transform: rotate(-225deg);
+	transition: all .4s ease-in-out;
+	background: rgba(52, 179, 120, 1);
+}
+
+.modal-header {
+    text-align: center;
+}
+*/ .modal button {
+    outline: none;
+}
+.firstcharacter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+.modal-body {
+    text-align: center;
+    padding-left: 40px
+}
+.modal-body h4 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+}
+.modal-body h5 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+}
+.modal-body p {
+    text-align: left;
+    line-height: 2.5em;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+.modal-body .profile-img.profile-img-teamMember img {
+    height: 101%;
+    width: 101%;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+/* the end of customizing Moal*/
+
 /* Extra small devices (phones, less than 768px) */
 
 /* No media query since this is the default in Bootstrap */
@@ -526,7 +630,7 @@ iPhone5: 320px
     }
 }
 @media (max-width: 320px) {
-	.first-section h1 {
+    .first-section h1 {
         font-size: 4em;
     }
     .first-section h2 {
@@ -535,7 +639,7 @@ iPhone5: 320px
     .first-section h3 {
         font-size: 1.2em;
     }
-	    .srdz-intro h3 {
+    .srdz-intro h3 {
         font-size: 1.1em;
         font-weight: 300;
     }
@@ -543,7 +647,7 @@ iPhone5: 320px
         font-size: 1.1em;
         line-height: 0px;
     }
-				.card-highlight .iphone5 {
+    .card-highlight .iphone5 {
         font-size: 2em;
     }
     .srdz-intro h3 {
