@@ -34,10 +34,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.navbar-toggle').click(function() {
-        //        $('.menu-box').toggleClass('open');
-        console.log('ok');
-    });
+    
 
     $.getJSON("js/json/advisors.json", function(json) {
 
@@ -81,65 +78,6 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).toggleClass('hover_effect');
     });
-
-
-    //    /*initialize the firebase DB*/
-    //    var myFirebaseRef = new Firebase("https://yeaheducation.firebaseio.com");
-    //
-    //    /*THE START OF sign new user up*/
-    //    $('#signupButton').on("click", function(p) {
-    //        p.preventDefault()
-    //        var $newEmail = $('#signupDiv').find('#email').val();
-    //        var $newPassword = $('#signupDiv').find('#password').val();
-    //
-    //        if ($newPassword === $('#signupDiv').find('#password2').val()) {
-    //            $('#signupDiv').find('.logError').text('');
-    //            $('#signupDiv').find('#password2').css('border', 'none')
-    //            $('#signupDiv').find('#email').css('border', 'none')
-    //            myFirebaseRef.createUser({
-    //                email: $newEmail,
-    //                password: $newPassword
-    //            }, function(error, userData) {
-    //                if (error) {
-    //                    $('#signupDiv').find('.logError').text(error);
-    //                    if (error) {
-    //                        $('#signupDiv').find('#email').css('border', '1px solid red')
-    //                    }
-    //                } else {
-    //                    $('#signupDiv').toggleClass('animated fadeOutUp singupSuccess');
-    //                    window.location.replace("/login.html");
-    //                    console.log("Successfully created user account with uid:", userData.uid);
-    //                }
-    //            });
-    //        } else {
-    //            $('#signupDiv').find('.logError').text('The confirmed email is different.');
-    //            $('#signupDiv').find('#password2').css('border', '1px solid red');
-    //            $('#signupDiv').toggleClass('animated wobble');
-    //        }
-    //    }) /*THE END OF log user in*/
-    //
-    //    /*THE START OF log user in*/
-    //    $('#loginButton').on("click", function(p) {
-    //        p.preventDefault()
-    //        var userEmail = $('#loginDiv').find('#email').val();
-    //        var userPassword = $('#loginDiv').find('#password').val();
-    //
-    //        $('#loginButton').on('click', function() {
-    //            var $userEmail = userEmail;
-    //            var $userpassword = userPassword;
-    //            myFirebaseRef.authWithPassword({
-    //                email: $userEmail,
-    //                password: $userpassword
-    //            }, function(error, authData) {
-    //                if (error) {
-    //                    console.log("Login Failed!", error);
-    //                } else {
-    //                    console.log("Authenticated successfully with payload:", authData);
-    //
-    //                }
-    //            });
-    //        });
-    //    }) /*THE END OF log user in*/
 
 
 

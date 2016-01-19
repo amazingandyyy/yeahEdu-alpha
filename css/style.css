@@ -242,6 +242,20 @@ a:hover {
     transition: all .1s ease-in-out;
     opacity: 0.8;
 }
+
+#userlog {
+	background-color: #34B3A0;
+	color: white;
+	position: relative;
+}
+
+.log-Container {
+	padding: 20px;
+	background-color: aqua;
+	width: 100px;
+	float: right;
+}
+
 .navbar-default .navbar-nav>li>a:hover {
     opacity: 1;
     color: #1F4056;
