@@ -121,7 +121,16 @@
     $('.modal').find('.close').hover(function() {
         $('span:nth-child(1)').toggleClass('active');
         $('span:nth-child(2)').toggleClass('active');
-        console.log('adsfdsa')
+    });
+
+    $('.modal').find('.close').bind('touchstart', function() {
+        $('span:nth-child(1)').addClass('active');
+        $('span:nth-child(2)').addClass('active');
+    });
+
+    $('#userlog').click(function() {
+        $('span:nth-child(1)').removeClass('active');
+        $('span:nth-child(2)').removeClass('active');
     });
 
     $('#logForm-tab a').click(function(e) {
