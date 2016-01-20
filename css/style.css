@@ -616,11 +616,13 @@ footer .rights {
 }
 .tab-content {
     margin-right: 20px;
-    text-align: left;
+    text-align: right;
 }
-.input-lg {
-    border-radius: 1px;
+
+.form-control {
+	height: 40px;
 }
+	
 /* the end of customizing Moal*/
 
 /* Extra small devices (phones, less than 768px) */
