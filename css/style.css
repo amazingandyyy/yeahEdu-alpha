@@ -637,6 +637,15 @@ body .modal-open {
 position:relative;
 overflow: hidden;
 }
+
+.btn, button {
+	outline: none;
+}
+
+.form-group.required .control-label:after { 
+   content:"*";
+   color:red;
+}
 /* the end of customizing Moal*/
 
 /* Extra small devices (phones, less than 768px) */
