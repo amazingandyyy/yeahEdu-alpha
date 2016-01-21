@@ -24,7 +24,10 @@
                 <li><a href="#">公益讲座/动向</a>
                 </li>
 
-                <li><a href="#" id="userlog" data-toggle="modal" data-target="#logForm">会员入口</a>
+                <li><a href="#" id="userlog">会员入口</a>
+
+                </li>
+                <li><a href="#" id="userlogout">登出</a>
 
                 </li>
             </ul>
@@ -89,10 +92,7 @@
                                     <input type="text" class="form-control" id="signup_email" placeholder="邮箱">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="signup_name_english" placeholder="English Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="signup_name_chinese" placeholder="中文全名">
+                                    <input type="text" class="form-control" id="signup_name" placeholder="Full Name">
                                 </div>
                                 <div class="form-group required">
                                     <input type="text" class="form-control" id="signup_password" placeholder="密码">
@@ -116,10 +116,13 @@
 
 
 <script>
-    $('.navbar-toggle').click(function() {
-        $('.menu-box').toggleClass('open');
-    });
-
+	$('#userlog').click(function() {
+		$('#loginForm').find('input').html('');
+		$('#signupForm').find('input').html('');
+		$('#logForm').modal('show');
+	
+	});
+ 
     $('.modal').find('.close').hover(function() {
         $('span:nth-child(1)').toggleClass('active');
         $('span:nth-child(2)').toggleClass('active');
@@ -143,56 +146,9 @@
     $(document).ready(function() {
 
             // Ref the Friebase URL Data
-            var myFirebaseRef = new Firebase("https://yeaheducation.firebaseio.com");
-
-            $('#signupForm').submit(function(event) {
-                $('.signupForm_error').html('');
-
-                event.preventDefault();
-                if ($('#signup_password').val() === $('#signup_password_confirmed').val()) {
-                    var $signup_email = $('#signup_email').val();
-                    var $signup_password = $('#signup_password').val();
-                    myFirebaseRef.createUser({
-                        email: $signup_email,
-                        password: $signup_password
-                    }, function(error, userData) {
-                        if (error) {
-                            $('.signupForm_error').show().html(error);
-                            event.preventDefault();
-                        } else {
-                            console.log("Successfully created user account with uid:", userData.uid);
-                            $('#logForm').modal('hide');
-                        }
-                    });
-                } else if ($('#signup_password').val() !== $('#signup_password_confirmed').val()) {
-
-                    $('#signup_password_confirmed').css({
-                        'border': '1px red solid'
-                    });
-                    $('.signupForm_error').show().html('两个密码不相同! :(');
-                }
-            });
-
-            $('#loginForm').submit(function(event) {
-                    $('.signupForm_error').html('');
-
-                    event.preventDefault();
-                    var $login_email = $('#login_email').val();
-                    var $login_password = $('#login_password').val();
-                    myFirebaseRef.authWithPassword({
-                        email: $login_email,
-                        password: $login_password
-                    }, function(error, authData) {
-                        if (error) {
-                            $('.loginForm_error').show().html(error);
-                            event.preventDefault();
-                        } else {
-                            console.log("Authenticated successfully with payload:", authData);
-																									$('#logForm').modal('hide');
-                        }
-                    });
-            });
+            
 				});
+	
 </script>
 
 

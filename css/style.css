@@ -639,7 +639,7 @@ overflow: hidden;
 }
 
 .btn, button {
-	outline: none;
+	outline: none; !important
 }
 
 .form-group.required .control-label:after { 

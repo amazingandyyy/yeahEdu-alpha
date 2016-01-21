@@ -1,5 +1,6 @@
 <html>
 <!--testing-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,8 +35,7 @@
 <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual
-        files as needed -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!-- jQuery UI -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -48,17 +48,29 @@
     <div class="container-fluid1">
         <div class="background_cover">
 -->
-    
+
     <header></header>
     <content></content>
     <footer></footer>
-    
-    
+
+
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
 
-<!-- link to local app.js -->
+   <script>
+        $('header').load('../header.html', function() {
+										$.getScript("js/app.js");
+//										$.getScript("js/testing.js"); 
+								});
+        $('footer').load('../footer.html');
+        $('content').load('../welcome.html');
+				
+    </script>
+   
+    <!-- link to local app.js -->
     <script src="js/app.js"></script>
+
+    
 
 </body>
 
