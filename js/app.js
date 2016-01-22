@@ -234,13 +234,13 @@ $(document).ready(function(){
     var YE = new YeahEducation('yeaheducation');
 
     YE.onLogin = function() {
-        $('#userlogout').fadeIn();
+        $('#userMe').fadeIn();
         $('#userlog').hide();
     };
 
     YE.onLogout = function() {
         $('#userlog').fadeIn();
-        $('#userlogout').hide();
+        $('#userMe').hide();
     };
 
      $('#userlogout').click(function () {

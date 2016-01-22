@@ -646,6 +646,12 @@ overflow: hidden;
    content:"*";
    color:red;
 }
+
+.dropdown-menu>li>a {
+		padding: 8px 25px;
+	font-size: 1.2em;
+}
+
 /* the end of customizing Moal*/
 
 /* Extra small devices (phones, less than 768px) */

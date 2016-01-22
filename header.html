@@ -4,7 +4,8 @@
 
             <a class="navbar-brand" href="/index.html"><i class="fa fa-hand-peace-o"></i><span> 欧耶转学</span></a>
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse"><span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <span class="sr-only">Toggle navigation</span>
                 <div class="menu-box">
                     <div class="menu-bar"></div>
                     <div class="menu-bar"></div>
@@ -20,16 +21,30 @@
                 </li>
                 <li><a href="#">短程备审筹备</a>
                 </li>
-
                 <li><a href="#">公益讲座/动向</a>
                 </li>
-
                 <li><a href="#" id="userlog">会员入口</a>
-
                 </li>
-                <li><a href="#" id="userlogout">登出</a>
-
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="userMe" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a>
+                        </li>
+                        <li><a href="#">Another action</a>
+                        </li>
+                        <li><a href="#">Something else here</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">隐私及使用规范</a>
+                        </li>
+                        <li><a href="#">设定</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" id="userlogout"><i class="fa fa-sign-out"></i> 登出</a>
+                        </li>
+                    </ul>
                 </li>
+                
             </ul>
         </div>
 
@@ -116,13 +131,12 @@
 
 
 <script>
-	$('#userlog').click(function() {
-		$('#loginForm').find('input').html('');
-		$('#signupForm').find('input').html('');
-		$('#logForm').modal('show');
-	
-	});
- 
+    $('#userlog').click(function() {
+        $('#loginForm').find('input').html('');
+        $('#signupForm').find('input').html('');
+        $('#logForm').modal('show');
+    });
+
     $('.modal').find('.close').hover(function() {
         $('span:nth-child(1)').toggleClass('active');
         $('span:nth-child(2)').toggleClass('active');
@@ -142,13 +156,14 @@
         e.preventDefault()
         $(this).tab('show')
     })
-
-    $(document).ready(function() {
-
-            // Ref the Friebase URL Data
-            
+				
+				$('#userMe').click(function() {
+						$('#userlogout').show();
 				});
-	
+
+    $('#userlogout').click(function() {
+						$('.nav').find('.dropdown').removeClass('open');
+				});
 </script>
 
 
