@@ -21,30 +21,28 @@
                 </li>
                 <li><a href="#">短程备审筹备</a>
                 </li>
-                <li><a href="#">公益讲座/动向</a>
+                <li><a href="#">转学讲座/动向</a>
                 </li>
                 <li><a href="#" id="userlog">会员入口</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" id="userMe" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a>
+                        <li><a href="/dashboard.html">个人主页</a>
                         </li>
-                        <li><a href="#">Another action</a>
+                        <li><a href="/setting.html">个人信息设置</a>
                         </li>
-                        <li><a href="#">Something else here</a>
+                        <li><a href="/resumeBuilder.html">欧耶履历助手&#8482;</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">隐私及使用规范</a>
                         </li>
-                        <li><a href="#">设定</a>
-                        </li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#" id="userlogout"><i class="fa fa-sign-out"></i> 登出</a>
+                        <li><a href="/index.html" id="userlogout"><i class="fa fa-sign-out"></i> 登出</a>
                         </li>
                     </ul>
                 </li>
-                
+
             </ul>
         </div>
 
@@ -65,64 +63,61 @@
 -->
             <div class="modal-body">
 
-                <div>
-                    <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
-                        <span></span><span></span>
-                    </button>
-                    <br>
-                    <div class="logForm-logo">
-                        <h1><i class="fa fa-hand-peace-o" style="font-size: 2em; color: #34B3A0; margin-bottom: 10px;"></i><br></h1>
-                    </div>
-                    <div class="margin20px"></div>
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#loginForm" aria-controls="signupForm" role="tab" data-toggle="tab">会员登入</a>
-                        </li>
-                        <li role="presentation"><a href="#signupForm" aria-controls="signupForm" role="tab" data-toggle="tab">加入会员</a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-
-                        <div role="tabpanel" class="tab-pane active fade in" id="loginForm">
-                            <form>
-                                <div class="margin20px"></div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="login_email" placeholder="邮箱">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="login_password" placeholder="密码">
-                                </div>
-                                <div class="loginForm_error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">密码不正确</div>
-                                <button type="submit" class="btn btn-link">忘记密码</button>
-                                <button type="submit" class="btn btn-default">登入欧耶</button>
-                            </form>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="signupForm">
-                            <form>
-                                <div class="margin20px"></div>
-                                <div class="form-group required">
-                                    <input type="text" class="form-control" id="signup_email" placeholder="邮箱">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="signup_name" placeholder="Full Name">
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" class="form-control" id="signup_password" placeholder="密码">
-                                </div>
-                                <div class="form-group required">
-                                    <input type="text" class="form-control" id="signup_password_confirmed" placeholder="再次输入密码">
-                                </div>
-                                <div class="signupForm_error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">密码不正确</div>
-                                <button type="submit" class="btn btn-default">注册欧耶</button>
-                            </form>
-                        </div>
-
-                    </div>
-
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
+                    <span></span><span></span>
+                </button>
+                <br>
+                <div class="logForm-logo">
+                    <h1><i class="fa fa-hand-peace-o" style="font-size: 2em; color: #34B3A0; margin-bottom: 10px;"></i><br></h1>
                 </div>
+                <div class="margin20px"></div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#loginForm" aria-controls="signupForm" role="tab" data-toggle="tab">会员登入</a>
+                    </li>
+                    <li role="presentation"><a href="#signupForm" aria-controls="signupForm" role="tab" data-toggle="tab">加入会员</a>
+                    </li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active fade in" id="loginForm">
+                        <form>
+                            <div class="margin20px"></div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="login_email" placeholder="邮箱">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="login_password" placeholder="密码">
+                            </div>
+                            <div class="loginForm_error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">密码不正确</div>
+                            <button type="submit" class="btn btn-link">忘记密码</button>
+                            <button type="submit" class="btn btn-default">登入欧耶</button>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="signupForm">
+                        <form>
+                            <div class="margin20px"></div>
+                            <div class="form-group required">
+                                <input type="text" class="form-control" id="signup_email" placeholder="邮箱">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="signup_name" placeholder="Full Name">
+                            </div>
+                            <div class="form-group required">
+                                <input type="text" class="form-control" id="signup_password" placeholder="密码">
+                            </div>
+                            <div class="form-group required">
+                                <input type="text" class="form-control" id="signup_password_confirmed" placeholder="再次输入密码">
+                            </div>
+                            <div class="signupForm_error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">密码不正确</div>
+                            <button type="submit" class="btn btn-default">注册欧耶</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -135,6 +130,8 @@
         $('#loginForm').find('input').html('');
         $('#signupForm').find('input').html('');
         $('#logForm').modal('show');
+        $('span:nth-child(1)').removeClass('active');
+        $('span:nth-child(2)').removeClass('active');
     });
 
     $('.modal').find('.close').hover(function() {
@@ -147,23 +144,18 @@
         $('span:nth-child(2)').addClass('active');
     });
 
-    $('#userlog').click(function() {
-        $('span:nth-child(1)').removeClass('active');
-        $('span:nth-child(2)').removeClass('active');
-    });
-
     $('#logForm-tab a').click(function(e) {
         e.preventDefault()
         $(this).tab('show')
     })
-				
-				$('#userMe').click(function() {
-						$('#userlogout').show();
-				});
+
+    $('#userMe').click(function() {
+        $('#userlogout').show();
+    });
 
     $('#userlogout').click(function() {
-						$('.nav').find('.dropdown').removeClass('open');
-				});
+        $('.nav').find('.dropdown').removeClass('open');
+    });
 </script>
 
 

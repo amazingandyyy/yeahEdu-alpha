@@ -208,6 +208,14 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+    
+    <script>
+	$('header').load('../header.html', function() {
+            $.getScript("js/app.js");
+        });
+        $('footer').load('../footer.html');
+	
+	</script>
 
 </body>
 
