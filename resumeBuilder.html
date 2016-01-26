@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css">
     <!-- CDN -> Swiper.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css">
+    <!--    CDN -> Boostrap Datapicker.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
         queries -->
@@ -32,11 +34,12 @@
         select {
             display: block;
             width: 100%;
-            height: 34px;
+            height: 38px;
             padding: 6px 12px;
             font-size: 14px;
             line-height: 1.42857143;
-            color: #555;
+            color: #686868;
+            font-weight: 400;
             background-color: #fff;
             background-image: none;
             border: 1px solid #ccc;
@@ -56,11 +59,9 @@
         }
     }
     #label_select {
-        position: relative
+        position: relative;
+        color: #686868;
     }
-    #label_select #label_select_arrow {
-						
-					}
     </style>
 </head>
 
@@ -110,121 +111,32 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="dashboard_currentschool">主办方</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                            <input type="text" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="volunteer_time">服务日期</label>
+                                            <input type='datetime-local' class="form-control" id='volunteer_time' />
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="dashboard_currentschool">参与身分</label>
                                             <br>
                                             <label id="label_select">
-                                               <div id="label_select_arrow">
                                                 <select id="dashboard_currentschool">
-                                                    <option value="volvo">Volvo</option>
-                                                    <option value="saab">Saab</option>
-                                                    <option value="opel">Opel</option>
-                                                    <option value="audi">Audi</option>
+                                                    <option value="volvo">-- 请选择 --</option>
+                                                    <option value="saab">主办者</option>
+                                                    <option value="opel">小组长</option>
+                                                    <option value="audi">参与者</option>
                                                 </select>
-                                                </div>
                                             </label>
                                         </div>
                                         <button type="submit" class="btn btn-default">修改信息</button>
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">名字</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">目前就读学校</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">住址邮递区号</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">名字</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">目前就读学校</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">住址邮递区号</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">名字</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">目前就读学校</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">住址邮递区号</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">名字</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">目前就读学校</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">住址邮递区号</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">名字</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">目前就读学校</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">住址邮递区号</label>
-                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
@@ -246,12 +158,19 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+    <!--		Boostrap Datapicker.js		-->
+    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></scrip>
+    <!-- Boostrap Motionjs for Datapicker.js   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
 
     <script>
         $('header').load('../header.html', function() {
             $.getScript("js/app.js");
         });
         $('footer').load('../footer.html');
+        $(document).ready(function() {
+            $('#datetimepicker4').datetimepicker();
+        })
     </script>
 
 </body>

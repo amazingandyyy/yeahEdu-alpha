@@ -598,7 +598,7 @@ footer .rights {
     background: #000;
 }
 .nav-tabs>li>a {
-    width: 146px;
+    min-width: 140px;
 }
 .nav-tabs {
     margin-left: 11px;
@@ -696,6 +696,9 @@ iPhone5: 320px
     .modal-content {
         margin-top: 20px;
     }
+    .nav-tabs>li>a {
+        width: 200px;
+    }
 }
 @media (max-width: 375px) {
     /*	iphone 6 */
@@ -709,7 +712,9 @@ iPhone5: 320px
         font-size: 1.4em;
     }
     .nav-tabs>li>a {
-        width: 90px;
+        max-width: 130px;
+        padding: 10px 0px;
+        margin-bottom: 15px;
     }
     .nav-tabs {
         margin-left: 10px;
@@ -735,13 +740,16 @@ iPhone5: 320px
     }
     .nav-tabs {
         margin-left: 10px;
-        margin-right: 30px;
+        margin-right: 10px;
     }
     .modal-content {
         margin-top: 10px;
     }
     .modal-content {
         margin-top: 50px;
+    }
+    .nav-tabs>li>a {
+        min-width: 158px;
     }
 }
 @media (min-width: 768px) {
@@ -751,6 +759,7 @@ iPhone5: 320px
     .modal-sm input {
         margin: auto;
     }
+    
 }
 /* Medium devices (desktops, 992px and up) */
 
