@@ -458,10 +458,13 @@ footer .rights {
 .dashboard_card {
     border: 1px solid #F6F6F6;
     background-color: #F6F6F6;
-    padding: 60px 30px;
     border-radius: 7px;
-    margin: 30px 0px;
     position: relative;
+    margin: 30px 0px 0px 0px;
+    padding: 30px;
+}
+.margin_top {
+    padding: 60px 30px;
 }
 .dashboard_card_title {
     text-align: center;

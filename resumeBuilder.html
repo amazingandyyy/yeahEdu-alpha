@@ -28,7 +28,41 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     <style>
-        
+        /* The CSS */
+        select {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+            select {
+                padding-right: 18px
+            }
+        }
+        #label_select {
+            position: relative
+        }
+					
+					#label_select {
+						
+					}
+					
     </style>
 </head>
 
@@ -46,7 +80,7 @@
     <header></header>
 
     <section class="section section-w section-setting">
-        <div class="container" style="max-width: 800px">
+        <div class="container-fluid" style="max-width: 1000px">
             <div class="margin50px"></div>
             <div class="margin50px"></div>
             <h1 style='margin-bottom: 20px; color: #34B3A0'>resumeBuilder&#8482;</h1>
@@ -69,19 +103,42 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active fade in" id="general-info">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="dashboard_card">
-                                    <div class="dashboard_card_title">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本信息
-                                        <button class="fa fa-cog pull-right" style="font-size: 1.2em;}"></button>
-                                    </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
+                                    <form class="info-list-form">
+                                        <div class="form-group">
+                                            <label for="dashboard_name">活动名称</label>
+                                            <input type="email" class="form-control" id="dashboard_name" placeholder="活动名称">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">主办方</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">参与身分</label>
+                                            <br>
+                                            <label id="label_select">
+                                                <select id="dashboard_currentschool">
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="saab">Saab</option>
+                                                    <option value="opel">Opel</option>
+                                                    <option value="audi">Audi</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">修改信息</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
                                     <form class="info-list-form">
                                         <div class="form-group">
                                             <label for="dashboard_name">名字</label>
                                             <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
                                         </div>
                                         <div class="form-group">
-                                            <label for="dashboard_currentschool">現在就讀學校</label>
+                                            <label for="dashboard_currentschool">目前就读学校</label>
                                             <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
                                         </div>
                                         <div class="form-group">
@@ -92,7 +149,83 @@
                                     </form>
                                 </div>
                             </div>
-                            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
+                                    <form class="info-list-form">
+                                        <div class="form-group">
+                                            <label for="dashboard_name">名字</label>
+                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">目前就读学校</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">住址邮递区号</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">修改信息</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
+                                    <form class="info-list-form">
+                                        <div class="form-group">
+                                            <label for="dashboard_name">名字</label>
+                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">目前就读学校</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">住址邮递区号</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">修改信息</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
+                                    <form class="info-list-form">
+                                        <div class="form-group">
+                                            <label for="dashboard_name">名字</label>
+                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">目前就读学校</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">住址邮递区号</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">修改信息</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="dashboard_card" style="min-width: 300px">
+                                    <form class="info-list-form">
+                                        <div class="form-group">
+                                            <label for="dashboard_name">名字</label>
+                                            <input type="email" class="form-control" id="dashboard_name" placeholder="陳小仲, Andy Chen">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">目前就读学校</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dashboard_currentschool">住址邮递区号</label>
+                                            <input type="password" class="form-control" id="dashboard_currentschool" placeholder="Zip Code">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">修改信息</button>
+                                    </form>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile">..d.</div>
