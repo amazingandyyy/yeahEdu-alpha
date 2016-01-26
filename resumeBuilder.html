@@ -51,18 +51,16 @@
             cursor: pointer;
         }
         /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-            select {
-                padding-right: 18px
-            }
+        select {
+            padding-right: 18px
         }
-        #label_select {
-            position: relative
-        }
-					
-					#label_select {
+    }
+    #label_select {
+        position: relative
+    }
+    #label_select #label_select_arrow {
 						
 					}
-					
     </style>
 </head>
 
@@ -118,12 +116,14 @@
                                             <label for="dashboard_currentschool">参与身分</label>
                                             <br>
                                             <label id="label_select">
+                                               <div id="label_select_arrow">
                                                 <select id="dashboard_currentschool">
                                                     <option value="volvo">Volvo</option>
                                                     <option value="saab">Saab</option>
                                                     <option value="opel">Opel</option>
                                                     <option value="audi">Audi</option>
                                                 </select>
+                                                </div>
                                             </label>
                                         </div>
                                         <button type="submit" class="btn btn-default">修改信息</button>
