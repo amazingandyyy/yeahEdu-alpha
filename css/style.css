@@ -623,9 +623,15 @@ body .modal-open {
 }
 .btn,
 button {
-    outline: none;
-    !important
+    outline: none; !important
+	height: 40px;
 }
+
+.btn-default {
+	height: 40px;
+	line-height: 24px;
+}
+
 button {
     background: none;
     border: none;

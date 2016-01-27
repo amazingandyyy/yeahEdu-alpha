@@ -33,8 +33,7 @@
         /* The CSS */
         select {
             display: block;
-            width: 100%;
-            height: 38px;
+            height: 40px;
             padding: 6px 12px;
             font-size: 14px;
             line-height: 1.42857143;
@@ -61,6 +60,52 @@
     #label_select {
         position: relative;
         color: #686868;
+    }
+    .card-teamMember:hover {
+        border: 1px solid rgba(52, 179, 160, 1);
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        -o-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+    .card-teamMember:hover .profile-innerDiv {
+        background: rgba(255, 255, 255, 0.9);
+        opacity: 1;
+        top: 0%;
+    }
+    .card-teamMember:hover .profile-img.profile-img-teamMember img {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+    .teamMember-more {
+        background: rgba(52, 179, 160, 0.95);
+        position: absolute;
+        border-radius: 20px;
+        bottom: 7.5px;
+        right: 7.5px;
+        height: 0px;
+        width: 0px;
+        padding: 10px;
+        color: white;
+        overflow: scroll;
+        opacity: 0;
+        padding: 5px;
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        -o-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        transition-delay: 0s;
+    }
+    .card-teamMember:hover .teamMember-more {
+        opacity: 1;
+        height: 25px;
+        width: 25px;
+        bottom: 2%;
+        right: 2%;
+        transition-delay: 0s;
+    }
+    .card-teamMember .teamMember-more:hover {
+        background: #41DBC4;
     }
     </style>
 </head>
@@ -102,36 +147,74 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active fade in" id="general-info">
                         <div class="row">
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-12">
+
                                 <div class="dashboard_card" style="min-width: 300px">
                                     <form class="info-list-form">
-                                        <div class="form-group">
-                                            <label for="dashboard_name">活动名称</label>
-                                            <input type="email" class="form-control" id="dashboard_name" placeholder="活动名称">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">主办方</label>
-                                            <input type="text" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="dashboard_name">活动名称</label>
+                                                    <input type="email" class="form-control" id="dashboard_name" placeholder="活动名称">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="volunteer_time">服务地点</label>
+                                                            <input type='text' class="form-control" id='volunteer_time' />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="volunteer_time">服务日期</label>
+                                                            <input type='date' class="form-control" id='volunteer_time' />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="dashboard_currentschool">主办方</label>
+                                                    <input type="text" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College...">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="dashboard_currentschool">参与身分</label>
+                                                            <br>
+                                                            <label id="label_select">
+                                                                <select id="dashboard_currentschool">
+                                                                    <option value="volvo">-- 请选择 --</option>
+                                                                    <option value="saab">主办者</option>
+                                                                    <option value="opel">小组长</option>
+                                                                    <option value="audi">参与者</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="volunteer_time">照片/档案</label>
+                                                            <input type="file" class="form-control" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px;" multiple>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label for="volunteer_time">服务日期</label>
-                                            <input type='datetime-local' class="form-control" id='volunteer_time' />
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label for="dashboard_currentschool">参与身分</label>
-                                            <br>
-                                            <label id="label_select">
-                                                <select id="dashboard_currentschool">
-                                                    <option value="volvo">-- 请选择 --</option>
-                                                    <option value="saab">主办者</option>
-                                                    <option value="opel">小组长</option>
-                                                    <option value="audi">参与者</option>
-                                                </select>
-                                            </label>
-                                        </div>
+
+
+
+
+
                                         <button type="submit" class="btn btn-default">修改信息</button>
                                     </form>
                                 </div>
@@ -162,6 +245,8 @@
     <scrip src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></scrip>
     <!-- Boostrap Motionjs for Datapicker.js   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+    <!-- Boostrap fileupload -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js"></script>
 
     <script>
         $('header').load('../header.html', function() {
@@ -171,6 +256,13 @@
         $(document).ready(function() {
             $('#datetimepicker4').datetimepicker();
         })
+
+         $("input:file").filestyle({
+            input: false,
+            iconName: 'fa fa-file-image-o'
+        });
+        $('.buttonText').css('color', '#686868');
+        $('.icon-span-filestyle').css('color', '#686868');
     </script>
 
 </body>
