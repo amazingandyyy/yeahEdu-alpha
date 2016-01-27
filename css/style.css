@@ -150,21 +150,25 @@ a:hover {
     transition: .3s ease-in-out;
 }
 .navbar-default .navbar-brand {
+    font-size: 1.8em;
+    letter-spacing: 3px;  
     color: #1F4056;
+/*
     font-size: 2.5em;
     font-weight: 900;
+*/
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }
 .navbar-default .navbar-brand:hover {
-    padding-top: 16px;
+/*    padding-top: 16px;*/
     color: #34B3A0;
     opacity: 0.9;
     letter-spacing: 3px;
     transition: all .3s ease-in-out;
-    font-size: 1.9em;
+    font-size: 1.8em;
 }
 .navbar-default .navbar-nav>li>a {
     color: #1F4056;
@@ -236,7 +240,6 @@ a:hover {
     height: 100vh;
 }
 .section {
-    padding: 60px 20px 100px 20px;
     color: #1F4056;
 }
 .section1 {
@@ -481,6 +484,21 @@ footer .rights {
     font-size: 1.2em;
     max-height: 45px;
 }
+.section-hero {
+    height: 30%;
+    background: black;
+    padding-top: 160px;
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(-90deg, red, yellow);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(-90deg, red, yellow);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-radial-gradient(-90deg, red, yellow);
+    /* For Firefox 3.6 to 15 */
+    background: radial-gradient(at bottom center, #34B3A0, #007B70);
+    /* Standard syntax */
+}
 /* customize the boostrap component*/
 
 .modal-content {
@@ -605,14 +623,13 @@ footer .rights {
     margin-right: 36px;
 }
 .tab-content {
-    margin-right: 20px;
     text-align: right;
 }
 .form-control {
     height: 40px;
-    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
-    !important box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
-    !important
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
+    font-size: 1.2em;
 }
 .form-control:active {
     border: 1px solid #34B3A0;
@@ -623,15 +640,13 @@ body .modal-open {
 }
 .btn,
 button {
-    outline: none; !important
-	height: 40px;
+    outline: none;
+    !important height: 40px;
 }
-
 .btn-default {
-	height: 40px;
-	line-height: 24px;
+    height: 40px;
+    line-height: 24px;
 }
-
 button {
     background: none;
     border: none;
@@ -765,7 +780,6 @@ iPhone5: 320px
     .modal-sm input {
         margin: auto;
     }
-    
 }
 /* Medium devices (desktops, 992px and up) */
 
