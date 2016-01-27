@@ -62,9 +62,9 @@
         color: #686868;
     }
     .mobile-container {
-        min-width: 768px;
+        min-width: 530px;
         text-align: center;
-        background: white;
+					background: rgba(255,255,255,0,95); ;
         margin: auto;
         position: relative;
     }
@@ -79,7 +79,7 @@
     .fog-left {
         position: absolute;
         left: 0px;
-        width: 20%;
+        width: 10%;
         background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
         height: 40px;
         z-index: 99;
@@ -90,6 +90,18 @@
     * {
         overflow-x: hidden;
     }
+    .nav-center-sticky {
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        z-index: 99;
+        width: 100%
+    }
+					
+					.section-hero h1{
+					font-size: 3em;
+					}
+					
     </style>
 </head>
 
@@ -108,32 +120,32 @@
 
     <section class="section section-w section-setting">
         <div class="section-hero">
-            <h1 style='font-size: 3em; margin-bottom: 20px; color: white;'><span style="font-size: 1em; font-weight: 200">resume</span>Builder&trade;</h1>
+            <h1 style='margin-bottom: 20px; color: white;'><span style="font-weight: 200">resume</span>Builder&trade;</h1>
         </div>
 
 
         <div>
 
             <!-- Nav tabs -->
-            <div class="nav-center-sticky">
-                <div class="nav-center">
-                    <div class="fog-right"></div>
-                    <div class="fog-left"></div>
-                    <div class="mobile-container">
+            <div class="nav-center-listener">
+            <div class="nav-center" style="border-bottom: 1px solid #eee;">
+                <div class="fog-right"></div>
+                <div class="fog-left"></div>
+                <div class="mobile-container">
 
-                        <ul class="nav nav-tabs tabs-advanced" role="tablist">
-                            <li role="presentation" class="active"><a href="#general-info" aria-controls="general-info" role="tab" data-toggle="tab">志愿社区服务</a>
-                            </li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">工作及实习</a>
-                            </li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">获奖及荣耀</a>
-                            </li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">社团及课外活动</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="nav nav-tabs tabs-advanced" role="tablist">
+                        <li role="presentation" class="active"><a href="#general-info" aria-controls="general-info" role="tab" data-toggle="tab">志愿社区服务</a>
+                        </li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">工作及实习</a>
+                        </li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">获奖及荣耀</a>
+                        </li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">社团及课外活动</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+									</div>
             <div class="container">
                 <!-- Tab panes -->
                 <div class="tab-content" style="padding-bottom: 100px;">
@@ -271,21 +283,18 @@
             //									console.log(st);
             //									console.log(parseInt($('.section-hero').css('padding-top'), 10));
 
-            var viewableOffset = $(".nav-center-sticky").offset().top - st;
-            if (viewableOffset > 52) {
-                $(".nav-center-sticky").css({
-                    'position': 'relative's
-                });
 
-            } else {
-                $(".nav-center-sticky").css({
-                    'position': 'relative',
-                    'top': '200px'
-                });
-
+            var viewableOffset = $(".nav-center-listener").offset().top - st;
+            if (viewableOffset < 51) {
+                $(".nav-center").addClass('nav-center-sticky');
+													$('.dashboard_card').css('margin-top', '70px');
+													
+            } else if(viewableOffset > 51){
+                $(".nav-center").removeClass('nav-center-sticky');
+													$('.dashboard_card').css('margin-top', '30px');
             };
-									console.log(viewableOffset);
 
+console.log(viewableOffset);
         });
     </script>
 

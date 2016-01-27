@@ -134,7 +134,7 @@ a:hover {
 .navbar-default.shrink {
     padding: 0px;
     min-height: 20px;
-    border-bottom: 1px solid rgba(233, 234, 234, 1);
+    border-bottom: 1px solid #eee;
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
@@ -142,7 +142,7 @@ a:hover {
 }
 .navbar-default {
     padding: 15px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 1);
     border: none;
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
@@ -437,9 +437,9 @@ footer .rights {
 
 .nav-center {
     text-align: center;
-    border-bottom: 0px solid #eee;
-    background-color: #eee;
-    height: 40px;
+    background: white;
+    height: 45px;
+    padding-top: 2px;
 }
 .nav-center ul.nav {
     display: inline-block;
@@ -619,7 +619,7 @@ footer .rights {
     background: #000;
 }
 .nav-tabs>li>a {
-    min-width: 140px;
+    min-width: 100px;
 }
 .nav-tabs {
     margin-left: 11px;
@@ -679,14 +679,31 @@ button:active {
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
     border: none;
-    background-color: #eee;
+    color: #0C8D7A;
+    background-color: rgba(52, 179, 160, 0.3);
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px 1px;
 }
 .nav>li>a:focus,
-.nav>li>a:hover {} .nav-tabs>li>a {
+.nav>li>a:hover {
+    border: none;
+    background-color: rgba(52, 179, 160, 0);
+}
+.nav-tabs>li>a {
     border: none;
 }
 .nav-tabs>li>a {
-    margin-right: 1px;
+    color: rgba(31, 44, 52, 0.6);
+    border: none;
+    background-color: rgba(52, 179, 160, 0);
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px 1px;
+}
+.nav-tabs>li>a:active {
+    border: none;
+    background-color: rgba(212, 213, 214, 0.7);
 }
 .tabs-advanced {
     border: none;
@@ -736,6 +753,9 @@ iPhone5: 320px
     .modal-content {
         margin-top: 20px;
     }
+    .section-hero h1 {
+        font-size: 2em;
+    }
 }
 @media (max-width: 375px) {
     /*	iphone 6 */
@@ -750,6 +770,9 @@ iPhone5: 320px
     }
     .modal-content {
         margin-top: 30px;
+    }
+    .section-hero h1 {
+        font-size: 2em;
     }
 }
 @media (max-width: 414px) {
@@ -768,6 +791,9 @@ iPhone5: 320px
     }
     .modal-content {
         margin-top: 50px;
+    }
+    .section-hero h1 {
+        font-size: 2em;
     }
 }
 @media (min-width: 768px) {
