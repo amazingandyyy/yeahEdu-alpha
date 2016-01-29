@@ -16,24 +16,24 @@ $(document).ready(function() {
     //    });
 
 
-	
-//    $(window).scroll(function() {
-//        if ($(document).scrollTop() > 50) {
-//            $('.navbar-default').addClass('shrink');
-//            $('.navbar-default .navbar-brand').css({
-//                'font-size': '1.8em',
-//                'color': '#34B3A0',
-//                'letter-spacing': '3px'
-//            });
-//        } else {
-//            $('.navbar-default').removeClass('shrink');
-//            $('.navbar-default .navbar-brand').css({
-//																'font-size': '2.5em',
-//																'color': '#1F4056',
-//																'letter-spacing': '0px'
-//            });
-//        }
-//    });
+
+    //    $(window).scroll(function() {
+    //        if ($(document).scrollTop() > 50) {
+    //            $('.navbar-default').addClass('shrink');
+    //            $('.navbar-default .navbar-brand').css({
+    //                'font-size': '1.8em',
+    //                'color': '#34B3A0',
+    //                'letter-spacing': '3px'
+    //            });
+    //        } else {
+    //            $('.navbar-default').removeClass('shrink');
+    //            $('.navbar-default .navbar-brand').css({
+    //																'font-size': '2.5em',
+    //																'color': '#1F4056',
+    //																'letter-spacing': '0px'
+    //            });
+    //        }
+    //    });
 
 
 
@@ -237,13 +237,17 @@ $(document).ready(function() {
     var YE = new YeahEducation('yeaheducation');
 
     YE.onLogin = function() {
-        $('#userMe').fadeIn();
-        $('#userlog').hide();
+        $('#userlog-y-out').show();
+        $('#nav-list-login').show();
+        $('#userlog-y').hide();
+        $('#nav-list-logout').hide();
     };
 
     YE.onLogout = function() {
-        $('#userlog').fadeIn();
-        $('#userMe').hide();
+        $('#userlog-y').show();
+        $('#nav-list-logout').show();
+        $('#nav-list-login').hide();
+        $('#userlog-y-out').hide();
     };
 
     $('#userlogout').click(function() {
