@@ -851,14 +851,15 @@ footer .rights {
     text-align: center;
     background: white;
     height: 45px;
-    padding-top: 2.5px;
+    padding-top: 1px;	
 }
 .nav-center ul.nav {
     display: inline-block;
 }
 .nav-center ul.nav li {
     display: inline a;
-    float: left;
+	border: 1px solid rgba(255,255,255,1);
+	box-shadow: none;
 }
 /*Header CSS*/
 
