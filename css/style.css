@@ -916,6 +916,11 @@ footer .rights {
 .section-hero h1 {
     font-size: 3em;
 }
+
+#loginForm input {
+	margin: auto;
+}
+
 /*navbar-y*/
 
 .navbar-y {
@@ -1024,7 +1029,6 @@ footer .rights {
     position: relative;
     display: inline-block;
     float: right;
-    margin-left: -50%;
     right: 0px;
     top: 2px;
     height: 25px;
@@ -1086,7 +1090,7 @@ footer .rights {
 }
 .modal-body {
     text-align: center;
-    padding-left: 40px
+    padding: 20px 20px;				
 }
 .modal-body h4 {
     font-size: 1.5em;
@@ -1332,7 +1336,7 @@ iPhone5: 320px
 }
 @media (max-width: 768px) {
     .modal-sm {
-        min-width: 400px;
+        min-width: 360px;
     }
     .modal-sm input {
         margin: auto;
@@ -1345,7 +1349,7 @@ iPhone5: 320px
 
 @media (min-width: 992px) {
     .modal-sm {
-        min-width: 400px;
+        min-width: 360px;
     }
 }
 /* Large devices (large desktops, 1200px and up) */
