@@ -56,6 +56,10 @@ section,
 summary {
     display: block;
 }
+
+head {
+	z-index: 99;
+}
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
@@ -877,7 +881,7 @@ footer .rights {
 .dashboard_card {
     border: 1px solid #F6F6F6;
     background-color: #F6F6F6;
-    border-radius: 7px;
+    border-radius: 0px;
     position: relative;
     margin: 30px 0px 0px 0px;
     padding: 30px;
@@ -1091,7 +1095,8 @@ footer .rights {
 }
 .modal-body {
     text-align: center;
-    padding: 20px 20px;				
+    padding: 20px 20px;	
+	border-radius: 0px;
 }
 .modal-body h4 {
     font-size: 1.5em;

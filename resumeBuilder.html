@@ -63,7 +63,7 @@
     }
     .mobile-container {
         min-width: 530px;
-					height: 39px;
+        height: 35px;
         text-align: center;
         background: rgba(255, 255, 255, 0, 95);
     }
@@ -90,7 +90,6 @@
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
     }
-					
     * {
         overflow-x: hidden;
     }
@@ -101,7 +100,6 @@
         z-index: 99;
         width: 100%
     }
-    
     </style>
 </head>
 
@@ -117,7 +115,6 @@
     <script src="js/app.js"></script>
 
     <header></header>
-
     <section class="section section-w section-setting">
         <div class="section-hero">
             <h1 style='margin-bottom: 20px; color: white;'><span style="font-weight: 200">resume</span>Builder&trade;</h1>
@@ -238,6 +235,7 @@
 
     </section>
 
+
     <footer></footer>
     <!-- link to firebase -->
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
@@ -254,6 +252,7 @@
         $('header').load('../header.html', function() {
             $.getScript("js/app.js");
         });
+
         $('footer').load('../footer.html');
 
 
@@ -294,7 +293,7 @@
                 $('.dashboard_card').css('margin-top', '30px');
             };
 
-//            console.log(viewableOffset);
+            //            console.log(viewableOffset);
         });
     </script>
 
