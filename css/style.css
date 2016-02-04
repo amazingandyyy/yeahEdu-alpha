@@ -56,9 +56,8 @@ section,
 summary {
     display: block;
 }
-
 head {
-	z-index: 99;
+    z-index: 99;
 }
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
@@ -142,7 +141,7 @@ dfn {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0.2em 0;
 }
 /**
  * Address styling not present in IE 8/9.
@@ -256,7 +255,9 @@ textarea {
     /* 2 */
     margin: 0;
     /* 3 */
+    resize: none;
 }
+input[type=file] {}
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
@@ -855,15 +856,16 @@ footer .rights {
     text-align: center;
     background: white;
     height: 45px;
-    padding-top: 1px;	
+    padding-top: 6px;
+	z-index: 98;
 }
 .nav-center ul.nav {
     display: inline-block;
 }
 .nav-center ul.nav li {
     display: inline a;
-	border: 1px solid rgba(255,255,255,1);
-	box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: none;
 }
 /*Header CSS*/
 
@@ -883,8 +885,12 @@ footer .rights {
     background-color: #F6F6F6;
     border-radius: 0px;
     position: relative;
-    margin: 30px 0px 0px 0px;
+    margin: 30px 0px 30px 0px;
     padding: 30px;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
 }
 .margin_top {
     padding: 60px 30px;
@@ -905,7 +911,7 @@ footer .rights {
     max-height: 45px;
 }
 .section-hero {
-    height: 330PX;
+    height: 300PX;
     background: black;
     padding-top: 140px;
     /* For browsers that do not support gradients */
@@ -921,11 +927,9 @@ footer .rights {
 .section-hero h1 {
     font-size: 3em;
 }
-
 #loginForm input {
-	margin: auto;
+    margin: auto;
 }
-
 /*navbar-y*/
 
 .navbar-y {
@@ -935,17 +939,17 @@ footer .rights {
     color: #162D3C;
     font-weight: 300;
     background: white;
-/*    box-shadow: inset 0px -1px 0px 0px #eee;*/
-	border-bottom: 1px solid #eee;
+    /*    box-shadow: inset 0px -1px 0px 0px #eee;*/
+    border-bottom: 1px solid #eee;
     position: fixed;
     width: 100%;
     z-index: 99;
 }
 .navbar-y .nav-brand {
-    height: 49px;
+    height: 50px;
     font-size: 2em;
     line-height: 50px;
-    padding: 0 20px;
+    padding: 2px 20px;
 }
 .navbar-y .nav-brand:hover {
     background: #34B3A0;
@@ -980,7 +984,7 @@ footer .rights {
     background: rgba(12, 141, 122, 0.08);
 }
 .navbar-y .nav-log {
-    height: 49px;
+    height: 50px;
     line-height: 50px;
     padding: 0 20px;
     color: #162D3C;
@@ -1095,8 +1099,8 @@ footer .rights {
 }
 .modal-body {
     text-align: center;
-    padding: 20px 20px;	
-	border-radius: 0px;
+    padding: 20px 20px;
+    border-radius: 0px;
 }
 .modal-body h4 {
     font-size: 1.5em;
@@ -1134,11 +1138,10 @@ footer .rights {
     min-width: 100px;
 }
 .nav-tabs {
-    margin-left: 11px;
-    margin-right: 36px;
+    margin: 0px 0px;
 }
 .tab-content {
-    text-align: right;
+    text-align: center;
 }
 .form-control {
     height: 40px;
@@ -1146,7 +1149,8 @@ footer .rights {
     box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
     font-size: 1em;
 }
-.form-control:active {
+.form-control:active,
+.form-control:focus {
     border: 1px solid #34B3A0;
 }
 body .modal-open {
@@ -1161,6 +1165,7 @@ button {
 .btn-default {
     height: 40px;
     line-height: 24px;
+    outline: none;
 }
 button {
     background: none;
@@ -1176,16 +1181,20 @@ button:active {
     color: red;
 }
 .dropdown-menu {
-	padding: 10px 0px;
+    padding: 10px 0px;
     z-index: 99;
     position: absolute;
     right: -1px;
     min-width: 300px;
     left: 80%;
     top: 47px;
-	border-radius: 0px;
-	border: 0px solid #eee;
-	box-shadow: inset 0px 0px 0px 1px #eee;
+    border-radius: 0px;
+    border: 0px solid #eee;
+    box-shadow: inset 0px 0px 0px 1px #eee;
+}
+
+.open>.dropdown-menu {
+	z-index: 99;
 }
 
 .dropdown-menu>li>a {
@@ -1208,7 +1217,7 @@ button:active {
     background-color: rgba(52, 179, 160, 0.3);
     border-radius: 4px;
     padding: 5px 10px;
-    margin: 5px 1px;
+    margin: 0px 1px;
 }
 .nav>li>a:focus,
 .nav>li>a:hover {
@@ -1224,7 +1233,7 @@ button:active {
     background-color: rgba(52, 179, 160, 0);
     border-radius: 4px;
     padding: 5px 10px;
-    margin: 5px 1px;
+    margin: 0px 1px;
 }
 .nav-tabs>li>a:active {
     border: none;
@@ -1321,7 +1330,7 @@ iPhone5: 320px
         font-size: 2em;
     }
     .navbar-y .nav-list .nav-list-item {
-        padding: 0px 5px;
+        padding: 0px 6px;
     }
     .mobile-container-inner {
         width: 280px;
@@ -1331,13 +1340,17 @@ iPhone5: 320px
         text-align: center;
         background: white;
         height: 40px;
-        padding-top: 0px;
+        padding-top: 4px;
     }
     .section-hero {
         height: 280PX;
     }
     .navbar-y .nav-list .nav-list-item {
         font-size: 1em;
+    }
+    .navbar-y .nav-brand,
+    .navbar-y .nav-log {
+        padding: 0 15px;
     }
 }
 @media (max-width: 768px) {

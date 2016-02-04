@@ -51,55 +51,76 @@
             -moz-appearance: none;
             appearance: none;
             cursor: pointer;
-        }
-        /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-        select {
             padding-right: 18px
         }
-    }
-    #label_select {
-        position: relative;
-        color: #686868;
-    }
-    .mobile-container {
-        min-width: 530px;
-        height: 35px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0, 95);
-    }
-    .fog-right {
-        position: absolute;
-        right: 0px;
-        width: 20%;
-        background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
-        height: 40px;
-        z-index: 99;
-    }
-    .fog-left {
-        position: absolute;
-        left: 0px;
-        width: 10%;
-        background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
-        height: 40px;
-        z-index: 99;
-    }
-    .nav-center {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        box-shadow: -28px 0 7px -7px #fff inset;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-    }
-    * {
-        overflow-x: hidden;
-    }
-    .nav-center-sticky {
-        position: fixed;
-        top: 50px;
-        left: 0px;
-        z-index: 99;
-        width: 100%
-    }
+        #label_select {
+            position: relative;
+            color: #686868;
+        }
+        .mobile-container {
+            min-width: 530px;
+            height: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0, 95);
+            margin: auto;
+        }
+        .nav-center {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            box-shadow: -28px 0 7px -7px #fff inset;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+        }
+        .nav-center-sticky {
+            position: fixed;
+            top: 50px;
+            left: 0px;
+            z-index: 98;
+            width: 100%
+        }
+        .card-normal {
+            background: rgba(246, 246, 246, 1);
+            padding: 20px 15px 45px 15px;
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0s;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+        .section-cv {
+            padding-top: 30px;
+        }
+        .dashboard_table {
+            margin: 30px 0px;
+            border: 1px solid #34B3A0;
+        }
+        .dashboard_table th {
+            background: #34B3A0;
+            padding: 10px 30px;
+            color: white;
+            font-weight: 100;
+        }
+        .dashboard_table td {
+            padding: 15px 30px;
+        }
+        .dashboard_table tr:nth-child(odd) {
+            background: #F6F6F6;
+        }
+					
+					.section-setting h2 {
+						border: 0px solid ;
+						padding: 10px;
+						font-size: 1.4em;
+						border-radius: 0px;
+						color: #1F2C34;
+						font-weight: 900;
+						width: 150px;
+					}
     </style>
 </head>
 
@@ -121,35 +142,32 @@
         </div>
 
 
-        <div>
 
-            <!-- Nav tabs -->
-            <div class="nav-center-listener">
-                <div class="nav-center" style="border-bottom: 1px solid #eee;">
-                    <!--
-                    <div class="fog-right"></div>
-                    <div class="fog-left"></div>
--->
-                    <div class="mobile-container">
-                        <ul class="nav nav-tabs tabs-advanced" role="tablist">
-                            <li role="presentation" class="active"><a href="#general-info" aria-controls="general-info" role="tab" data-toggle="tab">志愿社区服务</a>
-                            </li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">工作及实习</a>
-                            </li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">获奖及荣耀</a>
-                            </li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">社团及课外活动</a>
-                            </li>
-                        </ul>
-                    </div>
+
+        <!-- Nav tabs -->
+        <div class="nav-center-listener">
+            <div class="nav-center" style="border-bottom: 1px solid #eee;">
+
+                <div class="mobile-container">
+                    <ul class="nav nav-tabs tabs-advanced" role="tablist">
+                        <li role="presentation" class="active"><a href="#general-info" aria-controls="general-info" role="tab" data-toggle="tab">志愿社区服务</a>
+                        </li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">工作及实习</a>
+                        </li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">获奖及荣耀</a>
+                        </li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">社团及课外活动</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        <div class="section-cv">
             <div class="container">
                 <div class="tab-content" style="padding-bottom: 100px;">
                     <div role="tabpanel" class="tab-pane active fade in" id="general-info">
                         <div class="row">
-                            <div class="col-sm-6 col-md-12">
-
+                                <h2>新增活动</h2>
                                 <div class="dashboard_card" style="min-width: 300px">
                                     <form class="info-list-form">
                                         <div class="row">
@@ -164,7 +182,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="volunteer_time">服务地点</label>
-                                                            <input type='text' class="form-control" id='volunteer_time' />
+                                                            <input type='text' class="form-control" id='volunteer_time' placeholder="服务地点" />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -202,7 +220,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="volunteer_time">照片/档案</label>
-                                                            <input type="file" class="form-control" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px;" multiple>
+                                                            <input type="file" class="form-control" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px; outline: none;" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -210,14 +228,49 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="dashboard_currentschool">活动描述/日记</label>
-                                                    <textarea type="text" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College..." rows="3" cols="50"></textarea>
+                                                    <textarea type="text" class="form-control" id="dashboard_currentschool" placeholder="DVC, Foothill College..." rows="6" cols="50"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-default">修改信息</button>
                                     </form>
                                 </div>
-                            </div>
+                                
+                               <h2>经历列表</h2>
+
+
+                            <table style="width:100%" class="dashboard_table">
+                                <tr>
+                                    <th>活动名称</th>
+                                    <th>活动时间</th>
+                                    <th>参与身分</th>
+                                </tr>
+                                <tr>
+                                    <td>Jafads</td>
+                                    <td>Smith</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve</td>
+                                    <td>Jackson</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve</td>
+                                    <td>Jackson</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve</td>
+                                    <td>Jackson</td>
+                                    <td>94</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve</td>
+                                    <td>Jackson</td>
+                                    <td>94</td>
+                                </tr>
+                            </table>
 
 
                         </div>
@@ -286,11 +339,11 @@
             var viewableOffset = $(".nav-center-listener").offset().top - st;
             if (viewableOffset < 51) {
                 $(".nav-center").addClass('nav-center-sticky');
-                $('.dashboard_card').css('margin-top', '75px');
+                $('.section-cv').css('padding-top', '75px');
 
             } else if (viewableOffset > 51) {
                 $(".nav-center").removeClass('nav-center-sticky');
-                $('.dashboard_card').css('margin-top', '30px');
+                $('.section-cv').css('padding-top', '30px');
             };
 
             //            console.log(viewableOffset);
