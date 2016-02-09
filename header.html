@@ -173,8 +173,11 @@
     });
 
     $('#userlogout').click(function() {
-        $('.nav').find('.dropdown').removeClass('open');
-					console.log('aaa');
+        $('.navbar-y').find('.dropdown').removeClass('open');
+    });
+
+    $('.nav-log').click(function() {
+        $('#signupForm').find(':input').val('');
     });
 
     //    if ($(window).width() < 768) {
