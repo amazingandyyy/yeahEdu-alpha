@@ -74,67 +74,10 @@ $(document).ready(function() {
         $('.team-row').html(html);
     });
 
-
     $('.more-advisor').bind('touchstart touchend', function(e) {
         e.preventDefault();
         $(this).toggleClass('hover_effect');
     });
-
-
-
-
-
-    //	// Login & Sign up system
-    //	var myFirebaseRef = new Firebase("https://yeaheducation2.firebaseio.com");
-    //
-    //            $('#signupForm').submit(function(event) {
-    //                $('.signupForm_error').html('');
-    //
-    //                event.preventDefault();
-    //                if ($('#signup_password').val() === $('#signup_password_confirmed').val()) {
-    //                    var $signup_email = $('#signup_email').val();
-    //                    var $signup_password = $('#signup_password').val();
-    //                    myFirebaseRef.createUser({
-    //                        email: $signup_email,
-    //                        password: $signup_password
-    //                    }, function(error, userData) {
-    //                        if (error) {
-    //                            $('.signupForm_error').show().html(error);
-    //                            event.preventDefault();
-    //                        } else {
-    //                            console.log("Successfully created user account with uid:", userData.uid);
-    //                            $('#logForm').modal('hide');
-    //                        }
-    //                    });
-    //                } else if ($('#signup_password').val() !== $('#signup_password_confirmed').val()) {
-    //
-    //                    $('#signup_password_confirmed').css({
-    //                        'border': '1px red solid'
-    //                    });
-    //                    $('.signupForm_error').show().html('两个密码不相同! :(');
-    //                }
-    //            });
-    //
-    //            $('#loginForm').submit(function(event) {
-    //                    $('.signupForm_error').html('');
-    //
-    //                    event.preventDefault();
-    //                    var $login_email = $('#login_email').val();
-    //                    var $login_password = $('#login_password').val();
-    //                    myFirebaseRef.authWithPassword({
-    //                        email: $login_email,
-    //                        password: $login_password
-    //                    }, function(error, authData) {
-    //                        if (error) {
-    //                            $('.loginForm_error').show().html(error);
-    //                            event.preventDefault();
-    //                        } else {
-    //                            console.log("Authenticated successfully with payload:", authData);
-    //																									$('#logForm').modal('hide');
-    //                        }
-    //                    });
-    //            });
-    //	
 
 });
 
@@ -145,7 +88,6 @@ function YeahEducation(fbname) {
     var linksRef = firebase.child('links');
     var usersRef = firebase.child('users');
     var instance = this;
-
 
     this.login = function(email, password) {
         firebase.authWithPassword({
@@ -189,6 +131,24 @@ function YeahEducation(fbname) {
         firebase.unauth();
     };
 
+    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy) {
+        var authData = firebase.getAuth();
+        usersRef.child(authData.uid)
+            .child('Resume')
+            .child('volunteer')
+            .push({
+                event_name: event_name,
+                event_location: event_location,
+                event_date: event_date,
+                event_host: event_host,
+                event_participant: event_participant,
+                event_doc: event_doc,
+                event_dairy: event_dairy
+            });
+        console.log('clicked cv')
+
+    };
+
     // overrideable event functions
     this.onLogin = function(user) {};
     this.onLogout = function() {};
@@ -211,7 +171,7 @@ function YeahEducation(fbname) {
                 instance.onLogout();
             }
         });
-        // // LinksRef = firebase.child('links')
+        // LinksRef = firebase.child('links')
         //         linksRef.on('value', function(snapshot) {
         //             var links = snapshot.val();
         //             var preparedLinks = [];
@@ -281,5 +241,18 @@ $(document).ready(function() {
     });
 
     YE.start();
+
+    $('#cv_volunteer_form form').submit(function(event) {
+        var event_name = $(this).find('#event_name').val(),
+            event_location = $(this).find('#event_location').val(),
+            event_date = $(this).find('#event_date').val(),
+            event_host = $(this).find('#event_host').val(),
+            event_participant = $(this).find('#event_participant option:selected').val(),
+            event_doc = $(this).find('#event_doc').val(),
+            event_dairy = $(this).find('#event_dairy').val();
+					console.log('ddd');
+        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
+        return false;
+    });
 
 });

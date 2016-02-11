@@ -111,16 +111,15 @@
         .dashboard_table tr:nth-child(odd) {
             background: #F6F6F6;
         }
-					
-					.section-setting h2 {
-						border: 0px solid ;
-						padding: 10px;
-						font-size: 1.4em;
-						border-radius: 0px;
-						color: #1F2C34;
-						font-weight: 900;
-						width: 150px;
-					}
+        .section-setting h2 {
+            border: 0px solid;
+            padding: 10px;
+            font-size: 1.4em;
+            border-radius: 0px;
+            color: #1F2C34;
+            font-weight: 900;
+            width: 150px;
+        }
     </style>
 </head>
 
@@ -165,76 +164,76 @@
                 <div class="tab-content" style="padding-bottom: 100px;">
                     <div role="tabpanel" class="tab-pane active fade in" id="general-info">
                         <div class="row">
-                                <h2>新增活动</h2>
-                                <div class="dashboard_card" style="min-width: 300px">
-                                    <form class="info-list-form">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="event_name">活动名称</label>
-                                                    <input type="text" class="form-control" id="event_name" placeholder="活动名称">
-                                                </div>
+                            <h2>新增活动</h2>
+                            <div class="dashboard_card" id="cv_volunteer_form" style="min-width: 300px">
+                                <form class="info-list-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="event_name">活动名称</label>
+                                                <input type="text" class="form-control" id="event_name" placeholder="活动名称">
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="event_location">服务地点</label>
-                                                            <input type='text' class="form-control" id='event_location' placeholder="服务地点" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="event_date">服务日期</label>
-                                                            <input type='date' class="form-control" id='event_date' />
-                                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="event_location">服务地点</label>
+                                                        <input type='text' class="form-control" id='event_location' placeholder="服务地点" />
                                                     </div>
                                                 </div>
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="event_holder">主办方</label>
-                                                    <input type="text" class="form-control" id="event_holder" placeholder="Organization Oficial Full Name">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="event_date">服务日期</label>
+                                                        <input type='date' class="form-control" id='event_date' />
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="event_participant">参与身分</label>
-                                                            <br>
-                                                            <label id="label_select">
-                                                                <select id="event_participant">
-                                                                    <option value="placebo">-- 请选择 --</option>
-                                                                    <option value="1">主办者</option>
-                                                                    <option value="2">小组长</option>
-                                                                    <option value="3">参与者</option>
-                                                                </select>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="event_doc">照片/档案</label>
-                                                            <input type="file" class="form-control" id="event_doc" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px; outline: none;" multiple>
-                                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="event_host">主办方</label>
+                                                <input type="text" class="form-control" id="event_host" placeholder="Organization Oficial Full Name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="event_participant">参与身分</label>
+                                                        <br>
+                                                        <label id="label_select">
+                                                            <select id="event_participant">
+                                                                <option value="" disabled selected>-- 请选择 --</option>
+                                                                <option value="主办者">主办者</option>
+                                                                <option value="小组长">小组长</option>
+                                                                <option value="参与者">参与者</option>
+                                                            </select>
+                                                        </label>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="event_dairy">活动描述/日记</label>
-                                                    <textarea type="text" class="form-control" id="event_dairy" placeholder="DVC, Foothill College..." rows="6" cols="50"></textarea>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="event_doc">照片/档案</label>
+                                                        <input type="file" class="form-control" id="event_doc" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px; outline: none;" multiple>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-default">修改信息</button>
-                                    </form>
-                                </div>
-                                
-                               <h2>经历列表</h2>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="event_dairy">活动描述/日记</label>
+                                                <textarea type="text" class="form-control" id="event_dairy" placeholder="DVC, Foothill College..." rows="6" cols="50"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">修改信息</button>
+                                </form>
+                            </div>
+
+                            <h2>经历列表</h2>
 
 
                             <table style="width:100%" class="dashboard_table cv_volunteer_table">
@@ -301,11 +300,11 @@
 
     <script>
         $('header').load('../header.html', function() {
-            $.getScript("js/app.js");
+            $.getScript("js/userLogSystem.js");
+									return false;
         });
 
         $('footer').load('../footer.html');
-
 
         $("input:file").filestyle({
             input: false,
@@ -346,8 +345,8 @@
 
             //            console.log(viewableOffset);
         });
-					
-					
+
+         
     </script>
 
 </body>
