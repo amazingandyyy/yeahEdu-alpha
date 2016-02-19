@@ -1,0 +1,222 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="css/images/logo.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!-- Google Font -> Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900" rel="stylesheet" type="text/css">
+    <title>欧耶教育 专注CC转学</title>
+    <!-- CDN -> Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Link external style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CDN -> Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css">
+    <!-- CDN -> Swiper.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
+        queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .team-container {
+            padding: 8px;
+        }
+        .section-teamMember h1 {
+            font-weight: 200;
+            font-size: 2.4em;
+        }
+        .section-teamMember h2 {
+            font-weight: 400;
+            font-size: 1.4em;
+            color: #34B3A0;
+            letter-spacing: 3px;
+        }
+        .card-teamMember {
+            background: rgba(246, 246, 246, 1);
+            padding: 20px 15px 45px 15px;
+            height: 260px;
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0s;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+        .profile-innerDiv {
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            top: 100%;
+            border-radius: 7px;
+            right: 0%;
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            color: #1F4056;
+            overflow: scroll;
+            opacity: 1;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0.1s;
+        }
+        .profile-innerDiv h3 {
+            font-weight: 700;
+            font-size: 1em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .profile-innerDiv p {
+            text-align: left;
+            font-weight: 300;
+        }
+        .card-teamMember:hover {
+            border: 1px solid rgba(52, 179, 160, 1);
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+        .card-teamMember:hover .profile-innerDiv {
+            background: rgba(255, 255, 255, 0.9);
+            opacity: 1;
+            top: 0%;
+        }
+     .card-teamMember:hover .profile-img.profile-img-teamMember img{
+     -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+     }
+     
+        .teamMember-more {
+            background: rgba(52, 179, 160, 0.95);
+            position: absolute;
+            border-radius: 20px;
+            bottom: 7.5px;
+            right: 7.5px;
+            height: 0px;
+            width: 0px;
+            padding: 10px;
+            color: white;
+            overflow: scroll;
+            opacity: 0;
+            padding: 5px;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0s;
+        }
+        .card-teamMember:hover .teamMember-more {
+            opacity: 1;
+            height: 25px;
+            width: 25px;
+            bottom: 2%;
+            right: 2%;
+            transition-delay: 0s;
+        }
+        .card-teamMember .teamMember-more:hover {
+            background: #41DBC4;
+        }
+        .card-teamMember h4 {
+            font-size: 1.4em;
+            font-weight: 300;
+        }
+        .card-teamMember h5 {
+            font-weight: 300;
+            color: 1F2C34;
+        }
+        .profile-img.profile-img-teamMember {
+            height: 120px;
+            width: 120px;
+            border: 1px solid rgba(253, 253, 253, 1);
+            margin-bottom: 25px;
+        }
+        .profile-img.profile-img-teamMember img {
+            height: 101%;
+            width: 101%;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: 0.98;
+        }
+        .section-teamMember .profile-img {
+            border-radius: 60%;
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual
+        files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- link to local app.js -->
+    <script src="js/app.js"></script>
+
+    <header></header>
+
+    <section class="section section-w section-teamMember">
+        <div class="container" style="max-width: 800px">
+            <div class="margin50px"></div>
+            <div class="margin50px"></div>
+            <h1 style='margin-bottom: 20px;'>关于欧耶</h1>
+            <p style="font-size: 1.2em; text-align: justify;font-weight: 300; line-height: 2em;"><span class='firstcharacter'>社</span>区学院在美国已有超过百年的历史,而在 2008 年后,随着国内留学趋势的改变, 越来越多的学生开始选择社区学院作为自己名校的踏脚石,曲线救国,实现梦想。然 而,在此过程之中,也涌现出一系列不可忽视的问题。社区学院可谓易入难出,申请 入学社区学院没有任何难度,但如何从社区学院转入如 UCB\UCLA 等世界一流大学, 并不是申请周期一两天的写作努力,而是需要两年间从课程、课外活动、实习等方方 面面的精心准备,才能做到厚积薄发,在申请时一鸣惊人。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah 起源于一个致力于服务中国学生、帮助中国学生转学的平台---DVC 中华学生会。 从 2013 年起,Yeah 的创始人 Kevin Tian 通过中华学生会,先后举办超过 20 场转学及 申请讲座、6 次 Berkeley Mentorship Tour、200 多次私人辅导 session,为超过 300 名 中国学生提供了选课排课、选择老师、课外互动推介、竞赛辅导、工作推荐、申请文 书修改的服务。看到众多学生通过两年的时间完成了最初的梦想,Kevin 感到非常的 欣慰与满足,同时看到另外一批学生因为没有及时得到有效、准确信息,由于种种原 因,最终与 UCB\UCLA 失之交臂的情况,感到惋惜。于是在 2014 年,Kevin 正式创立 Yeah Education Group,与几位对转学、留学、社区学院教育非常有经验的导师一道, 为学生提供转学申请的帮助服务。</p>
+            <hr>
+            <h2>团队</h2>
+            <div class="row team-row">
+
+                <!-- Pick team members from jSON file-->
+
+                
+                <!-- team-container -->
+
+
+            </div>
+
+            <hr>
+            <h2>学术顾问</h2>
+            <div class="row team-row2"></div>
+
+        </div>
+
+
+    </section>
+
+    <footer></footer>
+    <!-- link to firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+    
+    <script>
+	$('header').load('../header.html', function() {
+            $.getScript("js/app.js");
+        });
+        $('footer').load('../footer.html');
+	
+	</script>
+
+</body>
+
+</html>

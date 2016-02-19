@@ -915,13 +915,13 @@ footer .rights {
     background: black;
     padding-top: 140px;
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(135deg, #50B584, #1699B5);
+    background: -webkit-radial-gradient(-90deg, red, yellow);
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(135deg, #50B584, #1699B5);
+    background: -o-radial-gradient(-90deg, red, yellow);
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(135deg, #50B584, #1699B5);
+    background: -moz-radial-gradient(-90deg, red, yellow);
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(135deg, #50B584, #1699B5);
+    background: radial-gradient(at bottom center, #34B3A0, #007B70);
     /* Standard syntax */
 }
 .section-hero h1 {

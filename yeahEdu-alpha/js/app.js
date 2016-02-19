@@ -4,6 +4,39 @@ $(document).ready(function() {
         $('.menu-box').toggleClass('open');
     });
 
+    //    $('#about').click(function() {
+    ////        $('content').load('p/about.html');
+    //     
+    //     console.log('#about clicked');
+    //     
+    //        $("html, body").animate({
+    //            scrollTop: 0
+    //        }, 200);
+    //        return false;
+    //    });
+
+
+
+    //    $(window).scroll(function() {
+    //        if ($(document).scrollTop() > 50) {
+    //            $('.navbar-default').addClass('shrink');
+    //            $('.navbar-default .navbar-brand').css({
+    //                'font-size': '1.8em',
+    //                'color': '#34B3A0',
+    //                'letter-spacing': '3px'
+    //            });
+    //        } else {
+    //            $('.navbar-default').removeClass('shrink');
+    //            $('.navbar-default .navbar-brand').css({
+    //																'font-size': '2.5em',
+    //																'color': '#1F4056',
+    //																'letter-spacing': '0px'
+    //            });
+    //        }
+    //    });
+
+
+
     $.getJSON("js/json/advisors.json", function(json) {
 
         var html = "";
@@ -41,10 +74,67 @@ $(document).ready(function() {
         $('.team-row').html(html);
     });
 
+
     $('.more-advisor').bind('touchstart touchend', function(e) {
         e.preventDefault();
         $(this).toggleClass('hover_effect');
     });
+
+
+
+
+
+    //	// Login & Sign up system
+    //	var myFirebaseRef = new Firebase("https://yeaheducation2.firebaseio.com");
+    //
+    //            $('#signupForm').submit(function(event) {
+    //                $('.signupForm_error').html('');
+    //
+    //                event.preventDefault();
+    //                if ($('#signup_password').val() === $('#signup_password_confirmed').val()) {
+    //                    var $signup_email = $('#signup_email').val();
+    //                    var $signup_password = $('#signup_password').val();
+    //                    myFirebaseRef.createUser({
+    //                        email: $signup_email,
+    //                        password: $signup_password
+    //                    }, function(error, userData) {
+    //                        if (error) {
+    //                            $('.signupForm_error').show().html(error);
+    //                            event.preventDefault();
+    //                        } else {
+    //                            console.log("Successfully created user account with uid:", userData.uid);
+    //                            $('#logForm').modal('hide');
+    //                        }
+    //                    });
+    //                } else if ($('#signup_password').val() !== $('#signup_password_confirmed').val()) {
+    //
+    //                    $('#signup_password_confirmed').css({
+    //                        'border': '1px red solid'
+    //                    });
+    //                    $('.signupForm_error').show().html('两个密码不相同! :(');
+    //                }
+    //            });
+    //
+    //            $('#loginForm').submit(function(event) {
+    //                    $('.signupForm_error').html('');
+    //
+    //                    event.preventDefault();
+    //                    var $login_email = $('#login_email').val();
+    //                    var $login_password = $('#login_password').val();
+    //                    myFirebaseRef.authWithPassword({
+    //                        email: $login_email,
+    //                        password: $login_password
+    //                    }, function(error, authData) {
+    //                        if (error) {
+    //                            $('.loginForm_error').show().html(error);
+    //                            event.preventDefault();
+    //                        } else {
+    //                            console.log("Authenticated successfully with payload:", authData);
+    //																									$('#logForm').modal('hide');
+    //                        }
+    //                    });
+    //            });
+    //	
 
 });
 
@@ -55,6 +145,7 @@ function YeahEducation(fbname) {
     var linksRef = firebase.child('links');
     var usersRef = firebase.child('users');
     var instance = this;
+
 
     this.login = function(email, password) {
         firebase.authWithPassword({
@@ -96,24 +187,6 @@ function YeahEducation(fbname) {
 
     this.logout = function() {
         firebase.unauth();
-        window.location.href = "/index.html"
-    };
-
-    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy) {
-        var authData = firebase.getAuth();
-        usersRef.child(authData.uid)
-            .child('Resume')
-            .child('volunteer')
-            .push({
-                event_name: event_name,
-                event_location: event_location,
-                event_date: event_date,
-                event_host: event_host,
-                event_participant: event_participant,
-                event_doc: event_doc,
-                event_dairy: event_dairy
-            });
-        console.log('clicked cv')
     };
 
     // overrideable event functions
@@ -125,7 +198,6 @@ function YeahEducation(fbname) {
 
     //setup long-running firebase listeners 4-3 1:13
     this.start = function() {
-
         // onAuth is really inportant!!!
         firebase.onAuth(function(authData) {
             if (authData) {
@@ -135,21 +207,25 @@ function YeahEducation(fbname) {
                     instance.user = snapshot.val();
                     instance.onLogin(instance.user); // extremely important!!!
                 });
-
-                usersRef.child(authData.uid).child('Resume').on('value', function(snapshot) {
-                    var volunteerEvents = snapshot.child('volunteer').val();
-                    console.log(volunteerEvents);
-                    var ResumeOfVolunteer = [];
-                    for (var volunteerEvent in volunteerEvents) {
-                        ResumeOfVolunteer.push(volunteerEvents[volunteerEvent]);
-                    }
-                    console.log(ResumeOfVolunteer);
-                    instance.onVolunteerChanged(ResumeOfVolunteer);
-                });
             } else {
                 instance.onLogout();
             }
         });
+        // // LinksRef = firebase.child('links')
+        //         linksRef.on('value', function(snapshot) {
+        //             var links = snapshot.val();
+        //             var preparedLinks = [];
+        //             for (var url in links) {
+        //                 if (links.hasOwnProperty(url)) {
+        //                     preparedLinks.push({
+        //                         title: links[url].title,
+        //                         url: atob(url)
+        //                     })
+        //                     getSubmitters(url, links[url].users);
+        //                 }
+        //             }
+        //             instance.onLinksChanged(preparedLinks);
+        //         });
 
     };
 
@@ -172,18 +248,6 @@ $(document).ready(function() {
         $('#nav-list-logout').show();
         $('#nav-list-login').hide();
         $('#userlog-y-out').hide();
-    };
-
-    YE.onVolunteerChanged = function(volunteerEvents) {
-        $('.cv_volunteer_table').empty();
-        volunteerEvents.map(function(volunteerEvent) {
-            console.log('dd');
-            var volunteerEventElement = "<tr>" + "<td>" + volunteerEvent.event_name + "</td>" + "<td>" + volunteerEvent.event_date + "</td>" + "<td>" + volunteerEvent.event_participant + "</td>" + "</tr>";
-           
-									$('.cv_volunteer_table').append(volunteerEventElement);
-        });
-					var title = "<tr><th>活动名称</th><th>活动时间</th><th>参与身分</th></tr>"; 
-					$('.cv_volunteer_table').prepend(title);
     };
 
     $('#userlogout').click(function() {
@@ -217,21 +281,5 @@ $(document).ready(function() {
     });
 
     YE.start();
-
-    $('#cv_volunteer_form form').submit(function(event) {
-        var event_name = $(this).find('#event_name').val(),
-            event_location = $(this).find('#event_location').val(),
-            event_date = $(this).find('#event_date').val(),
-            event_host = $(this).find('#event_host').val(),
-            event_participant = $(this).find('#event_participant option:selected').val(),
-            event_doc = $(this).find('#event_doc').val(),
-            event_dairy = $(this).find('#event_dairy').val();
-        console.log('ddd');
-        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
-        console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
-        $('#cv_volunteer_form').find(':input').val('');
-					$('#dashboard-more-trigger-div-cv-v').modal('hide');
-        return false;
-    });
 
 });
