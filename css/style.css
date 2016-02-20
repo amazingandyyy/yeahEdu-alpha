@@ -857,13 +857,13 @@ footer .rights {
     background: white;
     height: 45px;
     padding-top: 6px;
-	z-index: 98;
+    z-index: 98;
 }
 .nav-center ul.nav {
     display: inline-block;
 }
 .nav-center ul.nav li {
-    display: inline a;
+    display: inline;
     border: 1px solid rgba(255, 255, 255, 1);
     box-shadow: none;
 }
@@ -1192,11 +1192,9 @@ button:active {
     border: 0px solid #eee;
     box-shadow: inset 0px 0px 0px 1px #eee;
 }
-
 .open>.dropdown-menu {
-	z-index: 99;
+    z-index: 99;
 }
-
 .dropdown-menu>li>a {
     padding: 8px 25px;
     font-size: 1.2em;
@@ -1367,9 +1365,15 @@ iPhone5: 320px
 /* Medium devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
+    /*	Only do this when width is over 991*/
     .modal-sm {
         min-width: 360px;
     }
+/*
+    .hide-lg {
+        display: none;
+    }
+*/
 }
 /* Large devices (large desktops, 1200px and up) */
 

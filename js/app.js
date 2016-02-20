@@ -175,15 +175,20 @@ $(document).ready(function() {
     };
 
     YE.onVolunteerChanged = function(volunteerEvents) {
-        $('.cv_volunteer_table').empty();
+        $('.resume_list').empty();
         volunteerEvents.map(function(volunteerEvent) {
             console.log('dd');
-            var volunteerEventElement = "<tr>" + "<td>" + volunteerEvent.event_name + "</td>" + "<td>" + volunteerEvent.event_date + "</td>" + "<td>" + volunteerEvent.event_participant + "</td>" + "</tr>";
-           
-									$('.cv_volunteer_table').append(volunteerEventElement);
+            var volunteerEventElement = "<div class='resume_item'>" +
+                "<name>" + volunteerEvent.event_name + "</name>" +
+                "<date>" + volunteerEvent.event_date + "</date>" +
+                "<br>" +
+                "<location><i class='fa fa-map-marker'></i>&nbsp;" + volunteerEvent.event_location + "</location>" +
+                "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
+                "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
+                "<br>" +
+                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag'>更新信息</button>";
+            $('.resume_list').append(volunteerEventElement);
         });
-					var title = "<tr><th>活动名称</th><th>活动时间</th><th>参与身分</th></tr>"; 
-					$('.cv_volunteer_table').prepend(title);
     };
 
     $('#userlogout').click(function() {
@@ -230,7 +235,7 @@ $(document).ready(function() {
         YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
         console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
         $('#cv_volunteer_form').find(':input').val('');
-					$('#dashboard-more-trigger-div-cv-v').modal('hide');
+        $('#dashboard-more-trigger-div-cv-v').modal('hide');
         return false;
     });
 
