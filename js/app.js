@@ -48,6 +48,8 @@ $(document).ready(function() {
 
 });
 
+
+
 function YeahEducation(fbname) {
 
     var firebase = new Firebase('https://' + fbname + '.firebaseio.com/');
@@ -197,9 +199,13 @@ $(document).ready(function() {
                 "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
                 "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
                 "<br>" +
-                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' id='" + volunteerEvent.event_id + "'>更新信息</button>";
-            i++;
+                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>" +
+                i++;
             $('.resume_list').append(volunteerEventElement);
+            $('.resume_edit_tag').click(function() {
+                var event_uid = this.getAttribute('event-uid');
+                console.log(event_uid);
+            });
             //            }
         });
     };

@@ -4,7 +4,7 @@
         </div>
     </a>
     <a href="#">
-        <div class="nav-log" style="float: right; display: inline-block" id="userlog-y">入口</div>
+        <div class="nav-log" style="float: right; display: none" id="userlog-y">入口</div>
     </a>
     <!--
     <a href="#">
@@ -33,7 +33,7 @@
     <div class="mobile-container-outter">
         <div class="mobile-container-inner">
             <div class="nav-list">
-                <ul style="list-style-type: none; margin: 0; padding: 0;" id="nav-list-logout">
+                <ul style="list-style-type: none; margin: 0; padding: 0; display: none" id="nav-list-logout">
                     <a href="">
                         <div class="nav-list-item">私人订制
                         </div>
@@ -51,7 +51,7 @@
                         </div>
                     </a>
                 </ul>
-                <ul style="list-style-type: none; margin: 0; padding: 0;" id="nav-list-login">
+                <ul style="list-style-type: none; margin: 0; padding: 0; display: none" id="nav-list-login">
                     <div class="nav-list-item"><a href="/dashboard.html">个人主页</a>
                     </div>
                     <div class="nav-list-item"><a href="/resumeBuilder.html">履历助手</a>
@@ -174,7 +174,7 @@
 
     $('#userlogout').click(function() {
         $('.navbar-y').find('.dropdown').removeClass('open');
-					window.location.replace("/#");
+        window.location.replace("/#");
     });
 
     $('.nav-log').click(function() {
