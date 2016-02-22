@@ -182,14 +182,12 @@
             padding: 20px;
             margin: 10px 0px;
             text-align: left;
-									position: relative;
-									overflow: hidden;
+            position: relative;
+            overflow: hidden;
         }
-					.resume_item:hover {
-					box-shadow:  0px 0px 5px -1px rgba(0, 0, 0, 0.5);
-      
-					}
-					
+        .resume_item:hover {
+            box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
+        }
         .resume_item name {
             display: inline-block;
             color: #1F2C34;
@@ -216,20 +214,19 @@
             display: inline-block;
             margin: 5px 25px 8px 0px;
         }
-					.tab-vertical li{
-						display: block;
-					}
-					
-					.resume_edit_tag {
-						position: absolute;
-						right: -1px;
-						bottom: 0px;
-						color: white;
-						font-size: 0.7em;
-						letter-spacing: 1px;
-						padding: 6px 10px;
-						background: rgba(0,0,0,0.4);
-					}
+        .tab-vertical li {
+            display: block;
+        }
+        .resume_edit_tag {
+            position: absolute;
+            right: -1px;
+            bottom: 0px;
+            color: white;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 
@@ -269,16 +266,16 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="section-cv">
             <div class="container" style="max-width: 800px;">
-                        <div class="tab-content" style="padding-bottom: 100px;">
-                            <div role="tabpanel" class="tab-pane active fade in" id="general-info">
-                                <div class="row">
+                <div class="tab-content" style="padding-bottom: 100px;">
+                    <div role="tabpanel" class="tab-pane active fade in" id="general-info">
+                        <div class="row">
 
-                                    <h2>经历列表</h2>
+                            <h2>经历列表</h2>
 
-                                    <!--
+                            <!--
                                     <table style="width:100%" class="dashboard_table cv_volunteer_table">
                                         <tr>
                                             <th>活动名称</th>
@@ -288,128 +285,128 @@
                                     </table>
 -->
 
-                                    <div class="resume_list">
-                                        <div class="resume_item">
-                                           <button class="resume_edit_tag">更新信息</button>
-                                            <name>活動標題placeholder可能會超過30個字</name>
+                            <div class="resume_list">
+                                <div class="resume_item">
+                                    <button class="resume_edit_tag">更新信息</button>
+                                    <name>活動標題可能會超過30個字</name>
 
-                                            <date>2016/02/14</date>
+                                    <date>2016/02/14</date>
+                                    <br>
+                                    <location><i class="fa fa-map-marker"></i>&nbsp;Mountain View</location>
+                                    <organization><i class="fa fa-university"></i>&nbsp;主辦方全名</organization>
+                                    <participant><i class="fa fa-user"></i>&nbsp;參與身份</participant>
+                                    <br>
+                                    <description>活動細節日記及工作內農簡短介紹，不可超過500字。</description>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="dashboard-more" id="dashboard-more-cv-v">新增</div>
+
+                            <div class="modal fade" id="dashboard-more-trigger-div-cv-v" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+
+                                            <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
+                                                <span></span><span></span>
+                                            </button>
                                             <br>
-                                            <location><i class="fa fa-map-marker"></i>&nbsp;Mountain View</location>
-                                            <organization><i class="fa fa-university"></i>&nbsp;主辦方全名</organization>
-                                            <participant><i class="fa fa-user"></i>&nbsp;參與身份</participant>
-                                            <br>
-                                            <description>活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。活動細節日記及工作內農簡短介紹，不可超過500字。</description>
-
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="dashboard-more" id="dashboard-more-cv-v">增加</div>
-
-                                    <div class="modal fade" id="dashboard-more-trigger-div-cv-v" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-
-                                                <div class="modal-body">
-
-                                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>
-                                                        <span></span><span></span>
-                                                    </button>
-                                                    <br>
-                                                    <div class="logForm-logo">
-                                                        <h1><i class="fa fa-hand-peace-o" style="font-size: 2em; color: #34B3A0; margin-bottom: 10px;"></i><br></h1>
-                                                    </div>
-                                                    <div class="margin20px"></div>
-                                                    <!-- Nav tabs -->
-                                                    <div class="" id="cv_volunteer_form" style="min-width: 300px">
-                                                        <form class="info-list-form">
+                                            <div class="logForm-logo">
+                                                <h1><i class="fa fa-hand-peace-o" style="font-size: 2em; color: #34B3A0; margin-bottom: 10px;"></i><br></h1>
+                                            </div>
+                                            <div class="margin20px"></div>
+                                            <!-- Nav tabs -->
+                                            <div class="" id="cv_volunteer_form" style="min-width: 300px">
+                                                <form class="info-list-form">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="event_name">活动名称</label>
+                                                                <input type="text" class="form-control" id="event_name" placeholder="活动名称">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        <label for="event_name">活动名称</label>
-                                                                        <input type="text" class="form-control" id="event_name" placeholder="活动名称">
+                                                                        <label for="event_location">服务地点</label>
+                                                                        <input type='text' class="form-control" id='event_location' placeholder="服务地点" />
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="event_location">服务地点</label>
-                                                                                <input type='text' class="form-control" id='event_location' placeholder="服务地点" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="event_date">服务日期</label>
-                                                                                <input type='date' class="form-control" id='event_date' />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        <label for="event_host">主办方</label>
-                                                                        <input type="text" class="form-control" id="event_host" placeholder="Organization Oficial Full Name">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="event_participant">参与身分</label>
-                                                                                <br>
-                                                                                <label id="label_select">
-                                                                                    <select id="event_participant">
-                                                                                        <option value="" disabled selected>-- 请选择 --</option>
-                                                                                        <option value="主办者">主办者</option>
-                                                                                        <option value="小组长">小组长</option>
-                                                                                        <option value="参与者">参与者</option>
-                                                                                    </select>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label for="event_doc">照片/档案</label>
-                                                                                <input type="file" class="form-control" id="event_doc" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px; outline: none;" multiple>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="event_dairy">活动描述/日记</label>
-                                                                        <textarea type="text" class="form-control" id="event_dairy" placeholder="DVC, Foothill College..." rows="6" cols="50"></textarea>
+                                                                        <label for="event_date">服务日期</label>
+                                                                        <input type='date' class="form-control" id='event_date' />
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" class="btn btn-default">增加活動</button>
-                                                        </form>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="event_host">主办方</label>
+                                                                <input type="text" class="form-control" id="event_host" placeholder="Organization Oficial Full Name">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="event_participant">参与身分</label>
+                                                                        <br>
+                                                                        <label id="label_select">
+                                                                            <select id="event_participant">
+                                                                                <option value="" disabled selected>-- 请选择 --</option>
+                                                                                <option value="主办者">主办者</option>
+                                                                                <option value="小组长">小组长</option>
+                                                                                <option value="参与者">参与者</option>
+                                                                            </select>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="event_doc">照片/档案</label>
+                                                                        <input type="file" class="form-control" id="event_doc" data-input="false" data-iconName="glyphicon glyphicon-inbox" data-buttonText="上传附加档案." style="height: 40px; outline: none;" multiple>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="event_dairy">活动描述/日记</label>
+                                                                <textarea type="text" class="form-control" id="event_dairy" placeholder="DVC, Foothill College..." rows="6" cols="50"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
-
-
-                                                </div>
-
+                                                    <button type="submit" class="btn btn-default">新增活动</button>
+                                                </form>
                                             </div>
+
+
                                         </div>
+
                                     </div>
-
-
-
-
-
-
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">..d.</div>
-                            <div role="tabpanel" class="tab-pane" id="messages">.s..</div>
-                            <div role="tabpanel" class="tab-pane" id="settings">..a.</div>
+
+
+
+
+
+
                         </div>
-<!--                    </div>-->
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">..d.</div>
+                    <div role="tabpanel" class="tab-pane" id="messages">.s..</div>
+                    <div role="tabpanel" class="tab-pane" id="settings">..a.</div>
+                </div>
+                <!--                    </div>-->
             </div>
 
 

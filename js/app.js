@@ -101,7 +101,7 @@ function YeahEducation(fbname) {
 
     this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy) {
         var authData = firebase.getAuth();
-        usersRef.child(authData.uid)
+        var newVolunteerEvent = usersRef.child(authData.uid)
             .child('Resume')
             .child('volunteer')
             .push({
@@ -111,9 +111,16 @@ function YeahEducation(fbname) {
                 event_host: event_host,
                 event_participant: event_participant,
                 event_doc: event_doc,
-                event_dairy: event_dairy
+                event_dairy: event_dairy,
             });
-        console.log('clicked cv')
+        usersRef.child(authData.uid)
+            .child('Resume')
+            .child('volunteer')
+            .child(newVolunteerEvent.key())
+            .update({
+                event_id: newVolunteerEvent.key()
+            });
+        console.log('add Volunteer Event:' + newVolunteerEvent.key())
     };
 
     // overrideable event functions
@@ -143,6 +150,7 @@ function YeahEducation(fbname) {
                     for (var volunteerEvent in volunteerEvents) {
                         ResumeOfVolunteer.push(volunteerEvents[volunteerEvent]);
                     }
+                    console.log(ResumeOfVolunteer.length);
                     console.log(ResumeOfVolunteer);
                     instance.onVolunteerChanged(ResumeOfVolunteer);
                 });
@@ -176,8 +184,11 @@ $(document).ready(function() {
 
     YE.onVolunteerChanged = function(volunteerEvents) {
         $('.resume_list').empty();
+        var i = 0;
+
+        //        for (var i=0; i< volunteerEvents.length; i++){
         volunteerEvents.map(function(volunteerEvent) {
-            console.log('dd');
+            //            for (var i = 0; i < volunteerEvents.length; i++) {
             var volunteerEventElement = "<div class='resume_item'>" +
                 "<name>" + volunteerEvent.event_name + "</name>" +
                 "<date>" + volunteerEvent.event_date + "</date>" +
@@ -186,8 +197,10 @@ $(document).ready(function() {
                 "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
                 "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
                 "<br>" +
-                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag'>更新信息</button>";
+                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' id='" + volunteerEvent.event_id + "'>更新信息</button>";
+            i++;
             $('.resume_list').append(volunteerEventElement);
+            //            }
         });
     };
 
