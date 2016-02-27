@@ -285,7 +285,7 @@
                                     </table>
 -->
 
-                            <div class='resume_list2'>
+                            <div class='resume_list'>
                                 <div class='resume_item'>
                                     <button class='resume_edit_tag' type='button' data-toggle='modal' data-target='#volunteerEventEditter_default'>更新信息</button>
                                     <name>活動標題可能會超過30個字</name>
@@ -298,7 +298,7 @@
                                     <br>
                                     <description>活動細節日記及工作內農簡短介紹，不可超過500字。</description>
                                     <!-- start of the editter modal-->
-                                    <div class='modal fade' class='volunteerEventEditter' id='volunteerEventEditter_default' role='dialog' aria-labelledby='myModalLabel'>
+                                    <div class='modal fade' class='volunteerEventEditter' event-uid='volunteerEventEditter_default' role='dialog' aria-labelledby='myModalLabel'>
                                         <div class='modal-dialog modal-lg' role='document'>
                                             <div class='modal-content'>
 
@@ -569,7 +569,7 @@
         });
 
         $('#dashboard-more-cv-v').click(function() {
-            $('#dashboard-more-trigger-div-cv-v').modal('show');
+									$('#dashboard-more-trigger-div-cv-v').modal('show');
         });
     </script>
 

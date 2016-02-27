@@ -49,6 +49,8 @@ $(document).ready(function() {
 });
 
 
+//here are many function individuals we use in the entire system
+
 
 function YeahEducation(fbname) {
 
@@ -187,10 +189,7 @@ $(document).ready(function() {
     YE.onVolunteerChanged = function(volunteerEvents) {
         $('.resume_list').empty();
         var i = 0;
-
-        //        for (var i=0; i< volunteerEvents.length; i++){
         volunteerEvents.map(function(volunteerEvent) {
-            //            for (var i = 0; i < volunteerEvents.length; i++) {
             var volunteerEventElement = "<div class='resume_item'>" +
                 "<name>" + volunteerEvent.event_name + "</name>" +
                 "<date>" + volunteerEvent.event_date + "</date>" +
@@ -202,12 +201,15 @@ $(document).ready(function() {
                 "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>" +
                 i++;
             $('.resume_list').append(volunteerEventElement);
-            $('.resume_edit_tag').click(function() {
-                var event_uid = this.getAttribute('event-uid');
-                console.log(event_uid);
-            });
-            //            }
         });
+        $('.resume_edit_tag').click(function() {
+            var event_uid = this.getAttribute('event-uid');
+            return VolunteerEditterClicked(event_uid);
+            console.log(event_uid);
+        });
+					function VolunteerEditterClicked(volunteerEvent_uid) {
+    console.log('this is the eventEditter of event' + volunteerEvent_uid);
+}
     };
 
     $('#userlogout').click(function() {
