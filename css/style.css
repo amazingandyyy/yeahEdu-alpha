@@ -1156,7 +1156,6 @@ footer .rights {
 }
 body .modal-open {
     position: relative;
-    overflow: hidden;
 }
 .btn,
 button {

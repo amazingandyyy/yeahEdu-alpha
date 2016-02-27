@@ -127,6 +127,17 @@ function YeahEducation(fbname) {
         console.log('add Volunteer Event:' + newVolunteerEvent.key())
     };
 
+    this.volunteerEditterClicked = function(volunteerEvent_uid) {
+        console.log('this is the eventEditter of event' + volunteerEvent_uid);
+        var reume_item_id = "resume_item_" + volunteerEvent_uid;
+        console.log(reume_item_id);
+								var authData = firebase.getAuth();
+								var volunteerEventSingleContent = [];
+					volunteerEventSingleContent.push(authData.uid +"/"+ volunteerEvent_uid);
+					instance.onVolunteerEditter(volunteerEventSingleContent);
+console.log(volunteerEventSingleContent);
+    }
+
     // overrideable event functions
     this.onLogin = function(user) {};
     this.onLogout = function() {};
@@ -188,9 +199,9 @@ $(document).ready(function() {
 
     YE.onVolunteerChanged = function(volunteerEvents) {
         $('.resume_list').empty();
-        var i = 0;
+
         volunteerEvents.map(function(volunteerEvent) {
-            var volunteerEventElement = "<div class='resume_item'>" +
+            var volunteerEventElement = "<div class='resume_item resume_item_" + volunteerEvent.event_id + "'>" +
                 "<name>" + volunteerEvent.event_name + "</name>" +
                 "<date>" + volunteerEvent.event_date + "</date>" +
                 "<br>" +
@@ -198,19 +209,104 @@ $(document).ready(function() {
                 "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
                 "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
                 "<br>" +
-                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>" +
-                i++;
+                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>";
+
             $('.resume_list').append(volunteerEventElement);
         });
         $('.resume_edit_tag').click(function() {
             var event_uid = this.getAttribute('event-uid');
-            return VolunteerEditterClicked(event_uid);
-            console.log(event_uid);
+            YE.volunteerEditterClicked(event_uid);
         });
-					function VolunteerEditterClicked(volunteerEvent_uid) {
-    console.log('this is the eventEditter of event' + volunteerEvent_uid);
-}
+
     };
+	
+	YE.onVolunteerEditter = function(volunteerEventSingleContent) {
+	console.log('thx god');
+		var volunteerEditterModals = "<div class='modal fade' class='volunteerEventEditter' id='volunteerEventEditter_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
+                                        "<div class='modal-dialog modal-lg' role='document'>"+
+                                            "<div class='modal-content'>"+
+                                                "<div class='modal-body'>"+
+                                                    "<button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>"+
+                                                        "<span></span><span></span>"+
+                                                    "</button>"+
+                                                    "<br>"+
+                                                    "<div class='logForm-logo'>"+
+                                                        "<h1><i class='fa fa-hand-peace-o' style='font-size: 2em; color: #34B3A0; margin-bottom: 10px;'></i><br></h1>"+
+                                                    "</div>"+
+                                                    "<div class='margin20px'></div>"+
+                                                    "<div class='' id='cv_volunteer_form_editter' style='min-width: 300px'>"+
+                                                        "<form class='info-list-form'>"+
+                                                            "<div class='row'>"+
+                                                                "<div class='col-md-6'>"+
+                                                                    "<div class='form-group'>"+
+                                                                        "<label for='event_name'>活动名称</label>"+
+                                                                        "<input type='text' class='form-control' id='event_name' placeholder='活动名称'>"+
+                                                                    "</div>"+
+                                                                "</div>"+
+                                                                "<div class='col-md-6'>"+
+                                                                    "<div class='row'>"+
+                                                                        "<div class='col-md-6'>"+
+                                                                            "<div class='form-group'>"+
+                                                                                "<label for='event_date'>服务日期</label>"+
+                                                                                "<input type='date' class='form-control' id='event_date' />"+
+                                                                            "</div>"+
+                                                                        "</div>"+
+                                                                        "<div class='col-md-6'>"+
+                                                                            "<div class='form-group'>"+
+                                                                                "<label for='event_location'>服务地点</label>"+
+                                                                                "<input type='text' class='form-control' id='event_location' placeholder='服务地点' />"+
+                                                                            "</div>"+
+                                                                        "</div>"+
+                                                                    "</div>"+
+                                                                "</div>"+
+                                                                "<div class='col-md-6'>"+
+                                                                    "<div class='form-group'>"+
+                                                                        "<label for='event_host'>主办方</label>"+
+                                                                        "<input type='text' class='form-control' id='event_host' placeholder='Organization Oficial Full Name'>"+
+                                                                    "</div>"+
+                                                                "</div>"+
+                                                                "<div class='col-md-6'>"+
+                                                                    "<div class='row'>"+
+                                                                        "<div class='col-md-6'>"+
+                                                                            "<div class='form-group'>"+
+                                                                                "<label for='event_participant'>参与身分</label>"+
+                                                                                "<br>"+
+                                                                                "<label id='label_select'>"+
+                                                                                    "<select id='event_participant'>"+
+                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
+                                                                                        "<option value='主办者'>主办者</option>"+
+                                                                                        "<option value='小组长'>小组长</option>"+
+                                                                                        "<option value='参与者'>参与者</option>"+
+                                                                                    "</select>"+
+                                                                                "</label>"+
+                                                                            "</div>"+
+                                                                        "</div>"+
+                                                                        "<div class='col-md-6'>"+
+                                                                            "<div class='form-group'>"+
+                                                                                "<label for='event_doc'>照片/档案</label>"+
+                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
+                                                                            "</div>"+
+                                                                        "</div>"+
+                                                                    "</div>"+
+                                                                "</div>"+
+                                                                "<div class='col-md-12'>"+
+                                                                    "<div class='form-group'>"+
+                                                                        "<label for='event_dairy'>活动描述/日记</label>"+
+                                                                        "<textarea type='text' class='form-control' id='event_dairy' placeholder='DVC, Foothill College...' rows='6' cols='50'></textarea>"+
+                                                                    "</div>"+
+                                                                "</div>"+
+                                                            "</div>"+
+                                                            "<button type='submit' class='btn btn-default'>新增活动</button>"+
+                                                        "</form>"+
+                                                    "</div>"+
+																																															"</div>"+
+                                            "</div>"+
+                                        "</div>"+
+                                    "</div>";
+		
+		$('.resume_list').append(volunteerEditterModals);
+	
+	}
 
     $('#userlogout').click(function() {
         YE.logout();
