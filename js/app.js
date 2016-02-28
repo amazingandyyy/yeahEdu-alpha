@@ -103,7 +103,7 @@ function YeahEducation(fbname) {
         window.location.href = "/index.html"
     };
 
-    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy) {
+    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary) {
         var authData = firebase.getAuth();
         var newVolunteerEvent = usersRef.child(authData.uid)
             .child('Resume')
@@ -115,7 +115,7 @@ function YeahEducation(fbname) {
                 event_host: event_host,
                 event_participant: event_participant,
                 event_doc: event_doc,
-                event_dairy: event_dairy
+                event_diary: event_diary
             });
         usersRef.child(authData.uid)
             .child('Resume')
@@ -134,26 +134,23 @@ function YeahEducation(fbname) {
 								var authData = firebase.getAuth();
 								var volunteerEventSingleContent = [];
 //					volunteerEventSingleContent.empty();
-					
-					usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
-      var volunteerEventSingleContentItem = snapshot.val();   
-//						console.log('check', volunteerEventSingleContentItem.event_name);
-volunteerEventSingleContent.push(volunteerEventSingleContentItem
 
+					usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
+      var volunteerEventSingleContentItem = snapshot.val();
+										instance.onVolunteerEditter(volunteerEventSingleContentItem);
+					});
+    }
+
+				//
 //	{event_name: volunteerEventSingleContentItem.event_name,
 //                event_location2: volunteerEventSingleContentItem.event_location,
 //                event_date: volunteerEventSingleContentItem.event_date,
 //                event_host: volunteerEventSingleContentItem.event_host,
 //                event_participant: volunteerEventSingleContentItem.event_participant,
 //                event_doc: volunteerEventSingleContentItem.event_doc,
-//                event_dairy: volunteerEventSingleContentItem.event_dairy,
+//                event_diary: volunteerEventSingleContentItem.event_diary,
 //																																	event_id: volunteerEventSingleContentItem.event_id}
-	
-);
-					});
-										instance.onVolunteerEditter(volunteerEventSingleContent);
-console.log(volunteerEventSingleContent);
-    }
+
 
     // overrideable event functions
     this.onLogin = function(user) {};
@@ -226,7 +223,7 @@ $(document).ready(function() {
                 "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
                 "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
                 "<br>" +
-                "<description>" + volunteerEvent.event_dairy + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>";
+                "<description>" + volunteerEvent.event_diary + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>";
 
             $('.resume_list').append(volunteerEventElement);
         });
@@ -236,9 +233,8 @@ $(document).ready(function() {
         });
 
     };
-	
+
 	YE.onVolunteerEditter = function(volunteerEventSingleContent) {
-		console.log(volunteerEventSingleContent);
 		var volunteerEditterModals = "<div class='modal fade' class='volunteerEventEditter' id='volunteerEventEditter_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
                                             "<div class='modal-content'>"+
@@ -257,7 +253,7 @@ $(document).ready(function() {
                                                                 "<div class='col-md-6'>"+
                                                                     "<div class='form-group'>"+
                                                                         "<label for='event_name'>活动名称</label>"+
-                                                                        "<input type='text' class='form-control' id='event_name' placeholder='活动名称'>"+
+                                                                        "<input type='text' class='form-control' id='event_name' placeholder='活动名称' value='"+volunteerEventSingleContent.event_name+"'>"+
                                                                     "</div>"+
                                                                 "</div>"+
                                                                 "<div class='col-md-6'>"+
@@ -265,13 +261,13 @@ $(document).ready(function() {
                                                                         "<div class='col-md-6'>"+
                                                                             "<div class='form-group'>"+
                                                                                 "<label for='event_date'>服务日期</label>"+
-                                                                                "<input type='date' class='form-control' id='event_date' />"+
+                                                                                "<input type='date' class='form-control' id='event_date' value='"+volunteerEventSingleContent.event_date+"'/>"+
                                                                             "</div>"+
                                                                         "</div>"+
                                                                         "<div class='col-md-6'>"+
                                                                             "<div class='form-group'>"+
                                                                                 "<label for='event_location'>服务地点</label>"+
-                                                                                "<input type='text' class='form-control' id='event_location' placeholder='服务地点' />"+
+                                                                                "<input type='text' class='form-control' id='event_location' placeholder='服务地点' value='"+volunteerEventSingleContent.event_location+"'/>"+
                                                                             "</div>"+
                                                                         "</div>"+
                                                                     "</div>"+
@@ -279,7 +275,7 @@ $(document).ready(function() {
                                                                 "<div class='col-md-6'>"+
                                                                     "<div class='form-group'>"+
                                                                         "<label for='event_host'>主办方</label>"+
-                                                                        "<input type='text' class='form-control' id='event_host' placeholder='Organization Oficial Full Name'>"+
+                                                                        "<input type='text' class='form-control' id='event_host' placeholder='Organization Oficial Full Name' value='"+volunteerEventSingleContent.event_host+"'>"+
                                                                     "</div>"+
                                                                 "</div>"+
                                                                 "<div class='col-md-6'>"+
@@ -289,7 +285,7 @@ $(document).ready(function() {
                                                                                 "<label for='event_participant'>参与身分</label>"+
                                                                                 "<br>"+
                                                                                 "<label id='label_select'>"+
-                                                                                    "<select id='event_participant'>"+
+                                                                                    "<select id='event_participant event_participant_editter'>"+
                                                                                         "<option value='' disabled selected>-- 请选择 --</option>"+
                                                                                         "<option value='主办者'>主办者</option>"+
                                                                                         "<option value='小组长'>小组长</option>"+
@@ -308,21 +304,24 @@ $(document).ready(function() {
                                                                 "</div>"+
                                                                 "<div class='col-md-12'>"+
                                                                     "<div class='form-group'>"+
-                                                                        "<label for='event_dairy'>活动描述/日记</label>"+
-                                                                        "<textarea type='text' class='form-control' id='event_dairy' placeholder='DVC, Foothill College...' rows='6' cols='50'></textarea>"+
+                                                                        "<label for='event_diary'>活动描述/日记</label>"+
+                                                                        "<textarea type='text' class='form-control' id='event_diary' placeholder='DVC, Foothill College...' rows='6' cols='50'>'"+volunteerEventSingleContent.event_diary+"'</textarea>"+
                                                                     "</div>"+
                                                                 "</div>"+
                                                             "</div>"+
-                                                            "<button type='submit' class='btn btn-default'>新增活动</button>"+
+                                                            "<button type='submit' class='btn btn-default'>更新信息</button>"+
                                                         "</form>"+
                                                     "</div>"+
 																																															"</div>"+
                                             "</div>"+
                                         "</div>"+
                                     "</div>";
-		
+
 		$('.resume_list').append(volunteerEditterModals);
-	
+		 var event_participant = "option[value='"+volunteerEventSingleContent.event_participant+"']";
+//		console.log(event_participant);
+	$("option[value='"+volunteerEventSingleContent.event_participant+"']").prop('disabled', true);;
+
 	}
 
     $('#userlogout').click(function() {
@@ -364,10 +363,10 @@ $(document).ready(function() {
             event_host = $(this).find('#event_host').val(),
             event_participant = $(this).find('#event_participant option:selected').val(),
             event_doc = $(this).find('#event_doc').val(),
-            event_dairy = $(this).find('#event_dairy').val();
+            event_diary = $(this).find('#event_diary').val();
         console.log('ddd');
-        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
-        console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_dairy);
+        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
+        console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
         $('#cv_volunteer_form').find(':input').val('');
         $('#dashboard-more-trigger-div-cv-v').modal('hide');
         return false;
