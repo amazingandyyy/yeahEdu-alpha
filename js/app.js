@@ -115,7 +115,7 @@ function YeahEducation(fbname) {
                 event_host: event_host,
                 event_participant: event_participant,
                 event_doc: event_doc,
-                event_dairy: event_dairy,
+                event_dairy: event_dairy
             });
         usersRef.child(authData.uid)
             .child('Resume')
@@ -133,8 +133,25 @@ function YeahEducation(fbname) {
         console.log(reume_item_id);
 								var authData = firebase.getAuth();
 								var volunteerEventSingleContent = [];
-					volunteerEventSingleContent.push(authData.uid +"/"+ volunteerEvent_uid);
-					instance.onVolunteerEditter(volunteerEventSingleContent);
+//					volunteerEventSingleContent.empty();
+					
+					usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
+      var volunteerEventSingleContentItem = snapshot.val();   
+//						console.log('check', volunteerEventSingleContentItem.event_name);
+volunteerEventSingleContent.push(volunteerEventSingleContentItem
+
+//	{event_name: volunteerEventSingleContentItem.event_name,
+//                event_location2: volunteerEventSingleContentItem.event_location,
+//                event_date: volunteerEventSingleContentItem.event_date,
+//                event_host: volunteerEventSingleContentItem.event_host,
+//                event_participant: volunteerEventSingleContentItem.event_participant,
+//                event_doc: volunteerEventSingleContentItem.event_doc,
+//                event_dairy: volunteerEventSingleContentItem.event_dairy,
+//																																	event_id: volunteerEventSingleContentItem.event_id}
+	
+);
+					});
+										instance.onVolunteerEditter(volunteerEventSingleContent);
 console.log(volunteerEventSingleContent);
     }
 
@@ -221,7 +238,7 @@ $(document).ready(function() {
     };
 	
 	YE.onVolunteerEditter = function(volunteerEventSingleContent) {
-	console.log('thx god');
+		console.log(volunteerEventSingleContent);
 		var volunteerEditterModals = "<div class='modal fade' class='volunteerEventEditter' id='volunteerEventEditter_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
                                             "<div class='modal-content'>"+
