@@ -101,16 +101,31 @@
         "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Marketing",
         "introduction":"宣传策划<br>对外合作",
-        "story": "UC San Diego"
+        "story": "十二岁时跟随父母去到博茨瓦纳，在这个南部非洲的小国家完成了小学，初中，高中教育，现就读于Diablo Valley College，主修Economic专业。<br>博茨瓦纳在非洲虽然不算不发达国家，但与世界其他国家相比还是落后很多。在博茨瓦纳生活的七年里除了校园生活我更喜欢参加各种志工活动。在非洲的七年里比别人更懂得了教育的重要性，所以致力于改善非洲儿童的教育水平以及维护女性权利。在博茨瓦纳SOS儿童村成为了一名长期的志工，教孩子念书写字，捐献各类必需品。参与举办博茨瓦纳华人慈善拍卖会，拍卖所得善款全部捐予博茨瓦纳儿童村。<br>在DVC第一年与朋友一起创建了Data Science社团，在担任icc期间成功的拓展了这个还很年轻的社团。因在pleasant hill捐血站做志工随后担任DVC红十字社团秘书至今，致力于丰富同学们的志愿者活动，在任期间成功举办中秋月饼义卖，所得捐款600多美金全部捐献给国际红十字紧急救援中心",
+        "motto":"既然选择了远方 便只顾风雨兼程"
+        
     },
     
     {
-        "id": 6,
-        "name": "Allen Chen",
+        "id": 11,
+        "name": "Meishan Fan",
         "imageLink": "css/images/team/advisors/default-profile.png",
-        "title": "Angel Investor",
-        "introduction":"UC San Diego",
-        "story": "UC San Diego"
+        "title": "Marketing<br>Volunteer Coordinator",
+        "introduction":"銷售、以及負責志工活動及安排",
+        "story": "Meishan現就讀於加州大學伯克利分校，數學統計專業。<br>曾就職于International Education Center at Diablo Valley College。<br>在有限的一年時間內，幫助了多達500名來自世界各地的學生完成留學申請。<br>此外，Meishan有著豐富的志願者工作管理經驗，耐心幫助每一位留學生尋找志願者工作機會。豐富他們的社會經驗，有效地提高他們的實踐能力，并帶領他們一同深入探討美國的多樣文化。<br>与此同时，Meishan非常熱衷於教學。曾擔任Diablo Valley College的中文助教，同時耐心輔導DVC所提供的四個不同等級的中文課程的學生，幫助中文學習者提高其中文水平。以及現擔任UC Berkeley廣東話課程的Instructor。",
+        "motto":"有志者，事竟成。"
+    },
+
+    
+    {
+        "id": 11,
+        "name": "Ziyun Huangfu",
+        "imageLink": "css/images/team/advisors/default-profile.png",
+        "title": "Marketing",
+        "introduction":"营销策划、品牌宣传、对外合作",
+        "story": "皇甫子贇毕业于深圳外国语学校。在高中期间，曾任深圳市中学生“绿色星火”环保联盟主席，联合全市十二所高中的环保社团在大型社区内举办“地球一小时”活动，并协助学校成功创建国际生态型校园。同一学年，在全校三千名学生参与的投票选举中当选年度“深外之星”。<br>自幼学习长笛，已获中央音乐学院九级证书，曾被评为“中国优秀特长生”，并在校内外乐团中担任首席。<br>在DVC学习期间，除作为学生代表参与DVC环境委员会的会议以外，还同时担任中华学生会组织策划部部长、中文助教、数学辅导、新生志愿者等职务，为DVC的广大学生提供多样帮助。",
+        "motto":"1.与其让世界装住你的心，不如用心来包容整个世界。<br>2.人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。"
+        
     }
 
 ]
