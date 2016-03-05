@@ -1,3 +1,16 @@
+
+// Golbal variable and Function
+//				function cvVolunteerUpdate() {
+//				
+//				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
+//       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
+//        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
+//        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
+//        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
+//				console.log(event_name, event_location, event_date, event_host, event_diary);
+//			};
+
+
 $(document).ready(function() {
 	
 
@@ -49,23 +62,6 @@ $(document).ready(function() {
     });
 
 });
-
-
-function cvVolunteerUpdate2() {
-console.log('dddddfafds');	
-//event.preventDefault()
-//        var event_name = $(this).find('#event_name').val(),
-//            event_location = $(this).find('#event_location').val(),
-//            event_date = $(this).find('#event_date').val(),
-//            event_host = $(this).find('#event_host').val(),
-//            event_participant = $(this).find('#event_participant option:selected').val(),
-//            event_doc = $(this).find('#event_doc').val(),
-//            event_diary = $(this).find('#event_diary').val();
-//								
-//								console.log('volunteerEventeditor clicked');
-//        YE.cvVolunteerUpdate(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
-//        return false;
-};
 
 //here are many function individuals we use in the entire system
 
@@ -121,7 +117,7 @@ function YeahEducation(fbname) {
         window.location.href = "/index.html"
     };
 
-    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary) {
+    this.cvVolunteerPost = function(event_name, event_location, event_date, event_host, event_diary) {
         var authData = firebase.getAuth();
         var newVolunteerEvent = usersRef.child(authData.uid)
             .child('Resume')
@@ -131,8 +127,8 @@ function YeahEducation(fbname) {
                 event_location: event_location,
                 event_date: event_date,
                 event_host: event_host,
-                event_participant: event_participant,
-                event_doc: event_doc,
+//                event_participant: event_participant,
+//                event_doc: event_doc,
                 event_diary: event_diary
             });
         usersRef.child(authData.uid)
@@ -145,23 +141,6 @@ function YeahEducation(fbname) {
         console.log('add Volunteer Event:' + newVolunteerEvent.key())
     };
 	
-	this.cvVolunteerUpdate = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary) {
-console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
-		//        var authData = firebase.getAuth();
-//        var updateVolunteerEvent = usersRef.child(authData.uid)
-//            .child('Resume')
-//            .child('volunteer')
-//            .update({
-//                event_name: event_name,
-//                event_location: event_location,
-//                event_date: event_date,
-//                event_host: event_host,
-//                event_participant: event_participant,
-//                event_doc: event_doc,
-//                event_diary: event_diary
-//            });
-    };
-
     this.volunteereditorClicked = function(volunteerEvent_uid) {
         console.log('this is the eventeditor of event' + volunteerEvent_uid);
         var reume_item_id = "resume_item_" + volunteerEvent_uid;
@@ -274,6 +253,17 @@ $(document).ready(function() {
     };
 
 	YE.onVolunteereditor = function(volunteerEventSingleContent) {
+		
+		function cvVolunteerUpdate() {
+				
+				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
+       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
+        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
+        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
+        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
+				alert(event_name, event_location, event_date, event_host, event_diary);
+			};
+		
 		var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
                                             "<div class='modal-content'>"+
@@ -287,7 +277,7 @@ $(document).ready(function() {
                                                     "</div>"+
                                                     "<div class='margin20px'></div>"+
                                                     "<div class='' id='cv_volunteer_form_editor' style='min-width: 300px'>"+
-                                                        "<form class='info-list-form' onsubmit='cvVolunteerUpdate2()'>"+
+                                                        "<form class='info-list-form' onsubmit='cvVolunteerUpdate()'>"+
                                                             "<div class='row'>"+
                                                                 "<div class='col-md-6'>"+
                                                                     "<div class='form-group'>"+
@@ -299,7 +289,7 @@ $(document).ready(function() {
                                                                     "<div class='row'>"+
                                                                         "<div class='col-md-6'>"+
                                                                             "<div class='form-group'>"+
-                                                                                "<label for='event_date'>服务日期</label>"+
+                                                                                "<label for='event_date'>服务日期(mm/dd/yyyy)</label>"+
                                                                                 "<input type='date' class='form-control' id='event_date' value='"+volunteerEventSingleContent.event_date+"'/>"+
                                                                             "</div>"+
                                                                         "</div>"+
@@ -348,7 +338,7 @@ $(document).ready(function() {
                                                                     "</div>"+
                                                                 "</div>"+
                                                             "</div>"+
-                                                            "<button type='submit' class='btn btn-default'>更新信息</button>"+
+                                                            "<button type='submit' class='btn btn-default update'>更新信息</button>"+
                                                         "</form>"+
                                                     "</div>"+
 																																															"</div>"+
@@ -356,10 +346,12 @@ $(document).ready(function() {
                                         "</div>"+
                                     "</div>";
 
-		$('.resume_list').append(volunteereditorModals);
-		if($('#event_participant_editor').text() == "小组长"){
-				$(this).prop('selected', true);
-		};
+				$('.resume_list').append(volunteereditorModals);
+				if($('#event_participant_editor').text() == "小组长"){
+						$(this).prop('selected', true);
+				};
+		
+				
 	};
 
     $('#userlogout').click(function() {
@@ -399,11 +391,11 @@ $(document).ready(function() {
             event_location = $(this).find('#event_location').val(),
             event_date = $(this).find('#event_date').val(),
             event_host = $(this).find('#event_host').val(),
-            event_participant = $(this).find('#event_participant option:selected').val(),
-            event_doc = $(this).find('#event_doc').val(),
+//            event_participant = $(this).find('#event_participant option:selected').val(),
+//            event_doc = $(this).find('#event_doc').val(),
             event_diary = $(this).find('#event_diary').val();
-					
-        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
+					console.log('ssss');
+        YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_diary);
         $('#cv_volunteer_form').find(':input').val('');
         $('#dashboard-more-trigger-div-cv-v').modal('hide');
         return false;
