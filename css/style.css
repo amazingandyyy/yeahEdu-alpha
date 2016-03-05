@@ -867,8 +867,38 @@ footer .rights {
     border: 1px solid rgba(255, 255, 255, 1);
     box-shadow: none;
 }
-/*Header CSS*/
 
+.dashboard_loading {
+font-size: 2em;
+	animation: loading_spinning 2s linear infinite;
+}
+
+@keyframes loading_spinning {
+	 0% {
+    	transform: rotate(0deg)
+
+  }
+  100% {
+    	transform: rotate(360deg)
+
+  }
+}
+
+input[type=text],
+textarea[type=text],
+input[type=date] {
+    background: #F6F6F6
+}
+
+input[type=text]:active,
+textarea[type=text]:active,
+input[type=date]:active,input[type=text]:focus,
+textarea[type=text]:focus,
+input[type=date]:focus {
+    background: #fff;
+}
+
+/*Header CSS*/
 
 #userMe {
     font-size: 1.4em;
@@ -1369,7 +1399,7 @@ iPhone5: 320px
     .modal-sm {
         min-width: 360px;
     }
-/*
+    /*
     .hide-lg {
         display: none;
     }

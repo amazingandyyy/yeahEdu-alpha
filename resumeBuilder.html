@@ -141,6 +141,7 @@
             width: 100px;
             height: 100px;
             margin: auto;
+									margin-top: 40px;
             font-size: 1.4em;
             font-weight: 100;
             position: relative;
@@ -275,30 +276,30 @@
 
                             <h2>经历列表</h2>
 
-                            <!--
-                                    <table style='width:100%' class='dashboard_table cv_volunteer_table'>
-                                        <tr>
-                                            <th>活动名称</th>
-                                            <th>活动时间</th>
-                                            <th>参与身分</th>
-                                        </tr>
-                                    </table>
--->
 
                             <div class='resume_list'>
-                                <div class='resume_item'>
-                                    <button class='resume_edit_tag' type='button' data-toggle='modal' data-target='#volunteerEventEditter_default'>更新信息</button>
+                               <i class="fa fa-circle-o-notch dashboard_loading"></i>
+<!--
+                                 <div class='resume_item'>
+                                    <button class='resume_edit_tag' type='button' data-toggle='modal' data-target='#volunteerEventeditor_default'>更新信息</button>
                                     <name>活動標題可能會超過30個字</name>
 
                                     <date>2016/02/14</date>
                                     <br>
                                     <location><i class='fa fa-map-marker'></i>&nbsp;Mountain View</location>
                                     <organization><i class='fa fa-university'></i>&nbsp;主辦方全名</organization>
-                                    <participant><i class='fa fa-user'></i>&nbsp;參與身份</participant>
+-->
+																																				<!-- <participant><i class='fa fa-user'></i>&nbsp;參與身份</participant>-->
+<!--
                                     <br>
                                     <description>活動細節日記及工作內農簡短介紹，不可超過500字。</description>
-                                    <!-- start of the editter modal-->
-                                    <div class='modal fade' class='volunteerEventEditter' event-uid='volunteerEventEditter_default' role='dialog' aria-labelledby='myModalLabel'>
+                                    
+-->
+                                    
+                                    
+                                    <!-- start of the editor modal-->
+<!--
+                                    <div class='modal fade' class='volunteerEventeditor' event-uid='volunteerEventeditor_default' role='dialog' aria-labelledby='myModalLabel'>
                                         <div class='modal-dialog modal-lg' role='document'>
                                             <div class='modal-content'>
 
@@ -312,7 +313,9 @@
                                                         <h1><i class='fa fa-hand-peace-o' style='font-size: 2em; color: #34B3A0; margin-bottom: 10px;'></i><br></h1>
                                                     </div>
                                                     <div class='margin20px'></div>
+-->
                                                     <!-- Nav tabs -->
+<!--
                                                     <div class='' id='cv_volunteer_form' style='min-width: 300px'>
                                                         <form class='info-list-form'>
                                                             <div class='row'>
@@ -387,14 +390,14 @@
 
                                             </div>
                                         </div>
-                                    </div><!-- end of the editter modal-->
-                                </div>
+-->
+<!--                                    </div>-->
+                                    <!-- end of the editor modal-->
+<!--                                </div>-->
+                                  
                             </div>
 
 
-
-
-                            <div class='dashboard-more' id='dashboard-more-cv-v'>新增</div>
 
                             <div class='modal fade' id='dashboard-more-trigger-div-cv-v' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
                                 <div class='modal-dialog modal-lg' role='document'>
@@ -448,6 +451,7 @@
                                                         <div class='col-md-6'>
                                                             <div class='row'>
                                                                 <div class='col-md-6'>
+<!--
                                                                     <div class='form-group'>
                                                                         <label for='event_participant'>参与身分</label>
                                                                         <br>
@@ -460,12 +464,15 @@
                                                                             </select>
                                                                         </label>
                                                                     </div>
+-->
                                                                 </div>
                                                                 <div class='col-md-6'>
+<!--
                                                                     <div class='form-group'>
                                                                         <label for='event_doc'>照片/档案</label>
                                                                         <input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>
                                                                     </div>
+-->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -568,9 +575,7 @@
             //            console.log(viewableOffset);
         });
 
-        $('#dashboard-more-cv-v').click(function() {
-									$('#dashboard-more-trigger-div-cv-v').modal('show');
-        });
+        
     </script>
 
 </body>

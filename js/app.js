@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+
 
     $('.navbar-toggle').click(function() {
         $('.menu-box').toggleClass('open');
@@ -48,6 +50,22 @@ $(document).ready(function() {
 
 });
 
+
+function cvVolunteerUpdate2() {
+console.log('dddddfafds');	
+//event.preventDefault()
+//        var event_name = $(this).find('#event_name').val(),
+//            event_location = $(this).find('#event_location').val(),
+//            event_date = $(this).find('#event_date').val(),
+//            event_host = $(this).find('#event_host').val(),
+//            event_participant = $(this).find('#event_participant option:selected').val(),
+//            event_doc = $(this).find('#event_doc').val(),
+//            event_diary = $(this).find('#event_diary').val();
+//								
+//								console.log('volunteerEventeditor clicked');
+//        YE.cvVolunteerUpdate(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
+//        return false;
+};
 
 //here are many function individuals we use in the entire system
 
@@ -126,9 +144,26 @@ function YeahEducation(fbname) {
             });
         console.log('add Volunteer Event:' + newVolunteerEvent.key())
     };
+	
+	this.cvVolunteerUpdate = function(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary) {
+console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
+		//        var authData = firebase.getAuth();
+//        var updateVolunteerEvent = usersRef.child(authData.uid)
+//            .child('Resume')
+//            .child('volunteer')
+//            .update({
+//                event_name: event_name,
+//                event_location: event_location,
+//                event_date: event_date,
+//                event_host: event_host,
+//                event_participant: event_participant,
+//                event_doc: event_doc,
+//                event_diary: event_diary
+//            });
+    };
 
-    this.volunteerEditterClicked = function(volunteerEvent_uid) {
-        console.log('this is the eventEditter of event' + volunteerEvent_uid);
+    this.volunteereditorClicked = function(volunteerEvent_uid) {
+        console.log('this is the eventeditor of event' + volunteerEvent_uid);
         var reume_item_id = "resume_item_" + volunteerEvent_uid;
         console.log(reume_item_id);
 								var authData = firebase.getAuth();
@@ -137,10 +172,10 @@ function YeahEducation(fbname) {
 
 					usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
       var volunteerEventSingleContentItem = snapshot.val();
-										instance.onVolunteerEditter(volunteerEventSingleContentItem);
+										instance.onVolunteereditor(volunteerEventSingleContentItem);
 					});
     }
-
+				
 				//
 //	{event_name: volunteerEventSingleContentItem.event_name,
 //                event_location2: volunteerEventSingleContentItem.event_location,
@@ -221,21 +256,25 @@ $(document).ready(function() {
                 "<br>" +
                 "<location><i class='fa fa-map-marker'></i>&nbsp;" + volunteerEvent.event_location + "</location>" +
                 "<organization><i class='fa fa-university'></i>&nbsp;" + volunteerEvent.event_host + "</organization>" +
-                "<participant><i class='fa fa-user'></i>&nbsp;" + volunteerEvent.event_participant + "</participant>" +
                 "<br>" +
-                "<description>" + volunteerEvent.event_diary + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventEditter_" + volunteerEvent.event_id + "'>更新信息</button>";
+                "<description>" + volunteerEvent.event_diary + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventeditor_" + volunteerEvent.event_id + "'>更新信息</button>";
 
             $('.resume_list').append(volunteerEventElement);
+									
+        });
+					$('.resume_list').append("<div class='dashboard-more' id='dashboard-more-cv-v'>新增</div>");
+					$('#dashboard-more-cv-v').click(function() {
+									$('#dashboard-more-trigger-div-cv-v').modal('show');
         });
         $('.resume_edit_tag').click(function() {
             var event_uid = this.getAttribute('event-uid');
-            YE.volunteerEditterClicked(event_uid);
+            YE.volunteereditorClicked(event_uid);
         });
 
     };
 
-	YE.onVolunteerEditter = function(volunteerEventSingleContent) {
-		var volunteerEditterModals = "<div class='modal fade' class='volunteerEventEditter' id='volunteerEventEditter_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
+	YE.onVolunteereditor = function(volunteerEventSingleContent) {
+		var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
                                             "<div class='modal-content'>"+
                                                 "<div class='modal-body'>"+
@@ -247,8 +286,8 @@ $(document).ready(function() {
                                                         "<h1><i class='fa fa-hand-peace-o' style='font-size: 2em; color: #34B3A0; margin-bottom: 10px;'></i><br></h1>"+
                                                     "</div>"+
                                                     "<div class='margin20px'></div>"+
-                                                    "<div class='' id='cv_volunteer_form_editter' style='min-width: 300px'>"+
-                                                        "<form class='info-list-form'>"+
+                                                    "<div class='' id='cv_volunteer_form_editor' style='min-width: 300px'>"+
+                                                        "<form class='info-list-form' onsubmit='cvVolunteerUpdate2()'>"+
                                                             "<div class='row'>"+
                                                                 "<div class='col-md-6'>"+
                                                                     "<div class='form-group'>"+
@@ -281,24 +320,24 @@ $(document).ready(function() {
                                                                 "<div class='col-md-6'>"+
                                                                     "<div class='row'>"+
                                                                         "<div class='col-md-6'>"+
-                                                                            "<div class='form-group'>"+
-                                                                                "<label for='event_participant'>参与身分</label>"+
-                                                                                "<br>"+
-                                                                                "<label id='label_select'>"+
-                                                                                    "<select id='event_participant event_participant_editter'>"+
-                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
-                                                                                        "<option value='主办者'>主办者</option>"+
-                                                                                        "<option value='小组长'>小组长</option>"+
-                                                                                        "<option value='参与者'>参与者</option>"+
-                                                                                    "</select>"+
-                                                                                "</label>"+
-                                                                            "</div>"+
+//                                                                            "<div class='form-group'>"+
+//                                                                                "<label for='event_participant'>参与身分</label>"+
+//                                                                                "<br>"+
+//                                                                                "<label id='label_select'>"+
+//                                                                                    "<select id='event_participant'>"+
+//                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
+//                                                                                        "<option id='event_participant_editor'	 value='主办者'>主办者</option>"+
+//                                                                                        "<option id='event_participant_editor' value='小组长'>小组长</option>"+
+//                                                                                        "<option id='event_participant_editor' value='参与者'>参与者</option>"+
+//                                                                                    "</select>"+
+//                                                                                "</label>"+
+//                                                                            "</div>"+
                                                                         "</div>"+
                                                                         "<div class='col-md-6'>"+
-                                                                            "<div class='form-group'>"+
-                                                                                "<label for='event_doc'>照片/档案</label>"+
-                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
-                                                                            "</div>"+
+//                                                                            "<div class='form-group'>"+
+//                                                                                "<label for='event_doc'>照片/档案</label>"+
+//                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
+//                                                                            "</div>"+
                                                                         "</div>"+
                                                                     "</div>"+
                                                                 "</div>"+
@@ -317,12 +356,11 @@ $(document).ready(function() {
                                         "</div>"+
                                     "</div>";
 
-		$('.resume_list').append(volunteerEditterModals);
-		 var event_participant = "option[value='"+volunteerEventSingleContent.event_participant+"']";
-//		console.log(event_participant);
-	$("option[value='"+volunteerEventSingleContent.event_participant+"']").prop('disabled', true);;
-
-	}
+		$('.resume_list').append(volunteereditorModals);
+		if($('#event_participant_editor').text() == "小组长"){
+				$(this).prop('selected', true);
+		};
+	};
 
     $('#userlogout').click(function() {
         YE.logout();
@@ -364,12 +402,14 @@ $(document).ready(function() {
             event_participant = $(this).find('#event_participant option:selected').val(),
             event_doc = $(this).find('#event_doc').val(),
             event_diary = $(this).find('#event_diary').val();
-        console.log('ddd');
+					
         YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
-        console.log(event_name, event_location, event_date, event_host, event_participant, event_doc, event_diary);
         $('#cv_volunteer_form').find(':input').val('');
         $('#dashboard-more-trigger-div-cv-v').modal('hide');
         return false;
     });
+	
+
+		
 
 });
