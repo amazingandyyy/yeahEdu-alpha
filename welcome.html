@@ -1,17 +1,135 @@
+<style>
+    .leading-box-container {
+        color: white;
+    }
+    .leading-box-left,
+    .leading-box-right {
+        padding: 70px 20px;
+        width: 100%;
+        background: #000;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        min-height: 350px;
+        
+    }
+    .leading-box-left {
+        background: -webkit-linear-gradient(135deg, #50B584, #34B3A0);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(135deg, #50B584, #34B3A0);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(135deg, #50B584, #34B3A0);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(135deg, #50B584, #34B3A0);
+        /* Standard syntax */
+    }
+    .leading-box-right {
+        background: -webkit-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* Standard syntax */
+    }
+    .leading-intro {
+        font-size: 4em;
+        padding: 10px 10px;
+    }
+    .leading-intro span {
+        font-size: 0.25em;
+        font-weight: 400;
+    }
+    .leading-button {
+        background: white;
+        font-weight: 300;
+        padding: 12px;
+        font-size: 1.15em;
+        margin: 30px 20px 0px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .125s all ease-in-out;
+        transition-delay: .02s;
+        box-shadow: 0px 1px 2px -1px #000;
+    }
+    .leading-button:hover {
+        opacity: 0.75;
+        box-shadow: 0px 1px 20px -10px #000;
+    }
+    .leading-button.leading-button-longtermpackage {
+        background: white;
+        color: #50B584;
+    }
+    .leading-button.leading-button-shorttermpackage {
+        background: white;
+        color: #1699B5;
+    }
+    .leading-introducation H1 {
+        color: #1F2C34;
+        text-align: left;
+        font-size: 1.3em;
+        padding: 0px 15px;
+        font-weight: 300;
+        line-height: 1.8em;
+    }
+    .line {
+        border-radius: 10px;
+        height: 1px;
+        width: 100%;
+        background: #eee;
+        margin: 15px 0px;
+    }
+</style>
+
+
+
 <div id="welcome-page">
     <section class="first-section">
         <div class="section section1">
-            <h3>今年，就一件事！</h3>
-            <h1 class="visible-xs"><span>CC</span>转<span>大U</span></h1>
-            <h1 class="hidden-xs"><span>CC</span>成功转学<span>大U</span></h1>
-            <h2>欧耶全程规划，必须成功</h2>
+            <h3 style='letter-spacing: 2px;'>-&nbsp;2016欧耶全新企划&nbsp;-</h3>
+            <h1 class="visible-xs">社大&nbsp;<span>申请</span></h1>
+            <h1 class="hidden-xs">专注社大&nbsp;<span>转学申请</span></h1>
+            <h2>绝不花俏，只有专业</h2>
         </div>
     </section>
 
+    <section class="section-w"></section>
+    <div class="container" style="max-width: 1000px; padding-bottom: 100px;">
+        <div class="row">
+            <div class="col-sm-6 leading-box-container">
+                <div class="leading-box-left">
+                    <h1 class="leading-title">私人订制长期服务</h1>
+                    <h2 class="leading-intro"><i><span>服务长达<br></span></i>365天*2</h2>
+                    <a href="./longterm.html">
+                        <div class="leading-button leading-button-longtermpackage">了解欧耶旗舰服务！</div>
+                    </a>
+                </div>
+                <hr class="line hidden-xs" />
+                <div class="leading-introducation hidden-xs">
+                    <h1><b>如果你是今年秋季入学的新生，</b>欧耶首创私人订制服务将包含你在社区大学求学间的所有问题，根据你的个性专业与兴趣订制的排课分析、排课／退课战略、学校社团参与、志愿者活动、实习培訓與安排、名校參訪及更多细节。</h1>
+                </div>
+            </div>
+            <div class="col-sm-6 leading-box-container">
+                <div class="leading-box-right">
+                    <h1 class="leading-title">转学申请短期冲刺</h1>
+                    <h2 class="leading-intro"><i><span>服务快达<br></span></i>1周</h2>
+                    <a href="./application.html">
+                        <div class="leading-button leading-button-shorttermpackage">了解各项申请服务！</div>
+                    </a>
+                </div>
+                <hr class="line hidden-xs" />
+                <div class="leading-introducation hidden-xs">
+                    <h1><b>如果你是正在筹备转学申请的学生，</b>欧耶首创将为您提供最专业的转学申请修改及升级，我们的顾问全部是著名企业背景、名校经历、专业英语水平人士，从你特殊的背景及经历，为您深入打造最好的转学敲门砖。</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!--
     <section class="section-w srdz-intro">
         <div class="container">
             <div class="section">
+                <span class='number-tag'></span>
                 <h1>全程私人订制</h1>
                 <h3 class="iphone5">两年：从入学开始，到成功转学</h3>
                 <hr>
@@ -64,6 +182,8 @@
             </div>
         </div>
     </section>
+-->
+    <!--
     <section class="section section-g section-advisor">
         <div class="container">
 
@@ -72,7 +192,7 @@
             <div class="advisor-container">
                 <div class="advisor-container-inner">
                     <div class="row advisor-row">
-                        <!-- Randomly pick up advisors from jSON file-->
+                         Randomly pick up advisors from jSON file
 
                     </div>
 
@@ -83,34 +203,15 @@
             </a>
         </div>
     </section>
+-->
 
+    <!--
     <section class="section-w">
         <div class="container-fluid">
             <div class="section">
                 <h1 data-toggle="modal" data-target=".bs-example-modal-lg">欧耶学员收获</h1>
                 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-
-           <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
+           
            
             </div>
         </div>
@@ -128,7 +229,6 @@
         <button class="btn btn-default" type="button">订阅</button>
       </span>
                         </div>
-                        <!-- /input-group -->
 
                     </form>
                 </div>
@@ -139,4 +239,5 @@
             </div>
         </div>
     </section>
-</div>   
+-->
+</div>

@@ -664,6 +664,7 @@ a:hover {
 }
 .section-w {
     background: white;
+	padding: 50px 0px;
 }
 .section-g {
     background: #E9EAEA;
@@ -691,9 +692,9 @@ color: white;
     background: white;
 }
 .first-section {
-    padding: 10% 0;
+    padding: 1% 0;
     background: white;
-    height: 100vh;
+    height: 50vh;
 }
 .first-section h1 {
     font-size: 6em;
@@ -868,6 +869,10 @@ footer .rights {
     box-shadow: none;
 }
 
+.number-tag {
+	
+}
+
 .dashboard_loading {
 font-size: 2em;
 	animation: loading_spinning 2s linear infinite;
@@ -993,6 +998,23 @@ input[type=date]:focus {
     color: white;
 }
 .navbar-y .nav-brand i {
+    padding: 10px 0px;
+}
+.navbar-y .nav-brand-r {
+    height: 50px;
+    font-size: 2em;
+    line-height: 50px;
+    padding: 2px 20px;
+	cursor: default;
+	
+}
+.navbar-y .nav-brand-r:hover {
+    
+}
+.navbar-y .nav-brand-r:active {
+    
+}
+.navbar-y .nav-brand-r i {
     padding: 10px 0px;
 }
 .navbar-y .nav-list {
