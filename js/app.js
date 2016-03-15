@@ -1,15 +1,12 @@
-
-// Golbal variable and Function
-//				function cvVolunteerUpdate() {
-//				
-//				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
-//       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
-//        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
-//        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
-//        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
-//				console.log(event_name, event_location, event_date, event_host, event_diary);
-//			};
-
+	function cvVolunteerUpdate() {
+//				var	event_name = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_name').val(),
+//       	event_location = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_location').val(),
+//        event_date = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_date').val(),
+//        event_host = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_host').val(),
+//        event_diary = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_diary').val();		
+//				alert(event_name, event_location, event_date, event_host, event_diary);
+		var event_name = getElementsBySelector('.cv_volunteer_form_editor').value;
+			};
 
 $(document).ready(function() {
 	
@@ -50,7 +47,7 @@ $(document).ready(function() {
         for (var i = 6; i < json.length; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
-            html += "<div class='col-xs-12 col-sm-3 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "</p></div></div></div></div></div>";
+            html += "<div class='col-xs-12 col-sm-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "</p></div></div></div></div></div>";
         }
 
         $('.team-row').html(html);
@@ -163,7 +160,7 @@ function YeahEducation(fbname) {
 //                event_participant: volunteerEventSingleContentItem.event_participant,
 //                event_doc: volunteerEventSingleContentItem.event_doc,
 //                event_diary: volunteerEventSingleContentItem.event_diary,
-//																																	event_id: volunteerEventSingleContentItem.event_id}
+//																event_id: volunteerEventSingleContentItem.event_id}
 
 
     // overrideable event functions
@@ -254,15 +251,7 @@ $(document).ready(function() {
 
 	YE.onVolunteereditor = function(volunteerEventSingleContent) {
 		
-		function cvVolunteerUpdate() {
-				
-				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
-       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
-        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
-        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
-        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
-				alert(event_name, event_location, event_date, event_host, event_diary);
-			};
+	
 		
 		var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
@@ -338,7 +327,7 @@ $(document).ready(function() {
                                                                     "</div>"+
                                                                 "</div>"+
                                                             "</div>"+
-                                                            "<button type='submit' class='btn btn-default update'>更新信息</button>"+
+                                                            "<button type='submit' class='btn btn-default'>更新信息</button>"+
                                                         "</form>"+
                                                     "</div>"+
 																																															"</div>"+
