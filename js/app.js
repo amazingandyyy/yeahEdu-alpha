@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> yeah_David
 	function cvVolunteerUpdate() {
 //				var	event_name = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_name').val(),
 //       	event_location = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_location').val(),
@@ -41,13 +45,18 @@ $(document).ready(function() {
         for (var i = 0; i < 6; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
-            html += "<div class='col-xs-12 col-sm-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "</p></div></div></div></div></div>";
+            html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
         }
 
         for (var i = 6; i < json.length; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
+<<<<<<< HEAD
             html += "<div class='col-xs-12 col-sm-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "</p></div></div></div></div></div>";
+=======
+            html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+
+>>>>>>> yeah_David
         }
 
         $('.team-row').html(html);
@@ -251,7 +260,20 @@ $(document).ready(function() {
 
 	YE.onVolunteereditor = function(volunteerEventSingleContent) {
 		
+<<<<<<< HEAD
 	
+=======
+		function cvVolunteerUpdate() {
+				
+				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
+       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
+        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
+        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
+        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
+				alert(event_name, event_location, event_date, event_host, event_diary);
+			};
+
+>>>>>>> yeah_David
 		
 		var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
                                         "<div class='modal-dialog modal-lg' role='document'>"+
