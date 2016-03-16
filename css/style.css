@@ -959,6 +959,18 @@ input[type=date]:focus {
     /* For Firefox 3.6 to 15 */
     background: linear-gradient(135deg, #50B584, #1699B5);
     /* Standard syntax */
+}.section-hero-blue {
+    height: 300PX;
+    background: black;
+    padding-top: 120px;
+    background: -webkit-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(135deg, #4DB6CC, #1699B5);
+        /* Standard syntax */
 }
 .section-hero h1 {
     font-size: 3em;
