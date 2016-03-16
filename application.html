@@ -575,15 +575,6 @@
             //									console.log(parseInt($('.section-hero').css('padding-top'), 10));
 
 
-            var viewableOffset = $('.nav-center-listener').offset().top - st;
-            if (viewableOffset < 51) {
-                $('.nav-center').addClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '75px');
-
-            } else if (viewableOffset > 51) {
-                $('.nav-center').removeClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '30px');
-            };
 
             //            console.log(viewableOffset);
         });
