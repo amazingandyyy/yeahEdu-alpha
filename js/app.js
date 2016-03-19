@@ -1,18 +1,35 @@
+function cvVolunteerUpdate() {
+    //				var	event_name = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_name').val(),
+    //       	event_location = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_location').val(),
+    //        event_date = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_date').val(),
+    //        event_host = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_host').val(),
+    //        event_diary = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_diary').val();		
+    //				alert(event_name, event_location, event_date, event_host, event_diary);
+    var event_name = getElementsBySelector('.cv_volunteer_form_editor').value;
+};
 
-// Golbal variable and Function
-//				function cvVolunteerUpdate() {
-//				
-//				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
-//       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
-//        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
-//        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
-//        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
-//				console.log(event_name, event_location, event_date, event_host, event_diary);
-//			};
+jQuery(document).ready(function() {
+    var offset = 1000;
+    var duration = 300;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(200);
+        } else {
+            jQuery('.back-to-top').fadeOut(200);
+        }
+    });
 
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    })
+});
 
 $(document).ready(function() {
-	
+
 
 
     $('.navbar-toggle').click(function() {
@@ -50,7 +67,9 @@ $(document).ready(function() {
         for (var i = 6; i < json.length; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
+
             html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='fa fa-share teamMember-more' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'></div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+
         }
 
         $('.team-row').html(html);
@@ -127,8 +146,8 @@ function YeahEducation(fbname) {
                 event_location: event_location,
                 event_date: event_date,
                 event_host: event_host,
-//                event_participant: event_participant,
-//                event_doc: event_doc,
+                //                event_participant: event_participant,
+                //                event_doc: event_doc,
                 event_diary: event_diary
             });
         usersRef.child(authData.uid)
@@ -140,30 +159,30 @@ function YeahEducation(fbname) {
             });
         console.log('add Volunteer Event:' + newVolunteerEvent.key())
     };
-	
+
     this.volunteereditorClicked = function(volunteerEvent_uid) {
         console.log('this is the eventeditor of event' + volunteerEvent_uid);
         var reume_item_id = "resume_item_" + volunteerEvent_uid;
         console.log(reume_item_id);
-								var authData = firebase.getAuth();
-								var volunteerEventSingleContent = [];
-//					volunteerEventSingleContent.empty();
+        var authData = firebase.getAuth();
+        var volunteerEventSingleContent = [];
+        //					volunteerEventSingleContent.empty();
 
-					usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
-      var volunteerEventSingleContentItem = snapshot.val();
-										instance.onVolunteereditor(volunteerEventSingleContentItem);
-					});
+        usersRef.child(authData.uid).child('Resume').child('volunteer').child(volunteerEvent_uid).once('value', function(snapshot) {
+            var volunteerEventSingleContentItem = snapshot.val();
+            instance.onVolunteereditor(volunteerEventSingleContentItem);
+        });
     }
-				
-				//
-//	{event_name: volunteerEventSingleContentItem.event_name,
-//                event_location2: volunteerEventSingleContentItem.event_location,
-//                event_date: volunteerEventSingleContentItem.event_date,
-//                event_host: volunteerEventSingleContentItem.event_host,
-//                event_participant: volunteerEventSingleContentItem.event_participant,
-//                event_doc: volunteerEventSingleContentItem.event_doc,
-//                event_diary: volunteerEventSingleContentItem.event_diary,
-//																																	event_id: volunteerEventSingleContentItem.event_id}
+
+    //
+    //	{event_name: volunteerEventSingleContentItem.event_name,
+    //                event_location2: volunteerEventSingleContentItem.event_location,
+    //                event_date: volunteerEventSingleContentItem.event_date,
+    //                event_host: volunteerEventSingleContentItem.event_host,
+    //                event_participant: volunteerEventSingleContentItem.event_participant,
+    //                event_doc: volunteerEventSingleContentItem.event_doc,
+    //                event_diary: volunteerEventSingleContentItem.event_diary,
+    //																event_id: volunteerEventSingleContentItem.event_id}
 
 
     // overrideable event functions
@@ -239,11 +258,11 @@ $(document).ready(function() {
                 "<description>" + volunteerEvent.event_diary + "</description>" + "<button class='resume_edit_tag' event-uid='" + volunteerEvent.event_id + "' data-toggle='modal' data-target='#volunteerEventeditor_" + volunteerEvent.event_id + "'>更新信息</button>";
 
             $('.resume_list').append(volunteerEventElement);
-									
+
         });
-					$('.resume_list').append("<div class='dashboard-more' id='dashboard-more-cv-v'>新增</div>");
-					$('#dashboard-more-cv-v').click(function() {
-									$('#dashboard-more-trigger-div-cv-v').modal('show');
+        $('.resume_list').append("<div class='dashboard-more' id='dashboard-more-cv-v'>新增</div>");
+        $('#dashboard-more-cv-v').click(function() {
+            $('#dashboard-more-trigger-div-cv-v').modal('show');
         });
         $('.resume_edit_tag').click(function() {
             var event_uid = this.getAttribute('event-uid');
@@ -252,107 +271,107 @@ $(document).ready(function() {
 
     };
 
-	YE.onVolunteereditor = function(volunteerEventSingleContent) {
-		
-		function cvVolunteerUpdate() {
-				
-				var	event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
-       	event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
-        event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
-        event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
-        event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();		
-				alert(event_name, event_location, event_date, event_host, event_diary);
-			};
-		
-		var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_"+volunteerEventSingleContent.event_id+"' role='dialog' aria-labelledby='myModalLabel'>"+
-                                        "<div class='modal-dialog modal-lg' role='document'>"+
-                                            "<div class='modal-content'>"+
-                                                "<div class='modal-body'>"+
-                                                    "<button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>"+
-                                                        "<span></span><span></span>"+
-                                                    "</button>"+
-                                                    "<br>"+
-                                                    "<div class='logForm-logo'>"+
-                                                        "<h1><i class='fa fa-hand-peace-o' style='font-size: 2em; color: #34B3A0; margin-bottom: 10px;'></i><br></h1>"+
-                                                    "</div>"+
-                                                    "<div class='margin20px'></div>"+
-                                                    "<div class='' id='cv_volunteer_form_editor' style='min-width: 300px'>"+
-                                                        "<form class='info-list-form' onsubmit='cvVolunteerUpdate()'>"+
-                                                            "<div class='row'>"+
-                                                                "<div class='col-md-6'>"+
-                                                                    "<div class='form-group'>"+
-                                                                        "<label for='event_name'>活动名称</label>"+
-                                                                        "<input type='text' class='form-control' id='event_name' placeholder='活动名称' value='"+volunteerEventSingleContent.event_name+"'>"+
-                                                                    "</div>"+
-                                                                "</div>"+
-                                                                "<div class='col-md-6'>"+
-                                                                    "<div class='row'>"+
-                                                                        "<div class='col-md-6'>"+
-                                                                            "<div class='form-group'>"+
-                                                                                "<label for='event_date'>服务日期(mm/dd/yyyy)</label>"+
-                                                                                "<input type='date' class='form-control' id='event_date' value='"+volunteerEventSingleContent.event_date+"'/>"+
-                                                                            "</div>"+
-                                                                        "</div>"+
-                                                                        "<div class='col-md-6'>"+
-                                                                            "<div class='form-group'>"+
-                                                                                "<label for='event_location'>服务地点</label>"+
-                                                                                "<input type='text' class='form-control' id='event_location' placeholder='服务地点' value='"+volunteerEventSingleContent.event_location+"'/>"+
-                                                                            "</div>"+
-                                                                        "</div>"+
-                                                                    "</div>"+
-                                                                "</div>"+
-                                                                "<div class='col-md-6'>"+
-                                                                    "<div class='form-group'>"+
-                                                                        "<label for='event_host'>主办方</label>"+
-                                                                        "<input type='text' class='form-control' id='event_host' placeholder='Organization Oficial Full Name' value='"+volunteerEventSingleContent.event_host+"'>"+
-                                                                    "</div>"+
-                                                                "</div>"+
-                                                                "<div class='col-md-6'>"+
-                                                                    "<div class='row'>"+
-                                                                        "<div class='col-md-6'>"+
-//                                                                            "<div class='form-group'>"+
-//                                                                                "<label for='event_participant'>参与身分</label>"+
-//                                                                                "<br>"+
-//                                                                                "<label id='label_select'>"+
-//                                                                                    "<select id='event_participant'>"+
-//                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
-//                                                                                        "<option id='event_participant_editor'	 value='主办者'>主办者</option>"+
-//                                                                                        "<option id='event_participant_editor' value='小组长'>小组长</option>"+
-//                                                                                        "<option id='event_participant_editor' value='参与者'>参与者</option>"+
-//                                                                                    "</select>"+
-//                                                                                "</label>"+
-//                                                                            "</div>"+
-                                                                        "</div>"+
-                                                                        "<div class='col-md-6'>"+
-//                                                                            "<div class='form-group'>"+
-//                                                                                "<label for='event_doc'>照片/档案</label>"+
-//                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
-//                                                                            "</div>"+
-                                                                        "</div>"+
-                                                                    "</div>"+
-                                                                "</div>"+
-                                                                "<div class='col-md-12'>"+
-                                                                    "<div class='form-group'>"+
-                                                                        "<label for='event_diary'>活动描述/日记</label>"+
-                                                                        "<textarea type='text' class='form-control' id='event_diary' placeholder='DVC, Foothill College...' rows='6' cols='50'>'"+volunteerEventSingleContent.event_diary+"'</textarea>"+
-                                                                    "</div>"+
-                                                                "</div>"+
-                                                            "</div>"+
-                                                            "<button type='submit' class='btn btn-default update'>更新信息</button>"+
-                                                        "</form>"+
-                                                    "</div>"+
-																																															"</div>"+
-                                            "</div>"+
-                                        "</div>"+
-                                    "</div>";
+    YE.onVolunteereditor = function(volunteerEventSingleContent) {
 
-				$('.resume_list').append(volunteereditorModals);
-				if($('#event_participant_editor').text() == "小组长"){
-						$(this).prop('selected', true);
-				};
-		
-				
-	};
+        function cvVolunteerUpdate() {
+
+            var event_name = $("cv_volunteer_form_editor").find('#event_name').val(),
+                event_location = $("cv_volunteer_form_editor").find('#event_location').val(),
+                event_date = $("cv_volunteer_form_editor").find('#event_date').val(),
+                event_host = $("cv_volunteer_form_editor").find('#event_host').val(),
+                event_diary = $("cv_volunteer_form_editor").find('#event_diary').val();
+            alert(event_name, event_location, event_date, event_host, event_diary);
+        };
+
+        var volunteereditorModals = "<div class='modal fade' class='volunteerEventeditor' id='volunteerEventeditor_" + volunteerEventSingleContent.event_id + "' role='dialog' aria-labelledby='myModalLabel'>" +
+            "<div class='modal-dialog modal-lg' role='document'>" +
+            "<div class='modal-content'>" +
+            "<div class='modal-body'>" +
+            "<button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'>" +
+            "<span></span><span></span>" +
+            "</button>" +
+            "<br>" +
+            "<div class='logForm-logo'>" +
+            "<h1><i class='fa fa-hand-peace-o' style='font-size: 2em; color: #34B3A0; margin-bottom: 10px;'></i><br></h1>" +
+            "</div>" +
+            "<div class='margin20px'></div>" +
+            "<div class='' id='cv_volunteer_form_editor' style='min-width: 300px'>" +
+            "<form class='info-list-form' onsubmit='cvVolunteerUpdate()'>" +
+            "<div class='row'>" +
+            "<div class='col-md-6'>" +
+            "<div class='form-group'>" +
+            "<label for='event_name'>活动名称</label>" +
+            "<input type='text' class='form-control' id='event_name' placeholder='活动名称' value='" + volunteerEventSingleContent.event_name + "'>" +
+            "</div>" +
+            "</div>" +
+            "<div class='col-md-6'>" +
+            "<div class='row'>" +
+            "<div class='col-md-6'>" +
+            "<div class='form-group'>" +
+            "<label for='event_date'>服务日期(mm/dd/yyyy)</label>" +
+            "<input type='date' class='form-control' id='event_date' value='" + volunteerEventSingleContent.event_date + "'/>" +
+            "</div>" +
+            "</div>" +
+            "<div class='col-md-6'>" +
+            "<div class='form-group'>" +
+            "<label for='event_location'>服务地点</label>" +
+            "<input type='text' class='form-control' id='event_location' placeholder='服务地点' value='" + volunteerEventSingleContent.event_location + "'/>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "<div class='col-md-6'>" +
+            "<div class='form-group'>" +
+            "<label for='event_host'>主办方</label>" +
+            "<input type='text' class='form-control' id='event_host' placeholder='Organization Oficial Full Name' value='" + volunteerEventSingleContent.event_host + "'>" +
+            "</div>" +
+            "</div>" +
+            "<div class='col-md-6'>" +
+            "<div class='row'>" +
+            "<div class='col-md-6'>" +
+        //                                                                            "<div class='form-group'>"+
+        //                                                                                "<label for='event_participant'>参与身分</label>"+
+        //                                                                                "<br>"+
+        //                                                                                "<label id='label_select'>"+
+        //                                                                                    "<select id='event_participant'>"+
+        //                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
+        //                                                                                        "<option id='event_participant_editor'	 value='主办者'>主办者</option>"+
+        //                                                                                        "<option id='event_participant_editor' value='小组长'>小组长</option>"+
+        //                                                                                        "<option id='event_participant_editor' value='参与者'>参与者</option>"+
+        //                                                                                    "</select>"+
+        //                                                                                "</label>"+
+        //                                                                            "</div>"+
+        "</div>" +
+            "<div class='col-md-6'>" +
+        //                                                                            "<div class='form-group'>"+
+        //                                                                                "<label for='event_doc'>照片/档案</label>"+
+        //                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
+        //                                                                            "</div>"+
+        "</div>" +
+            "</div>" +
+            "</div>" +
+            "<div class='col-md-12'>" +
+            "<div class='form-group'>" +
+            "<label for='event_diary'>活动描述/日记</label>" +
+            "<textarea type='text' class='form-control' id='event_diary' placeholder='DVC, Foothill College...' rows='6' cols='50'>'" + volunteerEventSingleContent.event_diary + "'</textarea>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "<button type='submit' class='btn btn-default'>更新信息</button>" +
+            "</form>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
+
+        $('.resume_list').append(volunteereditorModals);
+        if ($('#event_participant_editor').text() == "小组长") {
+            $(this).prop('selected', true);
+        };
+
+
+    };
 
     $('#userlogout').click(function() {
         YE.logout();
@@ -391,17 +410,17 @@ $(document).ready(function() {
             event_location = $(this).find('#event_location').val(),
             event_date = $(this).find('#event_date').val(),
             event_host = $(this).find('#event_host').val(),
-//            event_participant = $(this).find('#event_participant option:selected').val(),
-//            event_doc = $(this).find('#event_doc').val(),
+            //            event_participant = $(this).find('#event_participant option:selected').val(),
+            //            event_doc = $(this).find('#event_doc').val(),
             event_diary = $(this).find('#event_diary').val();
-					console.log('ssss');
+        console.log('ssss');
         YE.cvVolunteerPost(event_name, event_location, event_date, event_host, event_diary);
         $('#cv_volunteer_form').find(':input').val('');
         $('#dashboard-more-trigger-div-cv-v').modal('hide');
         return false;
     });
-	
 
-		
+
+
 
 });

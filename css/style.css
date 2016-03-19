@@ -664,6 +664,7 @@ a:hover {
 }
 .section-w {
     background: white;
+    padding: 50px 0px;
 }
 .section-g {
     background: #E9EAEA;
@@ -691,9 +692,9 @@ color: white;
     background: white;
 }
 .first-section {
-    padding: 10% 0;
+    padding: 1% 0;
     background: white;
-    height: 100vh;
+    height: 50vh;
 }
 .first-section h1 {
     font-size: 6em;
@@ -842,10 +843,13 @@ footer .qrcode {
 }
 footer .rights {
     color: rgba(250, 250, 250, 0.5);
-    font-size: 0.7em;
+    font-size: 1em;
     letter-spacing: 0.3px;
-    font-weight: 500;
+    font-weight: 300;
     text-align: center;
+}
+footer .rights hr {
+	opacity: 0.5;
 }
 .subcription {
     padding-top: 10px;
@@ -867,37 +871,31 @@ footer .rights {
     border: 1px solid rgba(255, 255, 255, 1);
     box-shadow: none;
 }
-
-.dashboard_loading {
-font-size: 2em;
-	animation: loading_spinning 2s linear infinite;
+.number-tag {} .dashboard_loading {
+    font-size: 2em;
+    animation: loading_spinning 2s linear infinite;
 }
-
 @keyframes loading_spinning {
-	 0% {
-    	transform: rotate(0deg)
-
-  }
-  100% {
-    	transform: rotate(360deg)
-
-  }
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
 }
-
 input[type=text],
 textarea[type=text],
 input[type=date] {
     background: #F6F6F6
 }
-
 input[type=text]:active,
 textarea[type=text]:active,
-input[type=date]:active,input[type=text]:focus,
+input[type=date]:active,
+input[type=text]:focus,
 textarea[type=text]:focus,
 input[type=date]:focus {
     background: #fff;
 }
-
 /*Header CSS*/
 
 #userMe {
@@ -955,12 +953,44 @@ input[type=date]:focus {
     background: linear-gradient(135deg, #50B584, #1699B5);
     /* Standard syntax */
 }
+.section-hero-blue {
+    height: 300PX;
+    background: black;
+    padding-top: 120px;
+    background: -webkit-linear-gradient(135deg, #4DB6CC, #1699B5);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(135deg, #4DB6CC, #1699B5);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(135deg, #4DB6CC, #1699B5);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(135deg, #4DB6CC, #1699B5);
+    /* Standard syntax */
+}
 .section-hero h1 {
     font-size: 3em;
 }
 #loginForm input {
     margin: auto;
 }
+
+.back-to-top {
+				background-color: rgba(44,44,44,0.1);
+				border-radius: 4px;
+				height:50px;
+				width:50px;
+				position: fixed;
+				bottom: 100px;
+				right: 30px;
+				transition:all .2s ease-in-out;
+				color: white;
+				font-size: 1.2em;
+				font-weight: 300;
+				line-height: 51px;
+				z-index: 99;
+			}
+			.back-to-top:hover {
+				background-color: rgba(44,44,44,0.6);
+			}
 /*navbar-y*/
 
 .navbar-y {
@@ -993,6 +1023,16 @@ input[type=date]:focus {
     color: white;
 }
 .navbar-y .nav-brand i {
+    padding: 10px 0px;
+}
+.navbar-y .nav-brand-r {
+    height: 50px;
+    font-size: 2em;
+    line-height: 50px;
+    padding: 2px 20px;
+    cursor: default;
+}
+.navbar-y .nav-brand-r:hover {} .navbar-y .nav-brand-r:active {} .navbar-y .nav-brand-r i {
     padding: 10px 0px;
 }
 .navbar-y .nav-list {

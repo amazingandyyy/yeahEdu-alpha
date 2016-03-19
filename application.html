@@ -1,0 +1,705 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='shortcut icon' href='css/images/logo.ico' type='image/x-icon' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
+    <!-- Google Font -> Lato -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <title>欧耶教育 专注CC转学</title>
+    <!-- CDN -> Bootstrap -->
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='css/font-awesome.css'>
+    <!-- Link external style.css -->
+    <link rel='stylesheet' href='css/style.css'>
+    <!-- CDN -> Animate.css -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css'>
+    <!-- CDN -> Swiper.css -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css'>
+    <!--    CDN -> Boostrap Datapicker.js-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.min.css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
+        queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+    <!--[if lt IE 9]>
+            <script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
+            <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
+        <![endif]-->
+    <style>
+        /* The CSS */
+        select {
+            display: block;
+            height: 40px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #686868;
+            font-weight: 400;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            padding-right: 18px
+        }
+        #label_select {
+            position: relative;
+            color: #686868;
+        }
+        .mobile-container {
+            min-width: 530px;
+            height: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0, 95);
+            margin: auto;
+        }
+        .nav-center {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            box-shadow: -28px 0 7px -7px #fff inset;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+        }
+        .nav-center-sticky {
+            position: fixed;
+            top: 50px;
+            left: 0px;
+            z-index: 98;
+            width: 100%
+        }
+        .card-normal {
+            background: rgba(246, 246, 246, 1);
+            padding: 20px 15px 45px 15px;
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0s;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+        .section-cv {
+            padding-top: 30px;
+        }
+        .dashboard_table {
+            margin: 30px 0px;
+            border: 1px solid #34B3A0;
+        }
+        .dashboard_table th {
+            background: #34B3A0;
+            padding: 10px 30px;
+            color: white;
+            font-weight: 100;
+        }
+        .dashboard_table td {
+            padding: 15px 30px;
+        }
+        .dashboard_table tr:nth-child(odd) {
+            background: #F6F6F6;
+        }
+        .section-setting h2 {
+            border: 0px solid;
+            padding: 10px;
+            font-size: 1.4em;
+            border-radius: 0px;
+            color: #1F2C34;
+            font-weight: 900;
+            width: 150px;
+        }
+        .dashboard_card.card_small {
+            text-align: left;
+            padding: 10px 15px;
+        }
+        .dashboard_card.card_small h1 {
+            text-transform: none;
+            letter-spacing: 1px;
+            font-size: 1.5em;
+        }
+        .dashboard_table tr th:nth-child(1),
+        .dashboard_table tr th:nth-child(2) {
+            min-width: 0px;
+        }
+        .dashboard-more {
+            border: 1px solid;
+            line-height: 100px;
+            text-transform: capitalize;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 40px;
+            font-size: 1.4em;
+            font-weight: 100;
+            position: relative;
+            cursor: pointer;
+            transition: background .2s ease-in-out;
+            overflow: hidden;
+        }
+        .dashboard-more::after {
+            background: red;
+            z-index: 1;
+            /*									  content: '';*/
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            top: 45%;
+            left: 45%;
+            position: absolute;
+        }
+        .dashboard-more:hover {
+            background: #1F4059;
+            color: white;
+            transition: all .2s ease-in-out;
+        }
+        .dashboard-more:active {
+            background: #1F4059;
+            color: white;
+            transform: scale(0.9);
+            transition: all .2s ease-in-out;
+        }
+        #dashboard-more-trigger-div {
+            display: none;
+        }
+        .resume_list {
+            padding: 5px 5px;
+        }
+        .resume_item {
+            border-radius: 5px;
+            background: rgba(246, 246, 246, 1);
+            padding: 20px;
+            margin: 10px 0px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .resume_item:hover {
+            box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
+        }
+        .resume_item name {
+            display: inline-block;
+            color: #1F2C34;
+            font-weight: 600;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            margin: 3px 0px;
+        }
+        .resume_item date {
+            font-size: 1em;
+            line-height: 30px;
+        }
+        .resume_item description {
+            font-weight: 300;
+            color: #999;
+        }
+        .resume_item date {
+            display: inline-block;
+            float: right;
+        }
+        .resume_item location,
+        .resume_item participant,
+        .resume_item organization {
+            display: inline-block;
+            margin: 5px 25px 8px 0px;
+        }
+        .tab-vertical li {
+            display: block;
+        }
+        .resume_edit_tag {
+            position: absolute;
+            right: -1px;
+            bottom: 0px;
+            color: white;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .section-hero {
+            position: relative;
+        }
+        .background-bubble {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .sub-service-container {
+            padding: 15px;
+        }
+        .sub-service {
+            transition: .125s all ease-in-out;
+            padding: 10px;
+            border-radius: 4px;
+            margin: auto;
+        }
+        .fadein {
+            display: none;
+        }
+        .sub-service img {
+            cursor: pointer;
+            transition: .125s all ease-in-out;
+            transition-delay: .02s;
+            height: 80px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .sub-service img:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .sub-service h1 {
+            font-size: 1.4em;
+            font-weight: 600;
+            text-align: center;
+            line-height: 27.5px;
+            cursor: default;
+        }
+        /*
+        .sub-service:nth-child(10) {
+            border: 1px solid #000;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+        .sub-service img {
+            height: 80px;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            opacity: 0;
+        }
+        .sub-service.popup img:hover {
+            opacity: 1;
+									transform: scale(1.1);
+        }
+        .sub-service h1 {
+            font-size: 0.5em;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+        .sub-service.popup img {
+            height: 80px;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            opacity: 0.75;
+        }
+        .sub-service.popup h1 {
+            font-size: 1.4em;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+*/
+        .service_container {
+            text-align: left;
+            padding: 120px 10px 0px 10px;
+            background: #fff;
+            position: relative;
+            max-width: 650px;
+            margin: auto;
+        }
+        .service_heading_img_text {
+            position: absolute;
+            left: 0px;
+            top: 65px;
+        }
+        .service_heading_img_text img {
+            height: 60px;
+            float: left;
+            transform: rotate(-5deg);
+        }
+        .service_heading_img_text h1 {
+            float: left;
+            line-height: 55px;
+            font-size: 1.3em;
+            padding-left: 10px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+        }
+        .service_introduction p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: 500;
+            line-height: 1.8em;
+            text-align: justify;
+            color: #686868;
+        }
+        .service_pricing .price_table_container {
+            padding: 0px;
+        }
+        .service_pricing .price_table {
+            background: #fff;
+            border: 0px solid black;
+            padding: 0px;
+            border-radius: 0px;
+        }
+        .table-cell {
+            min-height: 66px;
+            margin: 0px 2px;
+									position: relative;
+        }
+        .table-cell.table-cell-grey {
+            background-color: #f7f9fa;
+        }
+        .table-cell-checked {
+            background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/562132baf554c39f7d195108_check-mark.svg");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+        .table-cell-null {
+            background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/56204acc6ff16b855d74bd8e_dash%402x.png");
+            background-position: 50% 50%;
+            background-size: 18px;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+					.table-cell .table-cell-leading-text {
+						font-weight: 500;
+						display: inline-block;
+						position: absolute;
+						left: 5px;
+						line-height: 66px;
+						padding-left: 15px;
+						font-size: 1.1em;
+						letter-spacing: 0.6px;
+						color: rgba(32,42,52,0.6);
+					}
+					.table-cell.table-cell-service-title {
+					font-weight: 600;
+						font-size: 1.4em;
+					}
+    </style>
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+    <!-- Include all compiled plugins (below), or include individual
+        files as needed -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+    <!-- jQuery UI -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+    <!-- link to local app.js -->
+    <script src='js/app.js'></script>
+
+    <header></header>
+    <section class='section section-w section-setting'>
+        <div class='section-hero section-hero-blue' style="height: 400px;">
+            <span class='background-bubble'></span>
+            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>申请冲刺</span></h1>
+            <h1 style='margin-bottom: 40px; font-weight: 300; font-size: 2.4em; color: white; text-align: center;'>两篇自传<span style='font-weight: 300;'>及经历表格</span></h1>
+        </div>
+
+        <div class="container" style="max-width: 900px; padding: 30px;">
+            <div class="section section-w hidden-sm hidden-xs">
+                <div class="row">
+                    <div class="col-sm-4 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text1">
+                                <img src="css/icons/faq.svg" title="背景了解规划" class="fadein" />
+                                <h1 class="">背景了解规划</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text2">
+                                <img src="css/icons/fine_print.svg" title="深度素材挖掘" class="fadein" />
+                                <h1 class="">深度素材挖掘</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text3">
+                                <img src="css/icons/online_support.svg" title="1对1视讯探讨" class="fadein" />
+                                <h1 class="">1对1视讯探讨</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text4">
+                                <img src="css/icons/data_backup.svg" title="文书提升润色" class="fadein" />
+                                <h1 class="">文书提升润色</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text5">
+                                <img src="css/icons/todo_list.svg" title="申请表格指导" class="fadein" />
+                                <h1 class="">申请表格指导</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text6">
+                                <img src="css/icons/inspection.svg" title="总监终审" class="fadein" />
+                                <h1 class="">总监终审</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text8">
+                                <img src="css/icons/privacy.svg" title="Admission团队终审" class="fadein" />
+                                <h1 class="">实战模拟审核</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin50px"></div>
+                <div class="margin20px"></div>
+                <hr />
+            </div>
+            <div class="section section-w" style="padding-top: 0px;">
+                <div class="service_container" id="service_heading_img_text1">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/faq.svg" title="背景了解规划" class="">
+                            <h1>背景了解规划</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                好的开始是成功的一半。一份成功的申请，要从了解过去与规划未来开始。你与欧耶的初见，我们用理性的分析、精准的定位，为迷茫的你点亮指路的明灯，带你拨开迷雾遇见希望的曙光。我们用专业的态度、细致的规划，为你开启通向Dream School的大门，带你迈出成功第一步。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text2">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/fine_print.svg" title="背景了解规划" class="">
+                            <h1>深度素材挖掘</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                从你选择欧耶的那一刻起，你便成为我们诚心相交的挚友。我们敞开心扉，了解你过去的点滴经历，探索你意想不到的独特素材。也许，你本以为自己是无数繁星中毫不起眼的一颗，注定被其它的光芒淹没。而我们，将用深度挖掘提取你与众不同的亮点，让你散发出不能被忽视的星光。从这里开始，让我们化身为另一个你，来一场独一无二的心灵对话，一段前所未有的发现之旅。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text3">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/online_support.svg" title="背景了解规划" class="">
+                            <h1>1对1视讯探讨</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                我们的专业，你的信赖。欧耶的资深导师将给你带来最丰富的转学经验、最独到的申请阅历、最前沿的一手资讯和全方位的升学指导。我们顶尖的1对1顾问将成为你申请文书中最重要的导航指南，通过与你循序渐进的私人交流，最深入地了解你的性格特点，多角度地展开你的课内课外经历，挖掘你特别的闪光点。并把你认为可能微不足道的细节，打造成文书中独具匠心的亮点，铸就最贴近你的创新文书，照亮你转学升学的重要人生旅程，与你乘风破浪，助你到达理想彼岸。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text4">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/data_backup.svg" title="背景了解规划" class="">
+                            <h1>文书提升润色</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                我们的耐心，你的放心。文书，是申请官了解你的最重要途径。我们绝不生搬硬套写作模板，也绝不按寻常套路出牌。我们的目标是树立每一位客户的独特风格，让你的文书做到绝无仅有，独领风骚，成为进击理想学府的敲门砖。我们不仅会从内容、结构、语法入手，还将从学校角度和申请官角度来为你做最全面稳妥的分析。我们专业导师的精心润色将给你的文书带来质的飞跃，助你的申请完成蜕变，为你的成功转学增添筹码。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text5">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/todo_list.svg" title="背景了解规划" class="">
+                            <h1>申请表格指导</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                我们的经验，你的方便。转学申请表格里有大大小小100+个填空，就算你是没有任何经验的雏鹰，你也可以对UC Application，Common Application信手拈来，因为我们会成为你最强大的后盾。欧耶智囊团将耐心详尽地为你解答各种有关申请表格的问题，在最有限的字符内展现出你最丰富的经历，避免填写误区，顺畅且高效地完成申请表的填写，专心于完成文书和学业的任务，成为你一飞冲天的助推器。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text6">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/inspection.svg" title="背景了解规划" class="">
+                            <h1>总监终审</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                信任，是你给予我们最大的成就，而我们将倾尽所能给予你100%的回报。欧耶钻石总监全程的保驾护航将为你的申请旅程增添想象不到的色彩。作为欧耶资格最老并拥有王牌秘籍的导师总监，他将为你近乎完美的文书再铸造星级的光芒。从你签下合同直到提交申请，他将倾尽全力为你打造专属的私人申请，让你享有欧耶最顶级的星级服务。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service_container" id="service_heading_img_text8">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/privacy.svg" title="背景了解规划" class="">
+                            <h1>实战模拟审核</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                你猜，这世界上比钻石还珍贵的东西是什么？是欧耶的真心。除了钻石总监给予你专属的贴身服务之外，旗舰VIP服务还将为你诚意配备欧耶王牌团队的终极审核！ 欧耶王牌团队由4位最顶尖的资深导师所组成，我们将模拟大学招生官对你的申请进行最终的评估和审核，在争论与探讨中进一步雕琢完善你的申请。钻石总监+王牌团队，让你的Dream School触手可及。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="container service_pricing" style="max-width: 1000px">
+            <div class="section section-w">
+                <div class="row">
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                           <div class="table-cell"></div>
+                            <div class="table-cell"></div>
+                            <div class="table-cell table-cell-grey">
+                            	<p class="table-cell-leading-text">背景了解规划</p>
+                            </div>
+                            <div class="table-cell">
+                            	<p class="table-cell-leading-text">深度素材挖掘</p>
+                            </div>
+                            <div class="table-cell table-cell-grey">
+                            	<p class="table-cell-leading-text">1对1视讯探讨</p>
+                            </div>
+                            <div class="table-cell ">
+                            	<p class="table-cell-leading-text">文书提升润色</p>
+                            </div>
+                            <div class="table-cell table-cell-grey">
+                            	<p class="table-cell-leading-text">申请表格指导</p>
+                            </div>
+                            <div class="table-cell">
+                            	<p class="table-cell-leading-text">总监终审</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                           <div class="table-cell table-cell-service-title" style="color: #2fc2a2;">精品臻享包</div>
+                            <div class="table-cell table-cell-service-target">其他UC申请<br>(不包含UCB/UCLA)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-null"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-null"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                           <div class="table-cell table-cell-service-title" style="color: #3b67b3;">私人尊享包</div>
+                            <div class="table-cell table-cell-service-target">UCB/UCLA申请<br>(不包含Haas)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-null"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                           <div class="table-cell table-cell-service-title" style="color: #1ec4d6;">钻石级包</div>
+                            <div class="table-cell table-cell-service-target">顶级私校申请<br>(包括Haas)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer></footer>
+    <!-- link to firebase -->
+    <script src='https://cdn.firebase.com/js/client/2.3.2/firebase.js'></script>
+    <!-- Swiper JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js'></script>
+    <!--		Boostrap Datapicker.js		-->
+    <scrip src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js'></scrip>
+    <!-- Boostrap Motionjs for Datapicker.js   -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js'></script>
+    <!-- Boostrap fileupload -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js'></script>
+
+    <script>
+        $('header').load('../header.html', function() {
+            $.getScript('js/userLogSystem.js');
+            return false;
+        });
+
+        $('footer').load('../footer.html');
+
+        $('input:file').filestyle({
+            input: false,
+            iconName: 'fa fa-file-image-o'
+        });
+
+        $('.buttonText').css('color', '#686868');
+        $('.icon-span-filestyle').css('color', '#686868');
+
+        $(window).on('scroll', function() {
+            var st = $(this).scrollTop();
+            var fontSize = $('.section-hero').find('h1').css('font-size');
+
+            $('.section-hero-blue').find('h1').css({
+                'opacity': (1 - st / 100),
+                //                'font-size': (4 - st / 10 + 1) + 'em'
+            });
+            if (st < 130) {
+                $('.section-hero-blue').css({
+                    'padding-top': (120 + st * 2) + 'px',
+                    //                'font-size': (4 - st / 10 + 1) + 'em'
+                });
+            }
+            //									console.log(fontSize);
+            //									console.log(st);
+            //									console.log(parseInt($('.section-hero').css('padding-top'), 10));
+
+
+
+            //            console.log(viewableOffset);
+        });
+
+        $(document).ready(function() {
+            $('.fadein').each(function() {
+                $(this).fadeIn(Math.random() * 2000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

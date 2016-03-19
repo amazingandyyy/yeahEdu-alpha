@@ -1,0 +1,401 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='shortcut icon' href='css/images/logo.ico' type='image/x-icon' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
+    <!-- Google Font -> Lato -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <title>欧耶教育 专注CC转学</title>
+    <!-- CDN -> Bootstrap -->
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='css/font-awesome.css'>
+    <!-- Link external style.css -->
+    <link rel='stylesheet' href='css/style.css'>
+    <!-- CDN -> Animate.css -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css'>
+    <!-- CDN -> Swiper.css -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css'>
+    <!--    CDN -> Boostrap Datapicker.js-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.min.css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
+        queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+    <!--[if lt IE 9]>
+            <script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
+            <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
+        <![endif]-->
+    <style>
+        /* The CSS */
+        select {
+            display: block;
+            height: 40px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #686868;
+            font-weight: 400;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            padding-right: 18px
+        }
+        #label_select {
+            position: relative;
+            color: #686868;
+        }
+        .mobile-container {
+            min-width: 530px;
+            height: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0, 95);
+            margin: auto;
+        }
+        .nav-center {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            box-shadow: -28px 0 7px -7px #fff inset;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+        }
+        .nav-center-sticky {
+            position: fixed;
+            top: 50px;
+            left: 0px;
+            z-index: 98;
+            width: 100%
+        }
+        .card-normal {
+            background: rgba(246, 246, 246, 1);
+            padding: 20px 15px 45px 15px;
+            border-radius: 7px;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            transition-delay: 0s;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+        .section-cv {
+            padding-top: 30px;
+        }
+        .dashboard_table {
+            margin: 30px 0px;
+            border: 1px solid #34B3A0;
+        }
+        .dashboard_table th {
+            background: #34B3A0;
+            padding: 10px 30px;
+            color: white;
+            font-weight: 100;
+        }
+        .dashboard_table td {
+            padding: 15px 30px;
+        }
+        .dashboard_table tr:nth-child(odd) {
+            background: #F6F6F6;
+        }
+        .section-setting h2 {
+            border: 0px solid;
+            padding: 10px;
+            font-size: 1.4em;
+            border-radius: 0px;
+            color: #1F2C34;
+            font-weight: 900;
+            width: 150px;
+        }
+        .dashboard_card.card_small {
+            text-align: left;
+            padding: 10px 15px;
+        }
+        .dashboard_card.card_small h1 {
+            text-transform: none;
+            letter-spacing: 1px;
+            font-size: 1.5em;
+        }
+        .dashboard_table tr th:nth-child(1),
+        .dashboard_table tr th:nth-child(2) {
+            min-width: 0px;
+        }
+        .dashboard-more {
+            border: 1px solid;
+            line-height: 100px;
+            text-transform: capitalize;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 40px;
+            font-size: 1.4em;
+            font-weight: 100;
+            position: relative;
+            cursor: pointer;
+            transition: background .2s ease-in-out;
+            overflow: hidden;
+        }
+        .dashboard-more::after {
+            background: red;
+            z-index: 1;
+            /*									  content: '';*/
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            top: 45%;
+            left: 45%;
+            position: absolute;
+        }
+        .dashboard-more:hover {
+            background: #1F4059;
+            color: white;
+            transition: all .2s ease-in-out;
+        }
+        .dashboard-more:active {
+            background: #1F4059;
+            color: white;
+            transform: scale(0.9);
+            transition: all .2s ease-in-out;
+        }
+        #dashboard-more-trigger-div {
+            display: none;
+        }
+        .resume_list {
+            padding: 5px 5px;
+        }
+        .resume_item {
+            border-radius: 5px;
+            background: rgba(246, 246, 246, 1);
+            padding: 20px;
+            margin: 10px 0px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .resume_item:hover {
+            box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
+        }
+        .resume_item name {
+            display: inline-block;
+            color: #1F2C34;
+            font-weight: 600;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            margin: 3px 0px;
+        }
+        .resume_item date {
+            font-size: 1em;
+            line-height: 30px;
+        }
+        .resume_item description {
+            font-weight: 300;
+            color: #999;
+        }
+        .resume_item date {
+            display: inline-block;
+            float: right;
+        }
+        .resume_item location,
+        .resume_item participant,
+        .resume_item organization {
+            display: inline-block;
+            margin: 5px 25px 8px 0px;
+        }
+        .tab-vertical li {
+            display: block;
+        }
+        .resume_edit_tag {
+            position: absolute;
+            right: -1px;
+            bottom: 0px;
+            color: white;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .section-hero {
+            position: relative;
+        }
+        .background-bubble {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .sub-service-container {
+            padding: 15px;
+        }
+        .sub-service1 {
+            padding: 10px;
+            box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            margin: auto;
+        }
+        .sub-service img {
+            cursor: pointer;
+            transition: .125s all ease-in-out;
+            transition-delay: .02s;
+										max-height: 100px;
+        }
+					.sub-service h1 {
+            font-size: 2em;
+						
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+    <!-- Include all compiled plugins (below), or include individual
+        files as needed -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+    <!-- jQuery UI -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+    <!-- link to local app.js -->
+    <script src='js/app.js'></script>
+
+    <header></header>
+    <section class='section section-w section-setting'>
+        <div class='section-hero' style="height: 400px;">
+            <span class='background-bubble'></span>
+            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>私人订制</span></h1>
+            <h1 style='margin-bottom: 40px; font-weight: 300; font-size: 2.4em; color: white; text-align: center;'>面面俱到<span style='font-weight: 300;'>，订制经历</span></h1>
+        </div>
+
+        <div class="container" style="max-width: 900px; padding: 30px;">
+            <div class="section section-w">
+                <div class="row">
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>背景了解规划</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>深度素材挖掘</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>1对1视讯探讨</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>文书提升润色</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>申请表格指导</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>总监终审</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>总监全程打造</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sub-service-container">
+                        <div class="sub-service">
+                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
+                            <h1>Admission团队终审</h1>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer></footer>
+    <!-- link to firebase -->
+    <script src='https://cdn.firebase.com/js/client/2.3.2/firebase.js'></script>
+    <!-- Swiper JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js'></script>
+    <!--		Boostrap Datapicker.js		-->
+    <scrip src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js'></scrip>
+    <!-- Boostrap Motionjs for Datapicker.js   -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js'></script>
+    <!-- Boostrap fileupload -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js'></script>
+
+    <script>
+        $('header').load('../header.html', function() {
+            $.getScript('js/userLogSystem.js');
+            return false;
+        });
+
+        $('footer').load('../footer.html');
+
+        $('input:file').filestyle({
+            input: false,
+            iconName: 'fa fa-file-image-o'
+        });
+
+        $('.buttonText').css('color', '#686868');
+        $('.icon-span-filestyle').css('color', '#686868');
+
+        $(window).on('scroll', function() {
+            var st = $(this).scrollTop();
+            var fontSize = $('.section-hero').find('h1').css('font-size');
+
+            $('.section-hero').find('h1').css({
+                'opacity': (1 - st / 100),
+                //                'font-size': (4 - st / 10 + 1) + 'em'
+            });
+            if (st < 100) {
+                $('.section-hero').css({
+                    'padding-top': (140 + st) + 'px',
+                    //                'font-size': (4 - st / 10 + 1) + 'em'
+                });
+            }
+            //									console.log(fontSize);
+            //									console.log(st);
+            //									console.log(parseInt($('.section-hero').css('padding-top'), 10));
+
+
+            var viewableOffset = $('.nav-center-listener').offset().top - st;
+            if (viewableOffset < 51) {
+                $('.nav-center').addClass('nav-center-sticky');
+                $('.section-cv').css('padding-top', '75px');
+
+            } else if (viewableOffset > 51) {
+                $('.nav-center').removeClass('nav-center-sticky');
+                $('.section-cv').css('padding-top', '30px');
+            };
+
+            //            console.log(viewableOffset);
+        });
+    </script>
+
+</body>
+
+</html>
