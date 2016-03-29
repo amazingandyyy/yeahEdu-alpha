@@ -966,6 +966,19 @@ input[type=date]:focus {
     background: linear-gradient(135deg, #4DB6CC, #1699B5);
     /* Standard syntax */
 }
+.section-hero-green {
+    height: 300PX;
+    background: black;
+    padding-top: 90px;
+    background: -webkit-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(135deg, #50B584, #34B3A0);
+    /* Standard syntax */
+}
 .section-hero h1 {
     font-size: 3em;
 }
