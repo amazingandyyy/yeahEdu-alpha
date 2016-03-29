@@ -403,13 +403,25 @@
             font-size: 1.3em;
             font-weight: 600;
         }
+					.section-timeline {
+						padding-top: 100px;
+					}
         .section-timeline .timeline-bubble {
-            background: rgba(0, 0, 0, 1);
+                background: rgba(246, 246, 246, 1);
             padding: 20px;
-									min-height: 200px;
+            min-height: 100px;
             position: relative;
             margin: 15px;
             border-radius: 4px;
+									margin-top: -40px;
+        }
+					.section-timeline .timeline-bubble:hover {
+						background: black;
+					}
+					
+        .section-timeline .timeline-bubble-white {
+            background: rgba(246, 246, 246, 1);;
+            min-height: 20px;
         }
         .section-timeline .timeline-bubble div {
             background: rgba(0, 0, 0, 0.2);
@@ -420,7 +432,7 @@
             width: 30px;
             height: 30px;
             background: none;
-									color: black;
+            color: rgba(246, 246, 246, 1);;
         }
         .section-timeline .timeline-bubble.timeline-bubble-right .array {
             right: -20px;
@@ -458,6 +470,9 @@
             z-index: 99;
             border-radius: 20px;
         }
+        .col-sm-6 {
+            border: 1px solid black;
+        }
     </style>
 </head>
 
@@ -487,13 +502,13 @@
         <div class="container">
             <div class="section section-w section-timeline">
                 <div class="row">
-                   <div class="col-sm-6"></div>
+                    <div class="col-sm-6"></div>
                     <div class="col-sm-6">
                         <div class="timeline-bubble timeline-bubble-left">
                             <div class="array">
                                 <div class="dot"></div>
                             </div>
-                            testingggg rr
+                            testingggg 2
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -501,11 +516,29 @@
                             <div class="array">
                                 <div class="dot"></div>
                             </div>
-                            testingggg ll
+                            testingggg 1
                         </div>
                     </div>
+                    <div class="col-sm-6">a</div>
+                </div> <div class="row">
                     <div class="col-sm-6"></div>
-                    
+                    <div class="col-sm-6">
+                        <div class="timeline-bubble timeline-bubble-left">
+                            <div class="array">
+                                <div class="dot"></div>
+                            </div>
+                            testingggg 2
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="timeline-bubble timeline-bubble-right">
+                            <div class="array">
+                                <div class="dot"></div>
+                            </div>
+                            testingggg 1
+                        </div>
+                    </div>
+                    <div class="col-sm-6">a</div>
                 </div>
             </div>
         </div>

@@ -1377,6 +1377,7 @@ iPhone5: 320px
     .section-hero h1 {
         font-size: 2em;
     }
+	
 }
 @media (max-width: 375px) {
     /*	iphone 6 */
@@ -1450,6 +1451,7 @@ iPhone5: 320px
     .dropdown-menu {
         left: 0%;
     }
+	
 }
 /* Medium devices (desktops, 992px and up) */
 
