@@ -403,75 +403,111 @@
             font-size: 1.3em;
             font-weight: 600;
         }
-					.section-timeline {
-						padding-top: 100px;
-					}
-        .section-timeline .timeline-bubble {
-                background: rgba(246, 246, 246, 1);
-            padding: 20px;
-            min-height: 100px;
-            position: relative;
-            margin: 15px;
-            border-radius: 4px;
-									margin-top: -40px;
+        .section-timeline {
+            padding-top: 50px;
         }
-					.section-timeline .timeline-bubble:hover {
-						background: black;
-					}
-					
-        .section-timeline .timeline-bubble-white {
-            background: rgba(246, 246, 246, 1);;
-            min-height: 20px;
+        .section-timeline .timeline {
+            margin: auto;
+            width: 90px;
+            height: 50%;
+            background: #E9E9E9;
+            border-radius: 5px;
         }
-        .section-timeline .timeline-bubble div {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .section-timeline .timeline-bubble .array {
-            position: absolute;
-            top: 20px;
-            width: 30px;
-            height: 30px;
-            background: none;
-            color: rgba(246, 246, 246, 1);;
-        }
-        .section-timeline .timeline-bubble.timeline-bubble-right .array {
-            right: -20px;
-            width: 0;
-            height: 0;
-            transform: rotate(180deg);
-            border-radius: 0px;
-            border-top: 15px solid transparent;
-            border-right: 25px solid;
-            border-bottom: 15px solid transparent;
-        }
-        .section-timeline .timeline-bubble.timeline-bubble-right .array .dot {
-            height: 13px;
-            width: 13px;
-            position: absolute;
-            top: -6.5;
-            right: 3.5px;
-            z-index: 99;
-            border-radius: 20px;
-        }
-        .section-timeline .timeline-bubble.timeline-bubble-left .array {
-            left: -20px;
-            width: 0;
-            height: 0;
-            border-top: 15px solid transparent;
-            border-right: 25px solid;
-            border-bottom: 15px solid transparent;
-        }
-        .section-timeline .timeline-bubble.timeline-bubble-left .array .dot {
-            height: 13px;
-            width: 13px;
-            position: absolute;
-            top: -6.1;
-            left: -16;
-            z-index: 99;
-            border-radius: 20px;
-        }
-        .col-sm-6 {
+        .section-timeline .timeline .timeline-section {
+            margin: auto;
+            width: 90px;
+            padding: 50px 30px;
+            font-size: 1.3em;
             border: 1px solid black;
+            background: #E9E9E9;
+            border-radius: 5px;
+        }
+        .section-timeline .badge {
+            padding: 15px 10px;
+            display: block;
+            margin: 10px;
+            max-width: 250px;
+            font-size: 1.2em;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+        .section-timeline .timeline_green {
+            background: rgba(12, 141, 122, 1);
+            ;
+        }
+        .section-timeline .timeline_red {
+            background: rgba(226, 0, 28, 0.7);
+        }
+        .section-timeline .timeline_blue {
+            background: rgba(22, 153, 181, 0.7);
+        }
+        .section-timeline .timeline_grey {
+            background: rgba(233, 233, 233, 1);
+        }
+        .section-timeline .item {
+            padding: 18px 30px;
+            color: white;
+            text-align: left;
+            border-radius: 5px;
+            left: 10px;
+            z-index: 90;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        .section-timeline .item:after2 {
+            position: absolute;
+            height: 42.5px;
+            width: 42.5px;
+            border-radius: 3px;
+            transform: rotate(45deg);
+            background: inherit;
+            content: '';
+            left: -19px;
+            top: 8px;
+            z-index: 10;
+        }
+        .section-timeline .item .dot1 {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            border: 2px solid white;
+            background: black;
+            position: absolute;
+            display: inline-block;
+            left: -64px;
+        }
+        .section-timeline .item_left {
+            padding: 18px 30px;
+            color: white;
+            text-align: left;
+            border-radius: 5px;
+            position: absolute;
+            right: 10px;
+            z-index: 90;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        .section-timeline .item_left:after {
+            position: absolute;
+            height: 42.5px;
+            width: 42.5px;
+            border-radius: 3px;
+            transform: rotate(45deg);
+            background: inherit;
+            content: '';
+            right: -19px;
+            top: 8px;
+            z-index: 10;
+        }
+        .section-timeline .item_left .dot1 {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            border: 2px solid white;
+            background: black;
+            position: absolute;
+            display: inline-block;
+            right: -64px;
         }
     </style>
 </head>
@@ -502,44 +538,36 @@
         <div class="container">
             <div class="section section-w section-timeline">
                 <div class="row">
-                    <div class="col-sm-6"></div>
-                    <div class="col-sm-6">
-                        <div class="timeline-bubble timeline-bubble-left">
-                            <div class="array">
-                                <div class="dot"></div>
-                            </div>
-                            testingggg 2
+                    <div class="col-sm-5" style="border: 1px solid black">
+                        <div class="item_left timeline_grey">
+                            <div class="dot"></div>
+                            <div>选专业</div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="timeline-bubble timeline-bubble-right">
-                            <div class="array">
-                                <div class="dot"></div>
-                            </div>
-                            testingggg 1
-                        </div>
+                    <div class="col-sm-2" style="border: 1px solid black">
+                        <!--                        <div class="timeline">-->
+                        <!--
+                            <div class="timeline-section">新生入学</div>
+                            <div class="timeline-section">社大一年</div>
+                            <div class="timeline-section">申请季</div>
+                            <div class="timeline-section">申请后</div>
+                            <div class="timeline-section">录取后</div>
+-->
+                        <!--                        </div>-->
                     </div>
-                    <div class="col-sm-6">a</div>
-                </div> <div class="row">
-                    <div class="col-sm-6"></div>
-                    <div class="col-sm-6">
-                        <div class="timeline-bubble timeline-bubble-left">
-                            <div class="array">
+                    <div class="col-sm-5" style="border: 1px solid black">
+                        <ul>
+                            <li class="item timeline_green">
                                 <div class="dot"></div>
-                            </div>
-                            testingggg 2
-                        </div>
+                                <div>选择专业</div>
+                            </li>
+                        </ul>
+
+
+
                     </div>
-                    <div class="col-sm-6">
-                        <div class="timeline-bubble timeline-bubble-right">
-                            <div class="array">
-                                <div class="dot"></div>
-                            </div>
-                            testingggg 1
-                        </div>
-                    </div>
-                    <div class="col-sm-6">a</div>
                 </div>
+
             </div>
         </div>
 
