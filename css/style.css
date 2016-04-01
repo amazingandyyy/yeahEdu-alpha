@@ -1329,6 +1329,10 @@ button:active {
 .tabs-advanced {
     border: none;
 }
+
+a:-webkit-any-link {
+		text-decoration: none;
+}
 /* the end of customizing Moal*/
 
 /* Extra small devices (phones, less than 768px) */

@@ -311,8 +311,9 @@
         }
 */
         .service_container {
+									
             text-align: left;
-            padding: 120px 10px 0px 10px;
+            padding: 80px 10px 0px 10px;
             background: #fff;
             position: relative;
             max-width: 650px;
@@ -321,7 +322,8 @@
         .service_heading_img_text {
             position: absolute;
             left: 0px;
-            top: 65px;
+            top: 150px;
+
         }
         .service_heading_img_text img {
             height: 60px;
@@ -337,7 +339,7 @@
             font-weight: 400;
         }
         .service_introduction p {
-            margin-top: 20px;
+            margin-top: 150px;
             font-size: 1.2em;
             font-weight: 500;
             line-height: 1.8em;
@@ -497,30 +499,14 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!--
-                    <div class="col-sm-3 sub-service-container fadein">
-                        <div class="sub-service ">
-                            <a href="#service_heading_img_text8">
-                                <img src="css/icons/privacy.svg" title="Admission团队终审" class="fadein" />
-                                <h1 class="">实战模拟审核</h1>
-                            </a>
-                        </div>
-                    </div>
--->
+                       
                             </div>
                             <div class="margin50px"></div>
                             <div class="margin20px"></div>
                             <hr />
                         </div>
                         <div class="section section-w" style="padding-top: 0px;">
-                            <div class="service_container" id="service_heading_img_text1">
-                                <div class="row">
-                                    <div class="col-sm-3">
-<!--                                        <div class="badge-y">服务特色介绍</div>-->
-                                    </div>
-                                    <div class="col-sm-9"></div>
-                                </div>
-                            </div>
+                         
                             <div class="service_container" id="service_heading_img_text1">
                                 <div class="row">
                                     <div class="service_heading_img_text">
@@ -600,21 +586,6 @@
                                 </div>
                             </div>
 
-                            <!--
-                <div class="service_container" id="service_heading_img_text8">
-                    <div class="row">
-                        <div class="service_heading_img_text">
-                            <img src="css/icons/privacy.svg" title="背景了解规划" class="">
-                            <h1>实战模拟审核</h1>
-                        </div>
-                        <div class="col-sm-12 service_introduction">
-                            <p>
-                                你猜，这世界上比钻石还珍贵的东西是什么？是欧耶的真心。除了钻石总监给予你专属的贴身服务之外，旗舰VIP服务还将为你诚意配备欧耶王牌团队的终极审核！ 欧耶王牌团队由4位最顶尖的资深导师所组成，我们将模拟大学招生官对你的申请进行最终的评估和审核，在争论与探讨中进一步雕琢完善你的申请。钻石总监+王牌团队，让你的Dream School触手可及。
-                            </p>
-                        </div>
-                    </div>
-                </div>
--->
 
                         </div>
 
@@ -730,7 +701,9 @@
             return false;
         });
 
-        $('footer').load('../footer.html');
+        $('footer').load('../footer.html', function() {
+            $.getScript('js/app.js');
+        });
 
         $('input:file').filestyle({
             input: false,

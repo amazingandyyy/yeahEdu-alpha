@@ -850,7 +850,9 @@
             return false;
         });
 
-        $('footer').load('../footer.html');
+        $('footer').load('../footer.html', function() {
+            $.getScript('js/app.js');
+        });
 
         $('input:file').filestyle({
             input: false,

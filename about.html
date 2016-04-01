@@ -99,6 +99,7 @@
      .card-teamMember:hover .profile-img.profile-img-teamMember img{
      -webkit-filter: grayscale(0%);
             filter: grayscale(0%);
+						opacity: 0.9;
      }
      
         .teamMember-more {
@@ -113,7 +114,8 @@
             color: white;
             overflow: scroll;
             opacity: 0;
-            padding: 5px;
+            padding: 4px;
+									font-size: 0.9em;
             -webkit-transition: .2s ease-in-out;
             -moz-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
@@ -123,7 +125,7 @@
         .card-teamMember:hover .teamMember-more {
             opacity: 1;
             height: 25px;
-            width: 25px;
+            width: 75px;
             bottom: 2%;
             right: 2%;
             transition-delay: 0s;
@@ -148,15 +150,17 @@
         .profile-img.profile-img-teamMember img {
             height: 101%;
             width: 101%;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
             opacity: 0.98;
+									
         }
         .section-teamMember .profile-img {
             border-radius: 60%;
             margin: auto;
             text-align: center;
             overflow: hidden;
+									border: 5px solid white;
         }
         
     </style>
