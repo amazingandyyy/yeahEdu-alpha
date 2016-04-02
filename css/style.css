@@ -23,6 +23,7 @@ html {
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    -ms-overflow-style: -ms-autohiding-scrollscrollbar;
 }
 /**
  * Remove default margin.
@@ -849,7 +850,7 @@ footer .rights {
     text-align: center;
 }
 footer .rights hr {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 .subcription {
     padding-top: 10px;
@@ -956,7 +957,7 @@ input[type=date]:focus {
 .section-hero-blue {
     height: 300PX;
     background: black;
-    padding-top: 120px;
+    padding-top: 90px;
     background: -webkit-linear-gradient(135deg, #4DB6CC, #1699B5);
     /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(135deg, #4DB6CC, #1699B5);
@@ -966,31 +967,43 @@ input[type=date]:focus {
     background: linear-gradient(135deg, #4DB6CC, #1699B5);
     /* Standard syntax */
 }
+.section-hero-green {
+    height: 300PX;
+    background: black;
+    padding-top: 90px;
+    background: -webkit-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(135deg, #50B584, #34B3A0);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(135deg, #50B584, #34B3A0);
+    /* Standard syntax */
+}
 .section-hero h1 {
     font-size: 3em;
 }
 #loginForm input {
     margin: auto;
 }
-
 .back-to-top {
-				background-color: rgba(44,44,44,0.1);
-				border-radius: 4px;
-				height:50px;
-				width:50px;
-				position: fixed;
-				bottom: 100px;
-				right: 30px;
-				transition:all .2s ease-in-out;
-				color: white;
-				font-size: 1.2em;
-				font-weight: 300;
-				line-height: 51px;
-				z-index: 99;
-			}
-			.back-to-top:hover {
-				background-color: rgba(44,44,44,0.6);
-			}
+    background-color: rgba(44, 44, 44, 0.1);
+    border-radius: 4px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    transition: all .2s ease-in-out;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 51px;
+    z-index: 99;
+}
+.back-to-top:hover {
+    background-color: rgba(44, 44, 44, 0.6);
+}
 /*navbar-y*/
 
 .navbar-y {
@@ -1054,6 +1067,13 @@ input[type=date]:focus {
     transition: color .2s ease-in-out, background .3s ease-in-out;
     background: rgba(12, 141, 122, 0.08);
 }
+.navbar-y .nav-list .nav-list-item.active {
+    color: #34B3A0;
+    font-weight: 700;
+    transition: color .2s ease-in-out, background .3s ease-in-out;
+    background: rgba(12, 141, 122, 0.08);
+    box-shadow: inset 0px -2px 0px 0px #34B3A0;
+}
 .navbar-y .nav-log {
     height: 50px;
     line-height: 50px;
@@ -1074,12 +1094,41 @@ input[type=date]:focus {
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
     white-space: nowrap;
     position: relative;
+}
+.mobile-container-outter::-webkit-scrollbar {
+    width: 0 !important
 }
 .mobile-container-inner {
     width: 420px;
     margin: auto;
+}
+.mobile-container {
+    min-width: 350px;
+    height: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0, 95);
+    margin: auto;
+}
+.nav-center {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -28px 0 7px -7px #fff inset;
+    white-space: nowrap;
+}
+.nav-center::-webkit-scrollbar {
+    width: 0 !important
+}
+.nav-center-sticky {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    z-index: 98;
+    width: 100%
 }
 #userlog-y {
     cursor: pointer;
@@ -1309,6 +1358,9 @@ button:active {
 }
 .tabs-advanced {
     border: none;
+}
+a:-webkit-any-link {
+    text-decoration: none;
 }
 /* the end of customizing Moal*/
 

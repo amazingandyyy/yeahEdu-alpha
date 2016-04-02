@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
     <!-- Google Font -> Lato -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-    <title>欧耶教育 专注CC转学</title>
+    <title>欧耶教育-助跑计画</title>
     <!-- CDN -> Bootstrap -->
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' rel='stylesheet'>
     <!-- Font Awesome -->
@@ -20,6 +20,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css'>
     <!--    CDN -> Boostrap Datapicker.js-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.min.css'>
+    <script src="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js"></script>
+    <script src="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.ui.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
         queries -->
@@ -237,21 +239,275 @@
         .sub-service-container {
             padding: 15px;
         }
-        .sub-service1 {
+        .sub-service {
+            transition: .125s all ease-in-out;
             padding: 10px;
-            box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.5);
             border-radius: 4px;
             margin: auto;
+        }
+        .fadein {
+            display: none;
         }
         .sub-service img {
             cursor: pointer;
             transition: .125s all ease-in-out;
             transition-delay: .02s;
-										max-height: 100px;
+            height: 80px;
+            margin-bottom: 10px;
+            opacity: 0.8;
         }
-					.sub-service h1 {
-            font-size: 2em;
-						
+        .sub-service img:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .sub-service h1 {
+            font-size: 1.3em;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0px;
+            line-height: 27.5px;
+            cursor: default;
+        }
+        /*
+        .sub-service:nth-child(10) {
+            border: 1px solid #000;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+        .sub-service img {
+            height: 80px;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            opacity: 0;
+        }
+        .sub-service.popup img:hover {
+            opacity: 1;
+									transform: scale(1.1);
+        }
+        .sub-service h1 {
+            font-size: 0.5em;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+        .sub-service.popup img {
+            height: 80px;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            opacity: 0.75;
+        }
+        .sub-service.popup h1 {
+            font-size: 1.4em;
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+        }
+*/
+        .service_container {
+            text-align: left;
+            padding: 120px 10px 0px 10px;
+            background: #fff;
+            position: relative;
+            max-width: 650px;
+            margin: auto;
+        }
+        .service_heading_img_text {
+            position: absolute;
+            left: 0px;
+            top: 65px;
+        }
+        .service_heading_img_text img {
+            height: 60px;
+            float: left;
+            transform: rotate(0deg);
+        }
+        .service_heading_img_text h1 {
+            float: left;
+            line-height: 55px;
+            font-size: 1.3em;
+            padding-left: 10px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+        }
+        .service_introduction p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: 500;
+            line-height: 1.8em;
+            text-align: justify;
+            color: #686868;
+        }
+        .service_pricing .price_table_container {
+            padding: 0px;
+        }
+        .service_pricing .price_table {
+            background: #fff;
+            border: 0px solid black;
+            padding: 0px;
+            border-radius: 0px;
+        }
+        .table-cell {
+            min-height: 66px;
+            margin: 0px 2px;
+            position: relative;
+        }
+        .table-cell.table-cell-grey {
+            background-color: #f7f9fa;
+        }
+        .table-cell-checked {
+            background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/562132baf554c39f7d195108_check-mark.svg");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+        .table-cell-null {
+            background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/56204acc6ff16b855d74bd8e_dash%402x.png");
+            background-position: 50% 50%;
+            background-size: 18px;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+        .table-cell .table-cell-leading-text {
+            font-weight: 500;
+            display: inline-block;
+            position: absolute;
+            left: 5px;
+            top: 26px;
+            /*						line-height: 66px;*/
+            padding-left: 15px;
+            font-size: 1.1em;
+            letter-spacing: 0.6px;
+            color: rgba(32, 42, 52, 0.6);
+        }
+        .table-cell.table-cell-service-title {
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+        .badge-y {
+            text-align: left;
+            float: left;
+            height: 50px;
+            margin: 30px -30px;
+            padding: 10px 20px;
+            background: #FFD521;
+            color: #1F4056;
+            line-height: 30px;
+            box-shadow: 5px 5px 0px 0px #1F4056;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        .section-timeline {
+            padding-top: 50px;
+        }
+        .section-timeline .timeline {
+            margin: auto;
+            width: 90px;
+            height: 50%;
+            background: #E9E9E9;
+            border-radius: 5px;
+        }
+        .section-timeline .timeline .timeline-section {
+            margin: auto;
+            width: 90px;
+            padding: 50px 30px;
+            font-size: 1.3em;
+            border: 1px solid black;
+            background: #E9E9E9;
+            border-radius: 5px;
+        }
+        .section-timeline .badge {
+            padding: 15px 10px;
+            display: block;
+            margin: 10px;
+            max-width: 250px;
+            font-size: 1.2em;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+        .section-timeline .timeline_green {
+            background: rgba(12, 141, 122, 1);
+            ;
+        }
+        .section-timeline .timeline_red {
+            background: rgba(226, 0, 28, 0.7);
+        }
+        .section-timeline .timeline_blue {
+            background: rgba(22, 153, 181, 0.7);
+        }
+        .section-timeline .timeline_grey {
+            background: rgba(233, 233, 233, 1);
+        }
+        .section-timeline .item {
+            padding: 18px 30px;
+            color: white;
+            text-align: left;
+            border-radius: 5px;
+            left: 10px;
+            z-index: 90;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        .section-timeline .item:after2 {
+            position: absolute;
+            height: 42.5px;
+            width: 42.5px;
+            border-radius: 3px;
+            transform: rotate(45deg);
+            background: inherit;
+            content: '';
+            left: -19px;
+            top: 8px;
+            z-index: 10;
+        }
+        .section-timeline .item .dot1 {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            border: 2px solid white;
+            background: black;
+            position: absolute;
+            display: inline-block;
+            left: -64px;
+        }
+        .section-timeline .item_left {
+            padding: 18px 30px;
+            color: white;
+            text-align: left;
+            border-radius: 5px;
+            position: absolute;
+            right: 10px;
+            z-index: 90;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        .section-timeline .item_left:after {
+            position: absolute;
+            height: 42.5px;
+            width: 42.5px;
+            border-radius: 3px;
+            transform: rotate(45deg);
+            background: inherit;
+            content: '';
+            right: -19px;
+            top: 8px;
+            z-index: 10;
+        }
+        .section-timeline .item_left .dot1 {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            border: 2px solid white;
+            background: black;
+            position: absolute;
+            display: inline-block;
+            right: -64px;
         }
     </style>
 </head>
@@ -269,68 +525,308 @@
 
     <header></header>
     <section class='section section-w section-setting'>
-        <div class='section-hero' style="height: 400px;">
+        <div class='section-hero section-hero-green' style="height: 400px;">
             <span class='background-bubble'></span>
-            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>私人订制</span></h1>
-            <h1 style='margin-bottom: 40px; font-weight: 300; font-size: 2.4em; color: white; text-align: center;'>面面俱到<span style='font-weight: 300;'>，订制经历</span></h1>
+            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>助跑计画</span></h1>
+            <h1 style='margin-bottom: 40px; line-height: 1.4em; font-weight: 300; font-size: 1.7em; color: white; text-align: center;'>
+            	社区大学转是一场长跑比赛<br>
+												欧耶教育独家企划，量身订做<br>
+													提前与持续的规划助你转学成功！
+            </h1>
         </div>
 
-        <div class="container" style="max-width: 900px; padding: 30px;">
+        <div class="container">
+            <div class="section section-w section-timeline">
+                <div class="row">
+                    <div class="col-sm-5" style="border: 1px solid black">
+                        <div class="item_left timeline_grey">
+                            <div class="dot"></div>
+                            <div>选专业</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="border: 1px solid black">
+                        <!--                        <div class="timeline">-->
+                        <!--
+                            <div class="timeline-section">新生入学</div>
+                            <div class="timeline-section">社大一年</div>
+                            <div class="timeline-section">申请季</div>
+                            <div class="timeline-section">申请后</div>
+                            <div class="timeline-section">录取后</div>
+-->
+                        <!--                        </div>-->
+                    </div>
+                    <div class="col-sm-5" style="border: 1px solid black">
+                        <ul>
+                            <li class="item timeline_green">
+                                <div class="dot"></div>
+                                <div>选择专业</div>
+                            </li>
+                        </ul>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container" style="padding: 30px;">
+            <div class="section section-w hidden-sm hidden-xs">
+                <div class="row">
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text1">
+                                <img src="css/icons/genealogy.svg" title="选课无忧安心过" class="fadein" />
+                                <h1 class="">选课无忧安心过</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text2">
+                                <img src="css/icons/timeline.svg" title="完美排课不是祸" class="fadein" />
+                                <h1 class="">完美排课不是祸</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text3">
+                                <img src="css/icons/conference_call.svg" title="领导能力有保障" class="fadein" />
+                                <h1 class="">领导能力有保障</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text4">
+                                <img src="css/icons/approve.svg" title="志工服务不惆怅" class="fadein" />
+                                <h1 class="">志工服务不惆怅</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text5">
+                                <img src="css/icons/reading.svg" title="免费辅导少不了" class="fadein" />
+                                <h1 class="">学科辅导少不了</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text6">
+                                <img src="css/icons/diploma_1.svg" title="职场培训知多少" class="fadein" />
+                                <h1 class="">职场培训知多少</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-sm-3 sub-service-container fadein">
+                        <div class="sub-service ">
+                            <a href="#service_heading_img_text8">
+                                <img src="css/icons/privacy.svg" title="Admission团队终审" class="fadein" />
+                                <h1 class="">实战模拟审核</h1>
+                            </a>
+                        </div>
+                    </div>
+-->
+                </div>
+                <div class="margin50px"></div>
+                <div class="margin20px"></div>
+                <hr />
+            </div>
+            <div class="section section-w" style="padding-top: 0px;">
+                <div class="service_container" id="service_heading_img_text1">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="badge-y">服务特色介绍</div>
+                        </div>
+                        <div class="col-sm-9"></div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text1">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/genealogy.svg" title="选课无忧安心过" class="">
+                            <h1>选课无忧安心过</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                选课就好比一场永无硝烟的战争。幸运的您，从此开始蹲课生涯。不幸的您，也许连张入场券都。好的教授（兽），前途无限（希望渺茫）。不一样的教授，成就不一样的您。而欧耶为你们全面剖析每一位教授的教学特点。各大学长学姐的世代A+秘籍等着你。 欧耶愿意携手与您共同抗战，熬过艰辛。您，不再需要担心与A无缘。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text2">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/timeline.svg" title="完美排课不是祸" class="">
+                            <h1>完美排课不是祸</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                完美排课让你CC两年不用愁！ 如果说，选课是CC生涯的第一个台阶，那么排课就好比楼梯的扶手，贯穿整条通往天堂的阶梯。 无论是热门还是冷门的专业，欧耶都能为您安排完美的CC课程。不闲不忙、充实过好每一天。不论两年、还是三年，带领你实现转学梦、走向未来、走向成功 。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text3">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/conference_call.svg" title="社团活动有保障" class="">
+                            <h1>社团活动有保障</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                慢着！没有好的领导能力，如何打进世界顶级学校？ 面对社团里仅有的几个职位、数十个的候选人。如何可以突显自己、成为无数颗星星中最闪烁的一颗？ 别担心！找欧耶、欧耶让您放心！ 我们拥有全套竞选、面试技巧。随着我们的帮助，您必定得心应手、胸有成竹、万无一失。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text4">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/approve.svg" title="志工服务不惆怅" class="">
+                            <h1>志工服务不惆怅</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                还怕联系不到义工服务？还怕没有义工证明？还怕找不到与专业相关的义工活动...... 欧耶拥有强大的义工互联网，数十份义工服务项目、每周的时间保障、只等着您的参与！无穷无尽、不怕没有、唯恐太多！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text5">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/reading.svg" title="学科辅导少不了" class="">
+                            <h1>学科辅导少不了</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                英文不是第一语言？作文毫无头绪？数学百试无解？书读百遍，可其意还是不现……怎么办？ 没关系！欧耶的私人定制服务中还包含了20小时的免费、专业、精品1对1课程辅导。 手把手辅导、各大学科任你选！线上线下全方位！省钱省力又省心！ GPA ！4.0？Piece of cake!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service_container" id="service_heading_img_text6">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/diploma_1.svg" title="职场培训知多少" class="">
+                            <h1>职场培训知多少</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                根据每一位学生不同的兴趣、爱好、专业等，定制独特的职场培训。 也许在世界顶尖的投行、四大、Google实习，对目前的您来说还依旧是场梦。 但我们欧耶擅长的，便是把梦变成现实！让您梦想成真！ 至少一次在美国实习的机会，便是欧耶给予您最大的承诺！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                <div class="service_container" id="service_heading_img_text8">
+                    <div class="row">
+                        <div class="service_heading_img_text">
+                            <img src="css/icons/privacy.svg" title="背景了解规划" class="">
+                            <h1>实战模拟审核</h1>
+                        </div>
+                        <div class="col-sm-12 service_introduction">
+                            <p>
+                                你猜，这世界上比钻石还珍贵的东西是什么？是欧耶的真心。除了钻石总监给予你专属的贴身服务之外，旗舰VIP服务还将为你诚意配备欧耶王牌团队的终极审核！ 欧耶王牌团队由4位最顶尖的资深导师所组成，我们将模拟大学招生官对你的申请进行最终的评估和审核，在争论与探讨中进一步雕琢完善你的申请。钻石总监+王牌团队，让你的Dream School触手可及。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+-->
+
+            </div>
+
+
+        </div>
+
+        <!--
+        <div class="container service_pricing" style="max-width: 1000px">
             <div class="section section-w">
                 <div class="row">
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>背景了解规划</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>深度素材挖掘</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>1对1视讯探讨</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>文书提升润色</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>申请表格指导</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>总监终审</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>总监全程打造</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 sub-service-container">
-                        <div class="sub-service">
-                            <img src="css/icons/flash_on.svg" title="flash_on.svg" />
-                            <h1>Admission团队终审</h1>
-                        </div>
-                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                            <div class="table-cell"></div>
+                            <div class="table-cell table-cell-service-target" style='line-height: 40px;'>您的目的地</div>
+                            <div class="table-cell table-cell-grey">
+                                <p class="table-cell-leading-text">背景了解
+                                    <br class="hidden-md hidden-lg">规划</p>
+                            </div>
+                            <div class="table-cell">
+                                <p class="table-cell-leading-text">深度素材
+                                    <br class="hidden-md hidden-lg">挖掘</p>
+                            </div>
+                            <div class="table-cell table-cell-grey">
+                                <p class="table-cell-leading-text">申请表格
+                                    <br class="hidden-md hidden-lg">指导</p>
+                            </div>
+                            <div class="table-cell ">
+                                <p class="table-cell-leading-text">文书提升
+                                    <br class="hidden-md hidden-lg">润色</p>
+                            </div>
+                            <div class="table-cell table-cell-grey">
+                                <p class="table-cell-leading-text">1对1视讯
+                                    <br class="hidden-md hidden-lg">探讨</p>
+                            </div>
+                            <div class="table-cell">
+                                <p class="table-cell-leading-text">总监私人
+                                    <br class="hidden-md hidden-lg">服务</p>
+                            </div>
 
-
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                            <div class="table-cell table-cell-service-title" style="color: #2fc2a2;">臻品
+                                <br class="hidden-md hidden-lg">经济班机</div>
+                            <div class="table-cell table-cell-service-target">其他UC申请
+                                <br>(不包含UCB/UCLA)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-null"></div>
+                            <div class="table-cell table-cell-null"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                            <div class="table-cell table-cell-service-title" style="color: #3b67b3;">尊享
+                                <br class="hidden-md hidden-lg">商务班机</div>
+                            <div class="table-cell table-cell-service-target">UCB/UCLA申请
+                                <br>(不包含Haas)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-null"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 price_table_container">
+                        <div class="price_table">
+                            <div class="table-cell table-cell-service-title" style="color: #3b67b3;">钻石
+                                <br class="hidden-md hidden-lg">头等班机</div>
+                            <div class="table-cell table-cell-service-target">顶级私校申请
+                                <br>(包括Haas)</div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                            <div class="table-cell table-cell-grey table-cell-checked"></div>
+                            <div class="table-cell table-cell-checked"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+-->
 
     </section>
 
@@ -350,10 +846,13 @@
     <script>
         $('header').load('../header.html', function() {
             $.getScript('js/userLogSystem.js');
+            $('.nav-list-item-longterm').addClass('active');
             return false;
         });
 
-        $('footer').load('../footer.html');
+        $('footer').load('../footer.html', function() {
+            $.getScript('js/app.js');
+        });
 
         $('input:file').filestyle({
             input: false,
@@ -367,13 +866,13 @@
             var st = $(this).scrollTop();
             var fontSize = $('.section-hero').find('h1').css('font-size');
 
-            $('.section-hero').find('h1').css({
+            $('.section-hero-green').find('h1').css({
                 'opacity': (1 - st / 100),
                 //                'font-size': (4 - st / 10 + 1) + 'em'
             });
-            if (st < 100) {
-                $('.section-hero').css({
-                    'padding-top': (140 + st) + 'px',
+            if (st < 130) {
+                $('.section-hero-green').css({
+                    'padding-top': (90 - st * 2) + 'px',
                     //                'font-size': (4 - st / 10 + 1) + 'em'
                 });
             }
@@ -382,17 +881,14 @@
             //									console.log(parseInt($('.section-hero').css('padding-top'), 10));
 
 
-            var viewableOffset = $('.nav-center-listener').offset().top - st;
-            if (viewableOffset < 51) {
-                $('.nav-center').addClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '75px');
-
-            } else if (viewableOffset > 51) {
-                $('.nav-center').removeClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '30px');
-            };
 
             //            console.log(viewableOffset);
+        });
+
+        $(document).ready(function() {
+            $('.fadein').each(function() {
+                $(this).fadeIn(Math.random() * 2000);
+            });
         });
     </script>
 

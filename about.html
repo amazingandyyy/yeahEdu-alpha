@@ -66,13 +66,18 @@
             width: 100%;
             padding: 10px;
             color: #1F4056;
-            overflow: scroll;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
             opacity: 1;
             -webkit-transition: .2s ease-in-out;
             -moz-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
             transition: .2s ease-in-out;
             transition-delay: 0.1s;
+        }
+        .profile-innerDiv::-webkit-scrollbar {
+            width: 0 !important
         }
         .profile-innerDiv h3 {
             font-weight: 700;
@@ -96,11 +101,11 @@
             opacity: 1;
             top: 0%;
         }
-     .card-teamMember:hover .profile-img.profile-img-teamMember img{
-     -webkit-filter: grayscale(0%);
+        .card-teamMember:hover .profile-img.profile-img-teamMember img {
+            -webkit-filter: grayscale(0%);
             filter: grayscale(0%);
-     }
-     
+            opacity: 0.9;
+        }
         .teamMember-more {
             background: rgba(52, 179, 160, 0.95);
             position: absolute;
@@ -111,9 +116,10 @@
             width: 0px;
             padding: 10px;
             color: white;
-            overflow: scroll;
+            overflow: hidden;
             opacity: 0;
-            padding: 5px;
+            padding: 4px;
+            font-size: 0.9em;
             -webkit-transition: .2s ease-in-out;
             -moz-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
@@ -123,7 +129,7 @@
         .card-teamMember:hover .teamMember-more {
             opacity: 1;
             height: 25px;
-            width: 25px;
+            width: 75px;
             bottom: 2%;
             right: 2%;
             transition-delay: 0s;
@@ -148,8 +154,8 @@
         .profile-img.profile-img-teamMember img {
             height: 101%;
             width: 101%;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
             opacity: 0.98;
         }
         .section-teamMember .profile-img {
@@ -157,8 +163,8 @@
             margin: auto;
             text-align: center;
             overflow: hidden;
+            border: 5px solid white;
         }
-        
     </style>
 </head>
 
@@ -188,7 +194,7 @@
 
                 <!-- Pick team members from jSON file-->
 
-                
+
                 <!-- team-container -->
 
 
@@ -208,14 +214,13 @@
     <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
-    
+
     <script>
-	$('header').load('../header.html', function() {
+        $('header').load('../header.html', function() {
             $.getScript("js/app.js");
         });
         $('footer').load('../footer.html');
-	
-	</script>
+    </script>
 
 </body>
 
