@@ -42,9 +42,11 @@
             /*background: linear-gradient(135deg, rgba(52,179,160,0.9), rgba(80,181,132,0.6));*/
         }
         .section-resource .card {
-            background: rgba(246, 246, 246, 1);
-            padding: 20px 15px 45px 15px;
+            background: rgba(255, 255, 255, 1);
+            padding: 30px 15px 45px 15px;
             height: 200px;
+									max-width: 300px;
+            border: 4px solid rgba(246, 246, 246, 1);
             border-radius: 7px;
             overflow: hidden;
             position: relative;
@@ -55,38 +57,53 @@
             transition-delay: 0s;
             cursor: pointer;
             word-wrap: break-word;
-									-webkit-transition: .2s ease-in-out;
+            -webkit-transition: .2s ease-in-out;
             -moz-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
             transition: .2s ease-in-out;
             transition-delay: 0s;
+            margin-bottom: 20px;
         }
         .section-resource .card h3 {
             font-weight: 600;
+            color: black;
+        }
+        .section-resource .card p {
+            font-weight: 400;
+            color: #34B3A0;
         }
         .section-resource .card .innerDiv {
             position: absolute;
-            top: 80%;
+            top: 88%;
             right: 0px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(246, 246, 246, 0.9);
+            border-radius: 0px;
             width: 100%;
             padding: 10px 10px 20px 10px;
-									-webkit-transition: .2s ease-in-out;
+            -webkit-transition: .2s ease-in-out;
             -moz-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
             transition: .2s ease-in-out;
             transition-delay: 0.01s;
-									height: 100%;
-									overflow-y: scroll;
+            height: 100%;
+            overflow-y: scroll;
+									padding-top: 20px;
+            line-height: 1.8em;
+									text-align: left;
         }
+					.section-resource .card .innerDiv hr {
+						margin: 10px;
+					}
         .section-resource .card:hover {
-            animation: shadow-spinning 2s linear infinite;
+            animation: shadow-spinning2 2s linear infinite;
             z-index: 99;
-									
+            transform: scale(1.03);
         }
-        .section-resource .card .innerDiv:hover  {
-            top: 0%;
-									
+        .section-resource .card .innerDiv:hover {
+            top: 88%;
+        }
+        .section-resource .resource-container {
+            padding-top: 100px;
         }
         @keyframes shadow-spinning {
             0% {
@@ -138,26 +155,52 @@
     <header></header>
     <section class='section section-w section-resource'>
         <h1>社大资源汇总</h1>
-        <h3>汇整就读社区大学，两年内常用连结</h3>
-        <div class="container">
+        <h3>两年社大生活，从这里出发无往不利</h3>
+        <div class="container resource-container">
             <div class="row">
-                <div class="col-xs-2 col-sm-3">
+                <div class="col-xs-6 col-sm-4">
                     <div class="card">
-                        <h3>ASSIST.org</h3>
-                        <p>最官方的转学必修信息</p>
-                        <div class="innerDiv">细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>细节： <br>
-                            <div class="goToPage"></div>
-                        </div>
+                        <a href="http://www.assist.org/" target="_blank">
+                            <h3>ASSIST.org</h3>
+                            <p>官方转学必修课公告</p>
+																									<div class="innerDiv"><b>功能:</b><br>此网站是UC官方的转学必修课公告区，从这里查转学前必须完成哪些课准没错。<hr/><b>使用方式:</b><br>是先选择你的CC，再选择目标学校及科系，就可以浏览必修课的列表。此网站与RMP并列为转学生最重要及最常造访的br网站。
+                                <div class="goToPage"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-xs-2 col-sm-3">
-                    <div class="box">a</div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="card">
+                        <a href="http://www.ratemyprofessors.com/" target="_blank">
+                            <h3>RateMyProfessor</h3>
+                            <p>最全各校教授评价平台</p>
+                            <div class="innerDiv">
+                                <div class="goToPage"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-xs-2 col-sm-3">
-                    <div class="box">a</div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="card">
+                        <a href="http://www.calculator.net/gpa-calculator.html" target="_blank">
+                            <h3>GPA计算机</h3>
+                            <p>清楚快速的GPA计算与预测</p>
+                            <div class="innerDiv">
+                                <div class="goToPage"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-xs-2 col-sm-3">
-                    <div class="box">a</div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="card">
+                        <a href="http://www.assist.org/" target="_blank">
+                            <h3>更多资源</h3>
+                            <p>资源建议请 Email</p>
+                            <div class="innerDiv">
+                                <div class="goToPage"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,7 +213,7 @@
     <script>
         $('header').load('../header.html', function() {
             $.getScript("js/app.js");
-									$('.nav-list-item-resource').addClass('active');
+            $('.nav-list-item-resource').addClass('active');
         });
         $('footer').load('../footer.html', function() {
             $.getScript('js/app.js');

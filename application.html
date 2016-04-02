@@ -59,24 +59,7 @@
             position: relative;
             color: #686868;
         }
-        .mobile-container {
-            min-width: 350px;
-            height: 35px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0, 95);
-            margin: auto;
-        }
-        .nav-center {
-            overflow-x: scroll;
-            overflow-y: hidden;
-            -ms-overflow-style: none;
-            -webkit-overflow-scrolling: touch;
-            box-shadow: -28px 0 7px -7px #fff inset;
-            white-space: nowrap;
-        }
-        .nav-center::-webkit-scrollbar {
-            width: 0 !important
-        }
+        
         .nav-center-sticky {
             position: fixed;
             top: 50px;
@@ -424,7 +407,7 @@
     <section class='section section-w section-setting'>
         <div class='section-hero section-hero-blue' style="height: 400px;">
             <span class='background-bubble'></span>
-            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>起飞计画</span></h1>
+            <h1 style='margin-bottom: 30px; '><span style='font-weight: 900; font-size: 2em; text-shadow: 0px 1px 1px #000; color: white; letter-spacing: 0.02em'>起飞计划</span></h1>
             <h1 style='margin-bottom: 40px; line-height: 1.4em; font-weight: 300; font-size: 1.7em; color: white; text-align: center;'>
             	欢迎乘坐欧耶申请季直飞航班<br>
 													本航班即将飞往您的梦想大学<br>
@@ -451,7 +434,7 @@
             <div class='tab-content' style='padding-bottom: 100px;'>
                 <div role='tabpanel' class='tab-pane active' id='normal'>
                     <div class="container" style="padding: 30px;">
-                        <div class="section section-w hidden-sm hidden-xs">
+                        <div class="section section-w section-application hidden-sm hidden-xs">
                             <div class="row">
                                 <div class="col-sm-2 sub-service-container fadein">
                                     <div class="sub-service ">
@@ -736,11 +719,11 @@
             var viewableOffset = $('.nav-center-listener').offset().top - st;
             if (viewableOffset < 51) {
                 $('.nav-center').addClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '75px');
+                $('.section-application').css('padding-top', '75px');
 
             } else if (viewableOffset > 51) {
                 $('.nav-center').removeClass('nav-center-sticky');
-                $('.section-cv').css('padding-top', '30px');
+                $('.section-application').css('padding-top', '30px');
             };
 
             //            console.log(viewableOffset);
