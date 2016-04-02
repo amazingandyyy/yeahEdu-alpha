@@ -151,6 +151,7 @@
         "motto":"运，成功者的谦虚词；命，失败者的借口；<br>若有恒，何必三更眠五更起；<br>最无益，莫过一日曝十日寒；"
         
     },
+    
     {
         "id": 14,
         "name": "Shuai Shao",
@@ -174,7 +175,6 @@
     {
         "id": 16,
         "name": "Dawei Feng",
-        "imageLink": "css/images/team/advisors/ei-feng-profile-img.png",
         "title": "Engineer",
         "introduction":"现就读于Diablo Valley College<br> Electrical Engineering & Computer Science专业 <br>DVC中华学生会宣传部部长<br>DVC应用数学社技术顾问<br>担任DVC中文Tutor和EOPS Tutor",
         "story": "一位专注于代码的极客<br>David毕业于广东省中山纪念中学 。<br>曾经参加过全国领导力大赛，编程比赛，视频制作比赛，摄影比赛，数学竞赛，并取得优异成绩。<br>现就读于Diablo Valley College，专攻Electrical Eningeering&Computer Science 方向，同时自学网页设计和开发。<br>David在空闲时间喜欢到野外摄影，想要用自己的镜头，自己的方式记录这个地球上每一处风景",
@@ -213,17 +213,9 @@
         
     },
     
-    {   "id":20,
-        "name":"Lipei Lin",
-        "imageLink": "css/images/team/advisors/default-profile.png",
-        "title": "Engineer",
-        "introduction":"拍视频",
-        "story": "'平凡'这个名词最好的代言人.",
-        "motto":"独善其身，敬爱天下。"
-        
-    },
+   
     
-    {   "id":21,
+    {   "id":20,
         "name":"Lipei Lin",
         "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Engineer",
