@@ -69,9 +69,13 @@
         .nav-center {
             overflow-x: scroll;
             overflow-y: hidden;
-            box-shadow: -28px 0 7px -7px #fff inset;
+            -ms-overflow-style: none;
             -webkit-overflow-scrolling: touch;
+            box-shadow: -28px 0 7px -7px #fff inset;
             white-space: nowrap;
+        }
+        .nav-center::-webkit-scrollbar {
+            width: 0 !important
         }
         .nav-center-sticky {
             position: fixed;
@@ -311,7 +315,6 @@
         }
 */
         .service_container {
-									
             text-align: left;
             padding: 80px 10px 0px 10px;
             background: #fff;
@@ -323,7 +326,6 @@
             position: absolute;
             left: 0px;
             top: 150px;
-
         }
         .service_heading_img_text img {
             height: 60px;
@@ -499,14 +501,14 @@
                                         </a>
                                     </div>
                                 </div>
-                       
+
                             </div>
                             <div class="margin50px"></div>
                             <div class="margin20px"></div>
                             <hr />
                         </div>
                         <div class="section section-w" style="padding-top: 0px;">
-                         
+
                             <div class="service_container" id="service_heading_img_text1">
                                 <div class="row">
                                     <div class="service_heading_img_text">

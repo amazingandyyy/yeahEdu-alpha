@@ -23,6 +23,7 @@ html {
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */
+    -ms-overflow-style: -ms-autohiding-scrollscrollbar;
 }
 /**
  * Remove default margin.
@@ -1093,12 +1094,41 @@ input[type=date]:focus {
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
     white-space: nowrap;
     position: relative;
+}
+.mobile-container-outter::-webkit-scrollbar {
+    width: 0 !important
 }
 .mobile-container-inner {
     width: 420px;
     margin: auto;
+}
+.mobile-container {
+    min-width: 350px;
+    height: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0, 95);
+    margin: auto;
+}
+.nav-center {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -28px 0 7px -7px #fff inset;
+    white-space: nowrap;
+}
+.nav-center::-webkit-scrollbar {
+    width: 0 !important
+}
+.nav-center-sticky {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    z-index: 98;
+    width: 100%
 }
 #userlog-y {
     cursor: pointer;
@@ -1329,9 +1359,8 @@ button:active {
 .tabs-advanced {
     border: none;
 }
-
 a:-webkit-any-link {
-		text-decoration: none;
+    text-decoration: none;
 }
 /* the end of customizing Moal*/
 
@@ -1381,7 +1410,6 @@ iPhone5: 320px
     .section-hero h1 {
         font-size: 2em;
     }
-	
 }
 @media (max-width: 375px) {
     /*	iphone 6 */
@@ -1455,7 +1483,6 @@ iPhone5: 320px
     .dropdown-menu {
         left: 0%;
     }
-	
 }
 /* Medium devices (desktops, 992px and up) */
 
