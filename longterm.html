@@ -403,25 +403,6 @@
             font-size: 1.3em;
             font-weight: 600;
         }
-        .section-timeline {
-            padding-top: 50px;
-        }
-        .section-timeline .timeline {
-            margin: auto;
-            width: 90px;
-            height: 50%;
-            background: #E9E9E9;
-            border-radius: 5px;
-        }
-        .section-timeline .timeline .timeline-section {
-            margin: auto;
-            width: 90px;
-            padding: 50px 30px;
-            font-size: 1.3em;
-            border: 1px solid black;
-            background: #E9E9E9;
-            border-radius: 5px;
-        }
         .section-timeline .badge {
             padding: 15px 10px;
             display: block;
@@ -431,84 +412,67 @@
             border-radius: 4px;
             font-weight: 400;
         }
-        .section-timeline .timeline_green {
+        .section-timeline {
+            text-align: center;
+        }
+        .section-timeline li {
+            list-style-type: none;
+        }
+        .section-timeline .timeline_green,
+        .section-timeline .item.timeline_green .array {
             background: rgba(12, 141, 122, 1);
-            ;
         }
-        .section-timeline .timeline_red {
-            background: rgba(226, 0, 28, 0.7);
+        .section-timeline .timeline_red,
+        .section-timeline .item.timeline_red .array {
+            background: rgba(248, 102, 120, 1);
         }
-        .section-timeline .timeline_blue {
-            background: rgba(22, 153, 181, 0.7);
-        }
-        .section-timeline .timeline_grey {
-            background: rgba(233, 233, 233, 1);
+        .section-timeline .timeline_placeholder,
+        .section-timeline .item.timeline_placeholder .array {
+            background: rgba(255, 255, 255, 1);
         }
         .section-timeline .item {
-            padding: 18px 30px;
+            margin: auto;
+            padding: 15px 12px;
             color: white;
-            text-align: left;
             border-radius: 5px;
-            left: 10px;
-            z-index: 90;
-            margin-top: 40px;
             font-size: 1.2em;
+            width: 80%;
+            margin-bottom: 20px;
         }
-        .section-timeline .item:after2 {
+        .section-timeline .item.item-left,
+        .section-timeline .item.item-right {
+            position: relative;
+        }
+					.section-timeline .item.item-left {
+					
+					}
+					.section-timeline .item.item-right {
+					
+					}
+        .section-timeline .item.item-left .array {
             position: absolute;
-            height: 42.5px;
-            width: 42.5px;
-            border-radius: 3px;
+            height: 39px;
+            width: 39px;
+            right: -16px;
             transform: rotate(45deg);
-            background: inherit;
-            content: '';
-            left: -19px;
-            top: 8px;
-            z-index: 10;
-        }
-        .section-timeline .item .dot1 {
-            width: 22px;
-            height: 22px;
-            border-radius: 100%;
-            border: 2px solid white;
-            background: black;
-            position: absolute;
-            display: inline-block;
-            left: -64px;
-        }
-        .section-timeline .item_left {
-            padding: 18px 30px;
-            color: white;
-            text-align: left;
+            top: 6.5px;
             border-radius: 5px;
-            position: absolute;
-            right: 10px;
-            z-index: 90;
-            margin-top: 40px;
-            font-size: 1.2em;
         }
-        .section-timeline .item_left:after {
-            position: absolute;
-            height: 42.5px;
-            width: 42.5px;
-            border-radius: 3px;
+        .section-timeline .item.item-right .array {
+           position: absolute;
+            height: 39px;
+            width: 39px;
+            left: -16px;
             transform: rotate(45deg);
-            background: inherit;
-            content: '';
-            right: -19px;
-            top: 8px;
-            z-index: 10;
+            top: 6.5px;
+            border-radius: 5px;
         }
-        .section-timeline .item_left .dot1 {
-            width: 22px;
-            height: 22px;
-            border-radius: 100%;
-            border: 2px solid white;
-            background: black;
-            position: absolute;
-            display: inline-block;
-            right: -64px;
-        }
+					.section-timeline .item.item-smaller {
+						width: 70%;
+					}
+					.section-timeline .item.item-right.item-smaller {
+						transform: translateX(-7%);
+					}
     </style>
 </head>
 
@@ -538,33 +502,38 @@
         <div class="container">
             <div class="section section-w section-timeline">
                 <div class="row">
-                    <div class="col-sm-5" style="border: 1px solid black">
-                        <div class="item_left timeline_grey">
-                            <div class="dot"></div>
-                            <div>选专业</div>
+                    <div class="col-sm-6">
+                        <div>
+                            <li class="item item-left timeline_red">
+                                <div class="array"></div>
+                                <div>不知道自己该选什么专业</div>
+                            </li>
+                            <li class="item item-left timeline_placeholder">
+                                <div class="dot"></div>
+                                <div>.</div>
+                            </li>
                         </div>
                     </div>
-                    <div class="col-sm-2" style="border: 1px solid black">
-                        <!--                        <div class="timeline">-->
-                        <!--
-                            <div class="timeline-section">新生入学</div>
-                            <div class="timeline-section">社大一年</div>
-                            <div class="timeline-section">申请季</div>
-                            <div class="timeline-section">申请后</div>
-                            <div class="timeline-section">录取后</div>
--->
-                        <!--                        </div>-->
-                    </div>
-                    <div class="col-sm-5" style="border: 1px solid black">
-                        <ul>
-                            <li class="item timeline_green">
-                                <div class="dot"></div>
+
+                    <div class="col-sm-6">
+                        <div>
+                            <li class="item item-right timeline_green">
+                                <div class="array"></div>
                                 <div>选择专业</div>
                             </li>
-                        </ul>
-
-
-
+                            <li class="item item-right timeline_green item-smaller">
+                                <div class="array"></div>
+                                <div>选择专业</div>
+                            </li>
+                            <li class="item item-right timeline_green">
+                                <div class="array"></div>
+                                <div>选择专业</div>
+                            </li>
+                            <li class="item item-right timeline_green">
+                                <div class="array"></div>
+                                <div>选择专业</div>
+                            </li>
+                        </div>
                     </div>
                 </div>
 
