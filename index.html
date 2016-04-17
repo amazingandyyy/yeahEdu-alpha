@@ -2,6 +2,7 @@
 <!--testing-->
 
 <!--testing-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +14,11 @@
     <!-- CDN -> Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- Link external style.css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- CDN -> Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css">
-    <!-- CDN -> Swiper.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css">
+    <!-- Link external style.css -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
         queries -->
@@ -30,8 +29,9 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     <style>
+
     </style>
-    
+
 </head>
 
 <body>
@@ -50,7 +50,6 @@
     <div class="container-fluid1">
         <div class="background_cover">
 -->
-
     <header></header>
     <content></content>
     <footer></footer>
@@ -59,11 +58,11 @@
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
     <script>
-        $('header').load('../header.html', function() {
+        $('header').load('./header.html', function() {
             $.getScript("js/app.js");
         });
-        $('footer').load('../footer.html');
-        $('content').load('../welcome.html');
+        $('footer').load('./footer.html');
+        $('content').load('./welcome.html');
     </script>
     <!-- link to local app.js -->
     <script src="js/app.js"></script>
