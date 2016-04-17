@@ -3,7 +3,7 @@ function cvVolunteerUpdate() {
     //       	event_location = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_location').val(),
     //        event_date = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_date').val(),
     //        event_host = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_host').val(),
-    //        event_diary = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_diary').val();		
+    //        event_diary = document.getElementsBySelector(".cv_volunteer_form_editor").find('#event_diary').val();
     //				alert(event_name, event_location, event_date, event_host, event_diary);
     var event_name = getElementsBySelector('.cv_volunteer_form_editor').value;
 };
@@ -313,6 +313,7 @@ $(document).ready(function() {
             "<div class='row'>" +
             "<div class='col-md-6'>" +
             "<div class='form-group'>" +
+            
             "<label for='event_name'>活动名称</label>" +
             "<input type='text' class='form-control' id='event_name' placeholder='活动名称' value='" + volunteerEventSingleContent.event_name + "'>" +
             "</div>" +
