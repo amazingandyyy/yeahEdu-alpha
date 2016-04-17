@@ -51,22 +51,37 @@ $(document).ready(function() {
         $('.menu-box').toggleClass('open');
     });
 
+    // $.getJSON("js/json/advisors.json", function(json) {
+    //
+    //     var html = "";
+    //
+    //     for (var i = 0; i < json.length; i++) {
+    //         var val = json[i];
+    //         html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='" + val.imageLink + "'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+    //
+    //     }
+    //
+    //     html += "<a href='#'><div class='card card-advisor-more'><div class='profile-img'><i class='fa fa-hand-peace-o card-advisor-more-i'></i></div><br><h3 class='adviser-name'>选择你的顾问</h3><h5 class='advisor-background'>你的目标学校</h5></div></a>"
+    //
+    //     $('.advisor-row').html(html);
+    //
+    // });
+
     $.getJSON("js/json/advisors.json", function(json) {
 
         var html = "";
 
-        for (var i = 0; i < 9; i++) {
-            var val = json[Math.floor(Math.random() * json.length)];
-            html += "<div class='card card-w card-advisor'><div class='profile-img'><img src='" + "css/images/team/advisors/default-profile" + Math.floor(Math.random() * 5 + 1) + ".jpg" + "'/></div><br><h3 class='adviser-name'>" + val.name + "</h3><h5 class='advisor-background'><i class='fa fa-map-marker'></i> " + val.background + "</h5></div>";
-
+        for (var i = 0; i < json.length; i++) {
+            var val = json[i];
+            var nameAbbr = val.name.toLowerCase().split(' ');
+            html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='"+val.imageLink+"'></div><h4>" + val.name + "</h4><h5>" + val.background + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+            // html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
         }
 
-        //        json.forEach(function(val) {});
+        // html += "<a href='#'><div class='card card-advisor-more'><div class='profile-img'><i class='fa fa-hand-peace-o card-advisor-more-i'></i></div><br><h3 class='adviser-name'>选择你的顾问</h3><h5 class='advisor-background'>你的目标学校</h5></div></a>"
 
-        html += "<a href='#'><div class='card card-advisor-more'><div class='profile-img'><i class='fa fa-hand-peace-o card-advisor-more-i'></i></div><br><h3 class='adviser-name'>选择你的顾问</h3><h5 class='advisor-background'>你的目标学校</h5></div></a>"
 
         $('.advisor-row').html(html);
-
     });
 
     $.getJSON("js/json/team.json", function(json) {
@@ -76,13 +91,15 @@ $(document).ready(function() {
         for (var i = 0; i < 6; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
-            html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+            html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='" + val.imageLink + "'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+            // html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
         }
 
         for (var i = 6; i < json.length; i++) {
             var val = json[i];
             var nameAbbr = val.name.toLowerCase().split(' ');
             html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
+            // html += "<div class='col-xs-12 col-sm-4 col-lg-4 team-container'><div class='card-teamMember'><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><div class='profile-innerDiv'><h3>" + val.name + "</h3><p>" + val.introduction + "</p></div><div class='teamMember-more' title='查看更多关于我' data-toggle='modal' data-target='." + nameAbbr.join('-') + "-modal'>更多关于</div></div><div class='modal fade " + nameAbbr.join('-') + "-modal'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-body'><button type='button' class='close' data-dismiss='modal' aria-label='Close' aria-hidden='true'><span></span><span></span></button><div class='profile-img profile-img-teamMember'><img src='css/images/team/members/" + nameAbbr.join('-') + "-profile-img.png'></div><h4>" + val.name + "</h4><h5>" + val.title + "</h5><p>" + val.story + "<hr /><br />" + val.motto + "</p></div></div></div></div></div>";
         }
 
         $('.team-row').html(html);
@@ -343,25 +360,25 @@ $(document).ready(function() {
             "<div class='col-md-6'>" +
             "<div class='row'>" +
             "<div class='col-md-6'>" +
-        //                                                                            "<div class='form-group'>"+
-        //                                                                                "<label for='event_participant'>参与身分</label>"+
-        //                                                                                "<br>"+
-        //                                                                                "<label id='label_select'>"+
-        //                                                                                    "<select id='event_participant'>"+
-        //                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
-        //                                                                                        "<option id='event_participant_editor'	 value='主办者'>主办者</option>"+
-        //                                                                                        "<option id='event_participant_editor' value='小组长'>小组长</option>"+
-        //                                                                                        "<option id='event_participant_editor' value='参与者'>参与者</option>"+
-        //                                                                                    "</select>"+
-        //                                                                                "</label>"+
-        //                                                                            "</div>"+
-        "</div>" +
+            //                                                                            "<div class='form-group'>"+
+            //                                                                                "<label for='event_participant'>参与身分</label>"+
+            //                                                                                "<br>"+
+            //                                                                                "<label id='label_select'>"+
+            //                                                                                    "<select id='event_participant'>"+
+            //                                                                                        "<option value='' disabled selected>-- 请选择 --</option>"+
+            //                                                                                        "<option id='event_participant_editor'	 value='主办者'>主办者</option>"+
+            //                                                                                        "<option id='event_participant_editor' value='小组长'>小组长</option>"+
+            //                                                                                        "<option id='event_participant_editor' value='参与者'>参与者</option>"+
+            //                                                                                    "</select>"+
+            //                                                                                "</label>"+
+            //                                                                            "</div>"+
+            "</div>" +
             "<div class='col-md-6'>" +
-        //                                                                            "<div class='form-group'>"+
-        //                                                                                "<label for='event_doc'>照片/档案</label>"+
-        //                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
-        //                                                                            "</div>"+
-        "</div>" +
+            //                                                                            "<div class='form-group'>"+
+            //                                                                                "<label for='event_doc'>照片/档案</label>"+
+            //                                                                                "<input type='file' class='form-control' id='event_doc' data-input='false' data-iconName='glyphicon glyphicon-inbox' data-buttonText='上传附加档案.' style='height: 40px; outline: none;' multiple>"+
+            //                                                                            "</div>"+
+            "</div>" +
             "</div>" +
             "</div>" +
             "<div class='col-md-12'>" +

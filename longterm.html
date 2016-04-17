@@ -1,27 +1,21 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel='shortcut icon' href='css/images/logo.ico' type='image/x-icon' />
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="css/images/logo.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <!-- Google Font -> Lato -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-    <title>欧耶教育-助跑计画</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900" rel="stylesheet" type="text/css">
+    <title>欧耶教育 专注CC转学</title>
     <!-- CDN -> Bootstrap -->
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' rel='stylesheet'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel='stylesheet' href='css/font-awesome.css'>
-    <!-- Link external style.css -->
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- CDN -> Animate.css -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css'>
-    <!-- CDN -> Swiper.css -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css'>
-    <!--    CDN -> Boostrap Datapicker.js-->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.min.css'>
-    <script src="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js"></script>
-    <script src="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css">
+    <!-- Link external style.css -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
         queries -->
@@ -33,6 +27,7 @@
         <![endif]-->
     <style>
         /* The CSS */
+
         select {
             display: block;
             height: 40px;
@@ -55,10 +50,12 @@
             cursor: pointer;
             padding-right: 18px
         }
+
         #label_select {
             position: relative;
             color: #686868;
         }
+
         .mobile-container {
             min-width: 530px;
             height: 35px;
@@ -66,6 +63,7 @@
             background: rgba(255, 255, 255, 0, 95);
             margin: auto;
         }
+
         .nav-center {
             overflow-x: scroll;
             overflow-y: hidden;
@@ -73,6 +71,7 @@
             -webkit-overflow-scrolling: touch;
             white-space: nowrap;
         }
+
         .nav-center-sticky {
             position: fixed;
             top: 50px;
@@ -80,6 +79,7 @@
             z-index: 98;
             width: 100%
         }
+
         .card-normal {
             background: rgba(246, 246, 246, 1);
             padding: 20px 15px 45px 15px;
@@ -94,25 +94,31 @@
             cursor: pointer;
             word-wrap: break-word;
         }
+
         .section-cv {
             padding-top: 30px;
         }
+
         .dashboard_table {
             margin: 30px 0px;
             border: 1px solid #34B3A0;
         }
+
         .dashboard_table th {
             background: #34B3A0;
             padding: 10px 30px;
             color: white;
             font-weight: 100;
         }
+
         .dashboard_table td {
             padding: 15px 30px;
         }
+
         .dashboard_table tr:nth-child(odd) {
             background: #F6F6F6;
         }
+
         .section-setting h2 {
             border: 0px solid;
             padding: 10px;
@@ -122,19 +128,23 @@
             font-weight: 900;
             width: 150px;
         }
+
         .dashboard_card.card_small {
             text-align: left;
             padding: 10px 15px;
         }
+
         .dashboard_card.card_small h1 {
             text-transform: none;
             letter-spacing: 1px;
             font-size: 1.5em;
         }
+
         .dashboard_table tr th:nth-child(1),
         .dashboard_table tr th:nth-child(2) {
             min-width: 0px;
         }
+
         .dashboard-more {
             border: 1px solid;
             line-height: 100px;
@@ -151,6 +161,7 @@
             transition: background .2s ease-in-out;
             overflow: hidden;
         }
+
         .dashboard-more::after {
             background: red;
             z-index: 1;
@@ -162,23 +173,28 @@
             left: 45%;
             position: absolute;
         }
+
         .dashboard-more:hover {
             background: #1F4059;
             color: white;
             transition: all .2s ease-in-out;
         }
+
         .dashboard-more:active {
             background: #1F4059;
             color: white;
             transform: scale(0.9);
             transition: all .2s ease-in-out;
         }
+
         #dashboard-more-trigger-div {
             display: none;
         }
+
         .resume_list {
             padding: 5px 5px;
         }
+
         .resume_item {
             border-radius: 5px;
             background: rgba(246, 246, 246, 1);
@@ -188,9 +204,11 @@
             position: relative;
             overflow: hidden;
         }
+
         .resume_item:hover {
             box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.5);
         }
+
         .resume_item name {
             display: inline-block;
             color: #1F2C34;
@@ -199,27 +217,33 @@
             letter-spacing: 1px;
             margin: 3px 0px;
         }
+
         .resume_item date {
             font-size: 1em;
             line-height: 30px;
         }
+
         .resume_item description {
             font-weight: 300;
             color: #999;
         }
+
         .resume_item date {
             display: inline-block;
             float: right;
         }
+
         .resume_item location,
         .resume_item participant,
         .resume_item organization {
             display: inline-block;
             margin: 5px 25px 8px 0px;
         }
+
         .tab-vertical li {
             display: block;
         }
+
         .resume_edit_tag {
             position: absolute;
             right: -1px;
@@ -230,24 +254,32 @@
             padding: 6px 10px;
             background: rgba(0, 0, 0, 0.4);
         }
+
         .section-hero {
             position: relative;
+            padding-left: 80px;
+            padding-right: 80px;
         }
+
         .background-bubble {
             background: rgba(255, 255, 255, 0.9);
         }
+
         .sub-service-container {
             padding: 15px;
         }
+
         .sub-service {
             transition: .125s all ease-in-out;
             padding: 10px;
             border-radius: 4px;
             margin: auto;
         }
+
         .fadein {
             display: none;
         }
+
         .sub-service img {
             cursor: pointer;
             transition: .125s all ease-in-out;
@@ -256,10 +288,12 @@
             margin-bottom: 10px;
             opacity: 0.8;
         }
+
         .sub-service img:hover {
             transform: scale(1.05);
             opacity: 1;
         }
+
         .sub-service h1 {
             font-size: 1.3em;
             font-weight: 600;
@@ -311,6 +345,7 @@
             transition: .2s ease-in-out;
         }
 */
+
         .service_container {
             text-align: left;
             padding: 120px 10px 0px 10px;
@@ -319,16 +354,19 @@
             max-width: 650px;
             margin: auto;
         }
+
         .service_heading_img_text {
             position: absolute;
             left: 0px;
             top: 65px;
         }
+
         .service_heading_img_text img {
             height: 60px;
             float: left;
             transform: rotate(0deg);
         }
+
         .service_heading_img_text h1 {
             float: left;
             line-height: 55px;
@@ -337,6 +375,7 @@
             letter-spacing: 0.05em;
             font-weight: 400;
         }
+
         .service_introduction p {
             margin-top: 20px;
             font-size: 1.2em;
@@ -345,28 +384,34 @@
             text-align: justify;
             color: #686868;
         }
+
         .service_pricing .price_table_container {
             padding: 0px;
         }
+
         .service_pricing .price_table {
             background: #fff;
             border: 0px solid black;
             padding: 0px;
             border-radius: 0px;
         }
+
         .table-cell {
             min-height: 66px;
             margin: 0px 2px;
             position: relative;
         }
+
         .table-cell.table-cell-grey {
             background-color: #f7f9fa;
         }
+
         .table-cell-checked {
             background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/562132baf554c39f7d195108_check-mark.svg");
             background-position: 50% 50%;
             background-repeat: no-repeat;
         }
+
         .table-cell-null {
             background-image: url("https://daks2k3a4ib2z.cloudfront.net/55de95401f19df505cc6c89d/56204acc6ff16b855d74bd8e_dash%402x.png");
             background-position: 50% 50%;
@@ -374,6 +419,7 @@
             background-repeat: no-repeat;
             background-attachment: scroll;
         }
+
         .table-cell .table-cell-leading-text {
             font-weight: 500;
             display: inline-block;
@@ -386,10 +432,12 @@
             letter-spacing: 0.6px;
             color: rgba(32, 42, 52, 0.6);
         }
+
         .table-cell.table-cell-service-title {
             font-weight: 600;
             font-size: 1.4em;
         }
+
         .badge-y {
             text-align: left;
             float: left;
@@ -403,6 +451,7 @@
             font-size: 1.3em;
             font-weight: 600;
         }
+
         .section-timeline .badge {
             padding: 15px 10px;
             display: block;
@@ -412,24 +461,30 @@
             border-radius: 4px;
             font-weight: 400;
         }
+
         .section-timeline {
             text-align: center;
         }
+
         .section-timeline li {
             list-style-type: none;
         }
+
         .section-timeline .timeline_green,
         .section-timeline .item.timeline_green .array {
             background: rgba(12, 141, 122, 1);
         }
+
         .section-timeline .timeline_red,
         .section-timeline .item.timeline_red .array {
             background: rgba(248, 102, 120, 1);
         }
+
         .section-timeline .timeline_placeholder,
         .section-timeline .item.timeline_placeholder .array {
             background: rgba(255, 255, 255, 1);
         }
+
         .section-timeline .item {
             margin: auto;
             padding: 15px 12px;
@@ -439,13 +494,18 @@
             width: 80%;
             margin-bottom: 20px;
         }
+
         .section-timeline .item.item-left,
         .section-timeline .item.item-right {
             position: relative;
         }
-        .section-timeline .item.item-left {} .section-timeline .item.item-right {
+
+        .section-timeline .item.item-left {}
+
+        .section-timeline .item.item-right {
             transform: translateX(4%);
         }
+
         .section-timeline .item.item-left .array {
             position: absolute;
             height: 39px;
@@ -455,6 +515,7 @@
             top: 6.5px;
             border-radius: 5px;
         }
+
         .section-timeline .item.item-right .array {
             position: absolute;
             height: 39px;
@@ -464,11 +525,18 @@
             top: 6.5px;
             border-radius: 5px;
         }
+
         .section-timeline .item.item-smaller {
             width: 70%;
         }
+
         .section-timeline .item.item-right.item-smaller {
             transform: translateX(12%);
+        }
+
+        .testing {
+            line-height: 2em;
+            font-size: 1.3em;
         }
     </style>
 </head>
@@ -488,16 +556,22 @@
     <section class='section section-w'>
         <div class='section-hero section-hero-green' style="height: 400px;">
             <span class='background-bubble'></span>
-            <h1><span>助跑计划</span></h1>
+            <div>
+                <h1><span>春茧计划</span></h1></div>
             <h1>
-            	社区大学转是一场长跑比赛<br>
-												欧耶教育独家企划，量身订做<br>
-													提前与持续的规划助你转学成功！
+            	两年，我们 许诺你一个不一样的人生<br>我们期待着与你从头开始，一起成长，陪伴是最长情的告白
             </h1>
         </div>
 
         <div class="container">
             <div class="section section-w section-timeline">
+                <!--
+                <div class="col-sm-12 testing" >
+                    第一学期： 欢迎来到Community College。此刻的你朝气蓬勃，此刻的你对未来充满期待。你想着在这片美洲大陆上闯出一片属于自己的 天地。 慢着！ 你确定你知道第一学期要上什么课了吗？！ 随便选？选自己喜欢的 ？？ 太天真了！ 你以为这是第一个学期就可以随便浪费掉的吗？ IGETC 里面哪节课容易上？哪节课坑？专业课要上哪几节？ 哪个教授能学东西又好拿A？想选的课选不到怎么办？ Counsellor给的建议跟自己的预想不一样怎么办？问他问题随便敷衍怎么办？ 这一系列的问题像一座座无法爬过的大山挡在你和你的梦想之间。 但是，又有谁能给你答案呢？问朋友？还是自己去探索？ 第二学期： 终于熬过了第一学期，你现在对各种选课和学习流程有了一个大概的了解。 心想 这下终于可以向这自己的理想学校直奔而去了吧！ 等一下！你突然发现周围的小伙伴周末都去做志愿者了。 为什么大家都不在家学习？这不是浪费时间吗？ 所以说你以为转学的时候学校只看你的GPA吗？ 难道你没听说过转学需要至少60个小时的志愿者活动经历吗？ 难道你不知道你的Resume part在UC Application上占有很大比重的吗？(25%) 这一堆堆的问题又把你拦在了通向理想的道路上？ 可是志愿者活动要去哪里找啊？参加什么样的社团才合适？没有拿得出手的奖项怎么办？工作 经验压根就是白板呀。。 是不是很苦恼呢？ 第三学期 两个学期过去了，GPA总算保住了，课外活动也参加了好多。 此刻的你虽然伤痕累累，却自信满满。 你相信自己能呈上一份完美的Application。 咳咳 Personal Statement写了没？知道怎么写吗？知道自己需要什么故事吗？知道从哪个角度切入你的故事吗？ 例如：本人男，CSA成员，积极参与社团活动，去过三番给流浪汉发饭。。。（此处省略1000字） 你确定这种文章能吸引到你的梦想学校吗？在GPA4.0满地走的时代，这种PS简直都不会被看 多一眼呢 明明离梦想那么近了，却还是被那张纸所挡住。 你不甘心，明明付出了这么多。 怎么能被一篇Persaonal Statement否定一切？ 第四学期： 申请完了的你准备享受这个在Community College的最后一个学期。 觉得终于可以松一口气了。 你准备好好地享受人生， 可是大二暑假你就打算去玩吗？不充实自己怎么会有竞争力和在大U呆了两年的人斗？ 人生就会这样变得平坦吗？ 怎么找实习？怎么去面试？专业知识那些是必须要知道的？ 去到理想的学校后就是人生赢家了吗？实习都没有一份，怎么办？ 未来的道路还有很长， 你真的对自己未来的职业道路有清楚的了解吗？ 人生赢家可不是那么好当的。 因为 上天只会把机会留给那些有准备的人
+
+                </div>
+-->
+                <!--
                 <div class="row">
                     <div class="col-sm-5">
                         <div>
@@ -541,6 +615,7 @@
                         </div>
                     </div>
                 </div>
+-->
 
             </div>
         </div>
