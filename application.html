@@ -59,7 +59,7 @@
             position: relative;
             color: #686868;
         }
-        
+
         .nav-center-sticky {
             position: fixed;
             top: 50px;
@@ -680,13 +680,13 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js'></script>
 
     <script>
-        $('header').load('../header.html', function() {
+        $('header').load('./header.html', function() {
             $.getScript('js/userLogSystem.js');
             $('.nav-list-item-application').addClass('active');
             return false;
         });
 
-        $('footer').load('../footer.html', function() {
+        $('footer').load('./footer.html', function() {
             $.getScript('js/app.js');
         });
 
