@@ -11,6 +11,16 @@
     },
 
     {
+        "id": 1,
+        "name": "Tony Sun",
+        "imageLink": "css/images/team/members/default-profile.png",
+        "title": "COO",
+        "introduction":"UC Berkeley 经济、心理双专业<br>曾在UC Berkeley开班授课<br>伯克利中国论坛创始人<br>原伯克利中国学生学者联谊会主席",
+        "story": "Tony 于2014年毕业于加州大学伯克利分校。主修经济学和心理学。曾任伯克利中国学生学者联谊会主席。在校期间曾创办西海岸最大的中国主题论坛，伯克利中国论坛，成为湾区华人企业家、中国问题研究专家、学生交流合作的平台。Tony对于教育的热情开始于2005年央视的一部中国教育现状的纪录片。教育经历包括：在伯克利就读期间，曾在戏剧表演及舞蹈系创立一门课程，教授入门武术；并于2014年夏天在尼泊尔担任义工，深入了解当地的教育情况。",
+        "motto": "知而不行，只是未知。"
+    },
+    
+    {
         "id": 2,
         "name": "Andy Chen",
         "imageLink": "css/images/team/members/andy-chen-profile-img.png",
@@ -18,6 +28,33 @@
         "introduction":"欧耶网页及品牌设计<br>完美主义者及使用者行为痴谜研究者<br>立志打造合理、性感、优雅的产品",
         "story": "硅谷使用者经验研究社成员<br>三个月年内夺得四座硅谷黑客松奖项<br>十八岁创办台湾首个跨平台公益整合平台-微乐志工平台<br>曾担任台湾最大跨校性学生公益组织-笑拥青年联盟品牌总监<br>第十届台湾地理奥林匹亚金牌得主",
         "motto":"It's very easy to be different, but very difficult to be better. - Jonathan Ive.<br> Simple is better."
+    },
+
+    {
+        "id": 3,
+        "name": "Shinzu Jona",
+        "imageLink": "css/images/team/members/shinzu-jona-profile-img.png",
+        "title": "CAO",
+        "introduction":"美国 Discover 金融公司市场推广<br>伯克利哈斯商学院<br>加州商学案例竞赛第一名<br>精通五门语言",
+        "story": "美国 Discover 金融公司市场推广<br>伯克利哈斯商学院<br>加州商学案例竞赛第一名<br>精通五门语言"
+    },
+
+    {
+        "id": 4,
+        "name": "Shutian Zheng",
+        "imageLink": "css/images/team/members/default-profile.png",
+        "title": "Founder&CEO",
+        "introduction":"CAO",
+        "story": "伯克利大学毕业<br>雅培美国金融分析师"
+    },
+
+    {
+        "id": 5,
+        "name": "Allen Chen",
+        "imageLink": "css/images/team/members/default-profile.png",
+        "title": "Angel Investor",
+        "introduction":"UC San Diego",
+        "story": "UC San Diego"
     },
 
     {
@@ -107,7 +144,7 @@
     {
         "id": 13,
         "name": "Zhuoxian Yang",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Campus Director",
         "introduction":"就读于Diablo Valley College，数学统计专业<br>DVC中华学生会副主席<br>DVC应用数学社副主席<br>曾任DVC数学辅导，DVC学生政府成员。",
         "story":"Jason高中就读于惠州市第一中学。移民美国后毕业于三藩市林肯高中。现就读于Diablo Valley College, 数学统计专业，在校内担任中华学生会副主席，数学社团副主席，数学辅导员，多次参与组织中国留学生课外活动与校内竞赛。致力与丰富留学生的课外活动。大二期间曾在保险公司实习并参与统计数据研发金融房产理赔项目。培养了谨慎严密的逻辑思维。对于在美高中生和转学生申请与校园生活有深入了解，能充分提供合适建议。希望能帮助更多的在美留学生。",
@@ -118,7 +155,7 @@
     {
         "id": 14,
         "name": "Shuai Shao",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Education Consultant",
         "introduction":"产品销售及咨询",
         "story": "毕业于山东省实验中学及加州 Chico Senior High School<br>曾获得七所top50高校录取通知，及九万美金奖学金<br>光明《留学》杂志记者<br>中联百文写手",
@@ -128,7 +165,7 @@
     {
         "id": 15,
         "name": "Paul Shih",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Education Consultant",
         "introduction":"就讀於Diablo Valley College Economics 专业<br>UC Berkeley 哈斯商学院青少年项目导师<br>DVC 金融社 副主席",
         "story": "Paul 在国内高中时期, 积极参与各类志愿者活动. 其中身为法律传播队的一员, 又为其之策划者。<br>Paul 深入偏乡教导经济弱势的孩子们基本法律常识。在过程中, 孩子们勤学的学习态度感动了。Paul, 也因此让他下定决心 “只要有能力 就要为社会付出” <br>此外, Paul 更在国立故宫博物院 身为其中、英文志愿导览者。在 Paul 与各国宾客的互动中, 他了解到各国文化之差异，也意识到提身自我国际观的重要性。<br>在Diablo Valley College 学习期间 Paul 身为学校金融社之副主席，也同时兼任社团之公关。他多次成功得与地方企业合作举办联合募款活动。此外，他也邀请许多企业家至校园分享公司成功秘诀。Paul 希望用它乐此不比助人的心和在美国求学的经验，来帮助即将筑梦的莘莘学子！",
@@ -147,7 +184,7 @@
     {
         "id": 17,
         "name": "Hongming Luo",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Engineer",
         "introduction":"产品开发，线上视频",
         "story": "无",
@@ -157,7 +194,7 @@
     {
         "id": 18,
         "name": "Xihao Wang",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Campus Director",
         "introduction":"校园大使",
         "story": "CPA认证，国家高级对外汉语教师资格证持有者。",
@@ -168,7 +205,7 @@
     {
         "id": 19,
         "name": "Yifan Li",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "平面设计师",
         "introduction":"海报图形设计",
         "story": "并没有什么丰功伟业",
@@ -180,7 +217,7 @@
 
     {   "id":20,
         "name":"Lipei Lin",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Engineer",
         "introduction":"拍视频",
         "story": "'平凡'这个名词最好的代言人.",
@@ -191,7 +228,7 @@
     {
         "id":21,
         "name":"Hao Wang",
-        "imageLink": "css/images/team/default-profile.png",
+        "imageLink": "css/images/team/advisors/default-profile.png",
         "title": "Director of Product",
         "introduction":"intern項目產品開發",
         "story": "珠海一中 <br>天津大學環境學院 <br>Diablo Valley College建築系",
