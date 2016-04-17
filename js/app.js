@@ -330,6 +330,7 @@ $(document).ready(function() {
             "<div class='row'>" +
             "<div class='col-md-6'>" +
             "<div class='form-group'>" +
+            
             "<label for='event_name'>活动名称</label>" +
             "<input type='text' class='form-control' id='event_name' placeholder='活动名称' value='" + volunteerEventSingleContent.event_name + "'>" +
             "</div>" +

@@ -209,14 +209,14 @@
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
     <script>
-        $('header').load('../header.html', function() {
+        $('header').load('./header.html', function() {
             $.getScript("js/app.js");
             $('.nav-list-item-resource').addClass('active');
         });
-        $('footer').load('../footer.html', function() {
+        $('footer').load('./footer.html', function() {
             $.getScript('js/app.js');
         });
-        $('content').load('../welcome.html', function() {
+        $('content').load('./welcome.html', function() {
             $.getScript('js/app.js');
         });
     </script>
