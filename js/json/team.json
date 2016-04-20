@@ -53,7 +53,7 @@
     {
         "id": 9,
         "name": "Linus Lin",
-        "imageLink": "css/images/team/advisors/linus-lin-profile-img.png",
+        "imageLink": "css/images/team/members/linus-lin-profile-img.png",
         "title": "Education Consultant",
         "introduction":"现就读于Diablo Valley College， Business专业<br>UC Berkeley 哈斯商学院青少年项目导师<br>原DVC学生政府Director of Public Relations<br>DVC中华学生会公关部部长<br>亲历社区大学转学申请，熟悉转学流程,了解各专业转学要求",
         "story": "Linus毕业于广州市执信中学，现就读于Diablo Valley College，商科专业。在DVC期间，曾任全校学生政府Director of Public Realtions, 为全校20,000个学生争取权益，运用所学知识扩大学生政府名声。此外，还曾任中华学生会公关部部长，与学校周边商家联系，成功组织大型留学生节日聚会，成功获得量子通讯公司赞助。课余生活，担任 Berkeley Haas青年企业家项目导师，帮助有business兴趣的高中生拓展爱好，发掘潜力，并密切了解伯克利哈斯商学院转学过程还有学院文化风气，对伯克利有深入的了解。同时，Linus积极与社区联系，独立联系Pleasant Hill图书馆志愿者服务，带领三位同学担任义工，了解美国当地文化。在社区大学的一年半里，深切感受到了国际学生从一无所知到对转学了如指掌的不易，这也是我希望能到在教育机构帮助到以后的学生的动力。",
@@ -160,7 +160,7 @@
         "imageLink": "css/images/team/default-profile.png",
         "title": "Campus Director",
         "introduction":"校园大使",
-        "story": "CPA认证，国家高级对外汉语教师资格证持有者。",
+        "story": "CPA认证，高级对外汉语教师资格证持有者。",
         "motto":"不忘初心"
 
     },
