@@ -87,5 +87,36 @@
         "name": "Stanley Liu",
         "imageLink": "css/images/team/default-profile.png",
         "background": "英属哥伦比亚金融硕士"
+    },
+    
+    {
+        "id": 15,
+        "name": "Thomas P. Maxon",
+        "imageLink": "css/images/team/default-profile.png",
+        "background": "UC Berkeley",
+        "introduction":"* UC Berkeley 中国文学硕士毕业 <br>* 曾就读于台湾国立大学及台湾师范大学<br>* 曾就任台湾Deloitte英文老师<br>* 阅读超过1000份大学申请文书，并指导众多学生进入UCB、UCLA等学校 ",
+        "story":"Thomas has studied and worked in Taiwan for four years. He studied Mandarin Chinese at National Taiwan University and National Taiwan Normal University from 2010-2012. After graduating from the University of Nevada, Reno in 2013 with a Bachelor of the Arts degree in History, he worked with Deloitte Taiwan as a personal English tutor from 2013-2014. During the application season, he also mentored over 20 high school students and undergraduate students with their UC and Common Applications. In 2015 he interned at the Asia Society Northern California working with businesses in Silicon Valley, Chinese entrepreneurs, California state officials and local cultural leaders. Thomas has earned his master's degree at UC Berkeley, studying Chinese literature, history, and anthropology.  Up to now, he has read over 1000 college application essays and is now drafting his first book,'Unlock the Secret of College Application'. ",
+        "motto":"Where there is a will, there is a way. <br>有志者事竟成"
+    },
+    
+    {
+        "id": 16,
+        "name": "Kiana Chan",
+        "imageLink": "css/images/team/default-profile.png",
+        "background": "University of California, Los Angeles",
+        "introduction":"I am passionate about working with international students and helping them achieve their academic and personal aspirations in America.",
+        "story":"Kiana has been passionate about learning Mandarin, interacting with international students, and promoting cross-cultural understanding between the citizens from the United States with those abroad. As a Chinese American, she was born in New York City, and grew up in the Bay Area, California. She has always had a strong interest for understanding other cultures and learning new languages. With experience studying abroad in Beijing with the U.S. State Department's fully funded Critical Language Scholarship Program, she has gained a deeper understanding of Chinese language and society, which makes her an excellent candidate for understanding the unique perspectives of YEAH Education students and the issues that they may experience when drafting their essays about their lives in China or their struggles with the English language. Kiana's experience in international education and passion for helping international students succeed resides in her experiences as an American Conversation and Culture Language Facilitator at the UCLA Dashew International Center. In this position, she takes on the leadership role as a facilitator amongst a class of international students, where she provides insight on American customs, society, and promotes conversation and understanding between people from diverse backgrounds. Kiana received the Award for Excellence in Writing for her essay, 'Not My Clay Doll,' a reflective personal statement about her identity and published in Fresh Voices, a California Polytechnic State University publication used in the first year English courses taught at the university. Currently at UCLA, her academic disciples are in Geography and Chinese Studies, with the ultimate goal of pursuing international public health and combining her passions for language, health, and travel into a fulfilling career abroad. ",
+        "motto":"“Live as if you were to die tomorrow. Learn as if you were to live forever.”-Mahatma Gandhi"
+    },
+    
+        {
+        "id": 17,
+        "name": "Phillip Larkin",
+        "imageLink": "css/images/team/default-profile.png",
+        "background": "UC Berkeley",
+        "introduction":"*UC Berkeley亚洲研究硕士毕业 <br>* 曾就读台湾国立大学及台湾师范大学<br>* 熟操英文、中文、日文<b4>* 曾担任UCB日语系主任<br>* CNN 及 Discovery 频道撰稿人<br>* 多年SAT、GRE、TOFEL 辅导经历<br>* 多年研究及指导 college application, 学生遍布Columbia, Stanford, UC Berkeley，Chicago等学校",
+        "story":"Between finishing his undergraduate degree in business at the University of Florida and completing a master's degree in Asian Studies at UC Berkeley, Phillip spent over a dozen years in Taiwan and mainland China. He studied Mandarin for several years at National Taiwan University and National Taiwan Normal University, before becoming an editor and translator for various publications and media companies, including CNN and Discovery Channel. He also spent over a decade mentoring Chinese-speaking students in ESL writing, specializing in SAT, GRE and TOEFL prep as well as advising on university applications. Many of his former students have been accepted at America's premier universities, such as the University of Chicago and Stanford University. During time off, Phillip traveled in Asia, Europe and Oceania as much as possible. He traveled by train from Hong Kong to London across the famous Trans-Siberian Railway, and crossed Australia from coast to coast in a camper van. Phillip returned to the US to complete his graduate degree at UC Berkeley in 2013, concentrating on Modern Japanese as well as Classical and Modern Chinese literature and history. After finishing his MA, Phillip spent a year as program coordinator for UC Berkeley's Center for Japanese Studies, and is currently a financial analyst for one of the world's largest non-profit organizations. In his free time, he enjoys biking around the East Bay, watching Chinese TV dramas and cooking Taiwanese food with his wife.",
+        "motto":"工欲善其事，必先利其器。"
     }
+    
 ]

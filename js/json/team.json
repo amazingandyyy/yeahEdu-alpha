@@ -51,6 +51,19 @@
     },
 
     {
+<<<<<<< HEAD
+=======
+        "id": 9,
+        "name": "Linus Lin",
+        "imageLink": "css/images/team/members/linus-lin-profile-img.png",
+        "title": "Education Consultant",
+        "introduction":"现就读于Diablo Valley College， Business专业<br>UC Berkeley 哈斯商学院青少年项目导师<br>原DVC学生政府Director of Public Relations<br>DVC中华学生会公关部部长<br>亲历社区大学转学申请，熟悉转学流程,了解各专业转学要求",
+        "story": "Linus毕业于广州市执信中学，现就读于Diablo Valley College，商科专业。在DVC期间，曾任全校学生政府Director of Public Realtions, 为全校20,000个学生争取权益，运用所学知识扩大学生政府名声。此外，还曾任中华学生会公关部部长，与学校周边商家联系，成功组织大型留学生节日聚会，成功获得量子通讯公司赞助。课余生活，担任 Berkeley Haas青年企业家项目导师，帮助有business兴趣的高中生拓展爱好，发掘潜力，并密切了解伯克利哈斯商学院转学过程还有学院文化风气，对伯克利有深入的了解。同时，Linus积极与社区联系，独立联系Pleasant Hill图书馆志愿者服务，带领三位同学担任义工，了解美国当地文化。在社区大学的一年半里，深切感受到了国际学生从一无所知到对转学了如指掌的不易，这也是我希望能到在教育机构帮助到以后的学生的动力。",
+        "motto":"有梦不死，天助自助者。"
+    },
+
+    {
+>>>>>>> yeah_David
         "id": 10,
         "name": "Yuxiang Hu",
         "imageLink": "css/images/team/members/yuxiang-hu-profile-img.png",
@@ -123,6 +136,62 @@
         "story": "一位专注于代码的极客<br>David毕业于广东省中山纪念中学 。<br>曾经参加过全国领导力大赛，编程比赛，视频制作比赛，摄影比赛，数学竞赛，并取得优异成绩。<br>现就读于Diablo Valley College，专攻Electrical Eningeering&Computer Science 方向，同时自学网页设计和开发。<br>David在空闲时间喜欢到野外摄影，想要用自己的镜头，自己的方式记录这个地球上每一处风景",
         "motto":"在雨中奔跑，别人就看不到你脸上的泪水了<br>可是，为什么在意别人是否看到呢?"
 
+<<<<<<< HEAD
+=======
+    },
+    {
+        "id": 17,
+        "name": "Hongming Luo",
+        "imageLink": "css/images/team/default-profile.png",
+        "title": "Engineer",
+        "introduction":"产品开发，线上视频",
+        "story": "无",
+        "motto":"无"
+
+    },
+    {
+        "id": 18,
+        "name": "Xihao Wang",
+        "imageLink": "css/images/team/default-profile.png",
+        "title": "Campus Director",
+        "introduction":"校园大使",
+        "story": "CPA认证，高级对外汉语教师资格证持有者。",
+        "motto":"不忘初心"
+
+    },
+
+    {
+        "id": 19,
+        "name": "Yifan Li",
+        "imageLink": "css/images/team/default-profile.png",
+        "title": "平面设计师",
+        "introduction":"海报图形设计",
+        "story": "并没有什么丰功伟业",
+        "motto":"less is more"
+
+    },
+
+
+
+    {   "id":20,
+        "name":"Lipei Lin",
+        "imageLink": "css/images/team/default-profile.png",
+        "title": "Engineer",
+        "introduction":"拍视频",
+        "story": "'平凡'这个名词最好的代言人.",
+        "motto":"独善其身，敬爱天下。"
+
+    },
+
+    {
+        "id":21,
+        "name":"Hao Wang",
+        "imageLink": "css/images/team/default-profile.png",
+        "title": "Director of Product",
+        "introduction":"intern項目產品開發",
+        "story": "珠海一中 <br>天津大學環境學院 <br>Diablo Valley College建築系",
+        "motto":"既然目標是地平線 留給世界的只能是背影。"
+>>>>>>> yeah_David
     }
 
 ]
